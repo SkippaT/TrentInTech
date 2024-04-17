@@ -1,0 +1,76 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0A182E;
+    color: black;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: #8892B0;
+}
+
+.code {
+    color: #58E0C0;
+    font-family: monospace;
+}
+
+.nav {
+    /* background: pink; */
+    /* border: 2px solid greenyellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 20px;
+}
+.nav a {
+    text-decoration: none;
+    padding: 5px 20px;
+    color: #8892B0;
+    position: relative;
+}
+.nav a:last-child {
+    margin-right: 20px;
+}
+.nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 0%;
+    height: 2px; /* Height of the underline */
+    background-color: #58E0C0; /* Colour of the underline */
+    transition: width 0.3s ease-out;
+}
+.nav a:hover::before {
+    width: 80%;
+}
+
+.introduction-section {
+    /* background-color: aquamarine; */
+    border: 2px solid greenyellow;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.introduction-section p {
+    padding: 10px;
+}
+
+.introduction-content {
+    border: 2px solid red;
+    text-align: left;
+    padding: 50px;
+}
+.introduction-content .name-heading {
+    font-size: 64px;
+    font-weight: bold;
+}
+.introduction-content .second-heading {
+    font-size: 48px;
+    font-weight: bold;
+}

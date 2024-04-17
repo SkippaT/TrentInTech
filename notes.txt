@@ -1,0 +1,44 @@
+Pages:
+    Home
+    About me
+    Projects
+    Contact me
+
+Add link to resume pdf
+
+
+
+Pick number 5 or 11
+.code {
+    color: #50C8B0;
+}
+.code2 {
+    color: #205050;
+}
+.code3 {
+    color: #318080;
+}
+.code4 {
+    color: #205058;
+}
+.code5 {
+    color: #58E0C0;
+}
+.code6 {
+    color: #50D0B8;
+}
+.code7 {
+    color: #58e08a;
+}
+.code8 {
+    color: #3fcf74;
+}
+.code9 {
+    color: #3ce178;
+}
+.code10 {
+    color: #2dff22;
+}
+.code11 {
+    color: #6cffa2;
+}
