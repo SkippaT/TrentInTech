@@ -6,6 +6,8 @@ Pages:
 
 Add link to resume pdf
 
+For projects, have rows for each project and the user can expand a row/project and more information and information will be displayed.
+
 
 
 Pick number 5 or 11
