@@ -120,31 +120,32 @@ body {
     padding-bottom: 10px;
 }
 
+
 .skills-section {
     /* background: purple; */
     border: 2px solid red;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 100px;
     align-items: center;
     padding: 25px;
     flex-wrap: wrap;
 }
 .skills-content {
-    border: 2px solid greenyellow;
+    /* border: 2px solid greenyellow; */
 }
-.skills-grid {
+.skills-row {
     border: 2px solid orange;
-    display: grid;
-    grid-template-columns: [col-start] repeat(3, 250px [col-start]);
-    grid-template-rows: [row-start] repeat(3, 150px [row-start]);
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
-    justify-items: stretch;
-    gap: 75px 30px;
-    position: relative;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
 }
 .skill-card {
     border: 2px solid green;
-    position: relative;
+    width: 200px;
 }
 .skill-card i {
     font-size: 40px;
@@ -152,48 +153,21 @@ body {
 .skill-card h4 {
     padding: 10px 0px;
 }
-
-
-.skill-card {
-    background-color: #8a5291;
-    position: relative;
-    /* overflow: hidden; */
-}
-
 .skill-card p {
-    position: absolute;
-    top: 0; /* Position it below the skill card */
-    left: 0;
-    width: 100%; /* Full width */
-    padding: 10px;
-    opacity: 0;
-    z-index: 1; /* Ensure it appears above other elements */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition effect for sliding and opacity */
-    transform: translateY(100%); /* Initially slide down */
-
+    display: none;
+}
+.skill-card:hover {
+    cursor: pointer;
 }
 
-.skill-card i {
-    transition: transform 0.3s ease-in-out; /* Transition effect for icon */
-}
-
-.skill-card h4 {
-    transition: transform 0.3s ease-in-out; /* Transition effect for title */
-}
-
-.skill-card:hover i,
-.skill-card:hover h4 {
-    transform: translateY(-75px);
-}
-
-.skill-card:hover p {
-    display: block; /* Show the description when hovering over the skill card */
-    transform: translateY(0); /* Slide description up */
-    opacity: 1; /* Make description fully visible */
-}
-
-.skills-grid:hover .skill-card:not(:hover) {
-    filter: blur(5px);
+.expansion {
+    background: #3B5F67;
+    display: flex;
+    overflow: hidden;
+    height: 0;
+    text-align: center;
+    align-items: center;
+    transition: height 0.3s ease;
 }
 
 
