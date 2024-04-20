@@ -137,7 +137,7 @@ body {
     width: 750px;
 }
 .skills-row {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -146,7 +146,7 @@ body {
     margin-top: 20px;
 }
 .skill-card {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width: 200px;
     transition: filter 0.3s ease; /* Add transition for smooth effect */
 }
