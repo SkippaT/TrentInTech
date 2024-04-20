@@ -108,6 +108,23 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleMenuButton = document.querySelector('.toggle-menu');
+    const linksContainer = document.querySelector('.links');
+  
+    toggleMenuButton.addEventListener('click', () => {
+      linksContainer.classList.toggle('show');
+    });
+  
+    // Add event listener to window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        linksContainer.classList.remove('show');
+      }
+    });
+  });
+  
+
 // document.addEventListener("DOMContentLoaded", function() {
 //     const skillsRow = document.querySelector(".skills-row");
 //     const expansions = document.querySelectorAll(".expansion");
