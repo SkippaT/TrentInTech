@@ -6,71 +6,89 @@
 }
 
 body {
-    background: #0A182E;
+    background: #E6D9CE;
     color: black;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
-    color: #8892B0;
+    color: #294866;
 }
 
 .code {
-    color: #58E0C0;
+    color: #8892B0;
     font-family: monospace;
 }
 
-.nav {
-    /* background: pink; */
-    /* border: 2px solid greenyellow; */
+.nav-section {
+    background: #f8efe7;
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    margin: 20px;
+    justify-content: space-between;
+    padding: 20px;
 }
-.nav a {
+
+.links {
+    display: flex;
+}
+
+.nav-section a {
     text-decoration: none;
     padding: 5px 20px;
-    color: #8892B0;
+    color: #294866;
     position: relative;
 }
-.nav a:last-child {
+.nav-section .links a:last-child {
     margin-right: 20px;
 }
-.nav a::before {
+.nav-section .links a::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 10%;
     width: 0%;
     height: 2px; /* Height of the underline */
-    background-color: #58E0C0; /* Colour of the underline */
+    background-color: #294866; /* Colour of the underline */
     transition: width 0.3s ease-out;
 }
-.nav a:hover::before {
+.nav-section .links a:hover::before {
     width: 80%;
 }
+.nav-section img {
+    max-height: 20px;
+}
 
-.introduction-section {
+.profile-section {
     /* background-color: aquamarine; */
-    border: 2px solid greenyellow;
+    /* border: 2px solid greenyellow; */
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
 }
-.introduction-section p {
+/* .profile-section p {
     padding: 10px;
-}
+} */
 
-.introduction-content {
-    border: 2px solid red;
+.profile-text {
+    /* background-color: pink; */
+    /* border: 2px solid red; */
     text-align: left;
     padding: 50px;
+    max-width: 550px;
 }
-.introduction-content .name-heading {
+.profile-text .name-heading {
     font-size: 64px;
     font-weight: bold;
+    padding-bottom: 10px;
 }
-.introduction-content .second-heading {
-    font-size: 48px;
+.profile-text .sub-heading {
+    font-size: 40px;
     font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.profile-image-section {
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
