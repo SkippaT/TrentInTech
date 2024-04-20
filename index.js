@@ -1,4 +1,4 @@
-var slogans = ["Engineering Student", "Tech Hobbyist", "Circuitry Connoisseur"]; // Add as many slogans as you want
+var slogans = ["Engineering Student", "Tech Hobbyist", "Circuitry Connoisseur", "Code Whisperer"]; // Add as many slogans as you want
 var currentSloganIndex = 0;
 
 function changeSlogan() {

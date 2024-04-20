@@ -28,6 +28,7 @@ body {
     left: 0;
     width: 100%;
     position: fixed;
+    z-index: 1;
 
 }
 .nav-section .links {
@@ -135,9 +136,11 @@ body {
     border: 2px solid orange;
     display: grid;
     grid-template-columns: [col-start] repeat(3, 250px [col-start]);
+    grid-template-rows: [row-start] repeat(3, 150px [row-start]);
     text-align: center;
     justify-items: stretch;
-    gap: 50px 30px;
+    gap: 75px 30px;
+    position: relative;
 }
 .skill-card {
     border: 2px solid green;
@@ -151,9 +154,46 @@ body {
 }
 
 
-.special {
-    background-color: red;
-    
+.skill-card {
+    background-color: #8a5291;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.skill-card p {
+    position: absolute;
+    top: 0; /* Position it below the skill card */
+    left: 0;
+    width: 100%; /* Full width */
+    padding: 10px;
+    opacity: 0;
+    z-index: 1; /* Ensure it appears above other elements */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition effect for sliding and opacity */
+    transform: translateY(100%); /* Initially slide down */
+
+}
+
+.skill-card i {
+    transition: transform 0.3s ease-in-out; /* Transition effect for icon */
+}
+
+.skill-card h4 {
+    transition: transform 0.3s ease-in-out; /* Transition effect for title */
+}
+
+.skill-card:hover i,
+.skill-card:hover h4 {
+    transform: translateY(-75px);
+}
+
+.skill-card:hover p {
+    display: block; /* Show the description when hovering over the skill card */
+    transform: translateY(0); /* Slide description up */
+    opacity: 1; /* Make description fully visible */
+}
+
+.skills-grid:hover .skill-card:not(:hover) {
+    filter: blur(5px);
 }
 
 
