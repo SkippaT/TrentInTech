@@ -24,9 +24,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding: 20px;
-}
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
 
-.links {
+}
+.nav-section .links {
     display: flex;
 }
 
@@ -59,6 +63,7 @@ body {
 .profile-section {
     /* background-color: aquamarine; */
     /* border: 2px solid greenyellow; */
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -100,8 +105,8 @@ body {
     padding: 30px;
 }
 .about-me-section h1 {
-    text-decoration: underline;
     font-weight: 700;
+    /* font-size: 64px; */
 }
 .about-me-intro {
     /* background: blue; */
@@ -118,25 +123,40 @@ body {
     /* background: purple; */
     border: 2px solid red;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 25px;
+    flex-wrap: wrap;
 }
 .skills-content {
     border: 2px solid greenyellow;
 }
-.skills-row {
+.skills-grid {
     border: 2px solid orange;
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: [col-start] repeat(3, 250px [col-start]);
     text-align: center;
+    justify-items: stretch;
+    gap: 50px 30px;
 }
 .skill-card {
     border: 2px solid green;
+    position: relative;
 }
 .skill-card i {
     font-size: 40px;
 }
+.skill-card h4 {
+    padding: 10px 0px;
+}
+
+
+.special {
+    background-color: red;
+    
+}
+
+
 
 .passions-section {
     background: blueviolet;
