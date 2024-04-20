@@ -123,7 +123,7 @@ body {
 
 .skills-section {
     /* background: purple; */
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     gap: 100px;
@@ -133,9 +133,10 @@ body {
 }
 .skills-content {
     /* border: 2px solid greenyellow; */
+    width: 750px;
 }
 .skills-row {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -144,8 +145,9 @@ body {
     margin-top: 20px;
 }
 .skill-card {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width: 200px;
+    transition: filter 0.3s ease; /* Add transition for smooth effect */
 }
 .skill-card i {
     font-size: 40px;
@@ -159,15 +161,20 @@ body {
 .skill-card:hover {
     cursor: pointer;
 }
+.skill-card.blur {
+    filter: blur(1px); /* Apply blur effect to blurred cards */
+}
 
 .expansion {
     background: #3B5F67;
     display: flex;
     overflow: hidden;
     height: 0;
+    width: 100%;
     text-align: center;
     align-items: center;
     transition: height 0.3s ease;
+    padding: 0px 10px;
 }
 
 
