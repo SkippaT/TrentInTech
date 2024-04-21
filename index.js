@@ -1,3 +1,6 @@
+// Set the hash portion of the URL to an empty string
+window.location.hash = '';
+
 // Slogans for subheading
 const slogans = ["Engineering Student", "Tech Hobbyist", "Circuitry Connoisseur", "Code Whisperer"]; // Add as many slogans as you want
 var currentSloganIndex = 0;
@@ -17,17 +20,17 @@ setInterval(changeSlogan, 4000); // Change the slogan every 4 seconds
 
 
 const skillsDictionary = new Map();
-    skillsDictionary.set("Teamwork", "Developed through collaborative university projects and tech hackathons. I believe in the power of collective intelligence and understand the importance of working harmoniously to achieve common goals.");
-    skillsDictionary.set("Leadership", "Cultivated as a project lead in several university assignments. I motivate and guide my team towards our objectives, understanding that effective leadership is key to the success of any project.");
-    skillsDictionary.set("Communication", "Honed through group presentations and interactions during my double degree. I effectively convey complex technical concepts to diverse audiences, a crucial skill for collaboration and mutual understanding.");
-    skillsDictionary.set("Problem Solving", "Gained through tackling coding challenges and troubleshooting tech issues. I enjoy finding solutions to complex problems, a skill that's vital in the ever-evolving tech industry.");
-    skillsDictionary.set("Work Ethic", "Demonstrated through my dedication to my studies and tech projects. I believe in delivering high-quality work consistently, understanding that a strong work ethic is the foundation of professional success.");
-    skillsDictionary.set("Project Management", "Developed by overseeing various tech projects, from inception to completion. I effectively plan, organise, and manage resources, recognising that good project management leads to timely and successful project outcomes.");
-    skillsDictionary.set("Adaptability", "Cultivated by keeping up with the fast-paced tech world. I quickly learn and apply new technologies, a necessary skill in an industry that's always advancing.");
-    skillsDictionary.set("Organisation", "Proven by balancing my studies, tech projects, and personal interests effectively. I manage my time well, recognising that good organisation enhances productivity and reduces stress.");
-    skillsDictionary.set("Technical Skills", "Acquired through my double degree and personal tech projects. I'm proficient in various programming languages and tech tools, skills that are essential in today's digital world.");
+skillsDictionary.set("Teamwork", "Developed through collaborative university projects and tech hackathons. I believe in the power of collective intelligence and understand the importance of working harmoniously to achieve common goals.");
+skillsDictionary.set("Leadership", "Cultivated as a project lead in several university assignments. I motivate and guide my team towards our objectives, understanding that effective leadership is key to the success of any project.");
+skillsDictionary.set("Communication", "Honed through group presentations and interactions during my double degree. I effectively convey complex technical concepts to diverse audiences, a crucial skill for collaboration and mutual understanding.");
+skillsDictionary.set("Problem Solving", "Gained through tackling coding challenges and troubleshooting tech issues. I enjoy finding solutions to complex problems, a skill that's vital in the ever-evolving tech industry.");
+skillsDictionary.set("Work Ethic", "Demonstrated through my dedication to my studies and tech projects. I believe in delivering high-quality work consistently, understanding that a strong work ethic is the foundation of professional success.");
+skillsDictionary.set("Project Management", "Developed by overseeing various tech projects, from inception to completion. I effectively plan, organise, and manage resources, recognising that good project management leads to timely and successful project outcomes.");
+skillsDictionary.set("Adaptability", "Cultivated by keeping up with the fast-paced tech world. I quickly learn and apply new technologies, a necessary skill in an industry that's always advancing.");
+skillsDictionary.set("Organisation", "Proven by balancing my studies, tech projects, and personal interests effectively. I manage my time well, recognising that good organisation enhances productivity and reduces stress.");
+skillsDictionary.set("Technical Skills", "Acquired through my double degree and personal tech projects. I'm proficient in various programming languages and tech tools, skills that are essential in today's digital world.");
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const skillCards = document.querySelectorAll(".skill-card");
     var expansion;
     var description;
@@ -54,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 description = document.getElementById("description3");
             }
 
-            console.log("Skill: "  + skill);
-            console.log("Current skill: "  + currentSkill);
+            console.log("Skill: " + skill);
+            console.log("Current skill: " + currentSkill);
             // Toggle the expansion if the same card is pressed twice in a row
             if (skill === currentSkill) {
                 console.log("1")
@@ -94,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    skillsSection.addEventListener("click", function() {
+    skillsSection.addEventListener("click", function () {
         // Reset height of expansion
         expansions.forEach(expansion => {
             expansion.style.height = "0"; // Set height to 0
@@ -108,36 +111,41 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const toggleMenuButton = document.querySelector('.toggle-menu');
     const linksContainer = document.querySelector('.links');
-  
+
     toggleMenuButton.addEventListener('click', () => {
-      linksContainer.classList.toggle('show');
+        linksContainer.classList.toggle('show');
     });
-  
+
     // Add event listener to window resize
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        linksContainer.classList.remove('show');
-      }
+        if (window.innerWidth > 768) {
+            linksContainer.classList.remove('show');
+        }
     });
-  });
-  
+});
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const skillsRow = document.querySelector(".skills-row");
-//     const expansions = document.querySelectorAll(".expansion");
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all 'a' elements inside the div with class 'links'
+    // Loop through each 'a' element and attach a click event listener
+    var links = document.querySelectorAll(".nav-link").forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            // Prevent the default behavior of the link
+            event.preventDefault();
 
-//     // Set the initial width of all expansions to match the skills row
-//     expansions.forEach(expansion => {
-//         expansion.style.width = skillsRow.offsetWidth + "px";
-//     });
+            // Your click event handling code goes here
+            // For example, you can get the href attribute of the clicked link
+            var href = link.getAttribute('href');
 
-//     // Add event listener to adjust the width dynamically on window resize
-//     window.addEventListener("resize", function() {
-//         expansions.forEach(expansion => {
-//             expansion.style.width = skillsRow.offsetWidth + "px";
-//         });
-//     });
-// });
+            const target = document.querySelector(this.getAttribute('href'));
+            const offset = 70; // Adjust this value to your preference
+
+            window.scrollTo({
+                top: target.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        });
+    });
+});

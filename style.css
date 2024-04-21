@@ -72,6 +72,7 @@ body {
     max-height: 20px;
 }
 
+
 .profile-section {
     /* background-color: aquamarine; */
     /* border: 2px solid greenyellow; */
@@ -156,14 +157,18 @@ body {
 }
 .skill-card {
     /* border: 2px solid green; */
+    border-radius: 5px;
     width: 200px;
     transition: filter 0.3s ease; /* Add transition for smooth effect */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    
 }
 .skill-card i {
     font-size: 40px;
 }
 .skill-card h4 {
-    padding: 10px 0px;
+    padding-top: 10px;
 }
 .skill-card p {
     display: none;
@@ -187,9 +192,129 @@ body {
     padding: 0px 10px;
 }
 
-.passions-section {
-    background: blueviolet;
+.section-seperator {
+    border: 0.5px solid #E6D9CE; /* Example border style */
+    width: 90vw;
+    align-self: center;
 }
+
+.passions-section {
+    /* border: 5px solid green; */
+    /* background: blueviolet; */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 75px);
+}
+.title {
+    /* border: 2px solid cyan; */
+    grid-area: 4 / 3 / span 2 / span 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+}
+.rainbow {
+    background-image: linear-gradient(45deg, #E6D9CE, #ff0, #0f0, #0ff, #00f, #f0f, #E6D9CE);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: none;
+    color: #E6D9CE;
+    transition: color 3s ease; /* Add a color transition */
+}
+
+@keyframes rainbowFade {
+    0% { background-position: 0 50%; color: #E6D9CE; } /* Start with red color */
+    14% { color: orange; } /* Transition from red to orange */
+    28% { color: yellow; } /* Transition from orange to yellow */
+    42% { color: lime; } /* Transition from yellow to lime */
+    56% { color: cyan; } /* Transition from lime to cyan */
+    70% { color: blue; } /* Transition from cyan to blue */
+    84% { color: magenta; } /* Transition from blue to magenta */
+    100% { background-position: 100% 50%; color: #E6D9CE; } /* End with red color */
+}
+
+.rainbow:hover {
+    animation: rainbowFade 10s infinite;
+    color: #E6D9CE;
+}
+
+.passion {
+    /* border: 2px solid blue; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.holder {
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+.holder i {
+    font-size: 36px;
+    transition: opacity 0.3s ease;
+}
+
+.passion h1 {
+    transition: opacity 0.3s ease;
+}
+.passions-section .description {
+    position: absolute;
+    transition: opacity 0.3s ease; /* Add transition for smooth fading */
+    top: 50%; /* Position description at the center vertically */
+    left: 50%; /* Position description at the center horizontally */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.holder:hover .description {
+    opacity: 1;
+}
+.holder:hover h1, .holder:hover i {
+    opacity: 0;
+}
+
+.snowboarding {
+    grid-area: 1 / 2 / span 2 / span 2;
+}
+.coding {
+    grid-area: 1 / 6 / span 2 / span 2;
+}
+.reading {
+    grid-area: 2 / 4 / span 2 / span 2;
+}
+.travel {
+    grid-area: 2 / 8 / span 2 / span 2;
+}
+.music {
+    grid-area: 4 / 1 / span 2 / span 2;
+}
+.basketball {
+    grid-area: 5 / 9 / span 2 / span 2;
+}
+.fitness {
+    grid-area: 6 / 2 / span 2 / span 2;
+}
+.robotics {
+    grid-area: 6 / 7 / span 2 / span 2;
+}
+.socialising {
+    grid-area: 7 / 5 / span 2 / span 2;
+}
+.camping {
+    grid-area: 8 / 3 / span 2 / span 2;
+}
+.gaming {
+    grid-area: 8 / 8 / span 2 / span 2;
+}
+
+
+
 
 .studies-section {
     background: violet;
@@ -213,8 +338,6 @@ body {
         max-width: 80%;
     }
 
-    
-    
     .skills-row {
         gap: 0;
     }
