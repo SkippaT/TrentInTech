@@ -14,6 +14,10 @@ body {
     font-size: 16px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .code {
     color: #8892B0;
     font-family: monospace;
@@ -116,7 +120,6 @@ body {
     display: flex;
     flex-direction: column;
     color: #E6D9CE;
-    /* padding: 30px; */
 }
 .about-me-section h1 {
     font-weight: 700;
@@ -130,6 +133,7 @@ body {
 }
 .about-me-intro h1 {
     padding-top: 30px;
+    font-size: 48px;
 }
 
 .skills-section {
@@ -384,7 +388,7 @@ body {
 }
 @media screen and (max-width: 575px) {
     .skills-section {
-        padding: 0;
+        padding: 10px;
     }
     .skill-card {
         width: 100px;
