@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var href = link.getAttribute('href');
 
             const target = document.querySelector(this.getAttribute('href'));
-            const offset = 70; // Adjust this value to your preference
+            const offset = 68; // Adjust this value to your preference
 
             window.scrollTo({
                 top: target.offsetTop - offset,
