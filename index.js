@@ -1,3 +1,6 @@
+
+
+
 // Set the hash portion of the URL to an empty string
 window.location.hash = '';
 
@@ -147,5 +150,106 @@ document.addEventListener("DOMContentLoaded", function() {
                 behavior: 'smooth'
             });
         });
+    });
+});
+
+
+// Get the sliders, carousels, arrow, etc
+const slider = document.querySelector('.slider');
+const prevArrow = document.querySelector(".prev");
+const nextArrow = document.querySelector(".next");
+const carousel = document.querySelector(".carousel");
+const indicatorParents = document.querySelector(".controls ul");
+
+var direction;  // 1 = previous;    -1 = next
+var sectionIndex = 0;
+var intervalId = 0;
+var isTransitioning = false;
+
+// This sets the selected indicator
+function setIndex() {
+    document.querySelector(".controls .selected").classList.remove("selected");
+    document.querySelectorAll(".controls li")[sectionIndex].classList.add("selected");
+}
+
+// document.querySelectorAll(".controls li").forEach(function(indicator, ind) {
+//     indicator.addEventListener("click", function() {
+//         sectionIndex = ind;
+//         setIndex();
+//         indicator.classList.add("selected");
+//     });
+// });
+
+
+function startShow() {
+    intervalId = setInterval(function() {
+        sectionIndex = (sectionIndex < 3) ? sectionIndex + 1 : 0;
+        setIndex();
+        if (direction === 1) {
+            slider.prepend(slider.lastElementChild);
+        }
+        direction = -1;
+        carousel.style.justifyContent = "flex-start";
+        slider.style.transform = 'translate(-25%)';
+    }, 5000);
+}
+startShow();
+carousel.addEventListener("mouseover", function() {
+    clearInterval(intervalId);
+});
+carousel.addEventListener("mouseout", function() {
+    startShow();
+});
+
+
+prevArrow.addEventListener("click", function() {
+    if (!isTransitioning) { // Check if not currently transitioning
+        isTransitioning = true; // Set transitioning flag
+        sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : 3;
+        setIndex();
+        if (direction === -1) {
+            slider.appendChild(slider.firstElementChild);
+            direction = 1;
+        }
+        carousel.style.justifyContent = "flex-end";
+        slider.style.transform = 'translate(25%)';
+        setTimeout(function() {
+            isTransitioning = false; // Reset transitioning flag after transition
+        }, 500); // Adjust this time according to your transition duration
+    }
+});
+nextArrow.addEventListener("click", function() {
+
+    console.log(nextArrow);
+    console.log(nextArrow.parentElement);
+    console.log(nextArrow.parentElement.parentElement);
+    
+    if (!isTransitioning) { // Check if not currently transitioning
+        isTransitioning = true; // Set transitioning flag
+        sectionIndex = (sectionIndex < 3) ? sectionIndex + 1 : 0;
+        setIndex();
+        if (direction === 1) {
+            slider.prepend(slider.lastElementChild);
+        }
+        direction = -1;
+        carousel.style.justifyContent = "flex-start";
+        slider.style.transform = 'translate(-25%)';
+        setTimeout(function() {
+            isTransitioning = false; // Reset transitioning flag after transition
+        }, 500); // Adjust this time according to your transition duration
+    }
+});
+
+slider.addEventListener("transitionend", function() {
+    if (direction === -1) {
+        slider.appendChild(slider.firstElementChild);
+    } else {
+        slider.prepend(slider.lastElementChild);
+    }
+
+    slider.style.transition = "none";
+    slider.style.transform = "translate(0)";
+    setTimeout(function() {
+        slider.style.transition = "all 0.3s ease";
     });
 });

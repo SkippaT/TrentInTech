@@ -115,6 +115,112 @@ html {
     align-items: center;
 }
 
+
+.projects-section {
+    border: 2px solid cyan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+.project {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 25px 0;
+    width: 100%;
+    /* position: relative;
+    overflow: hidden; */
+}
+.projects-section h1 {
+    font-size: 56px;
+}
+.project img {
+    max-width: 500px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+}
+.project h2 {
+    padding-bottom: 10px;
+}
+.project-hook {
+    border: 2px solid yellow;
+    max-width: 35%;
+}
+
+
+
+.carousel-container {
+    border: 2px solid red;
+    width: 50%;
+}
+.carousel {
+    border: 2px solid green;
+    height: 400px;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+}
+.slider {
+    border: 2px solid orange;
+    height: 100%;
+    display: flex;
+    width: 400%;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.slider section {
+    flex-basis: 25%;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 25%;
+}
+.controls .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 36px;
+}
+.arrow.prev {
+    left: 10px;
+}
+.arrow.next {
+    right: 10px;
+}
+.controls ul {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.controls ul li {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin: 10px;
+    background: #333;
+    cursor: pointer;
+}
+.controls ul li.selected {
+    background: transparent;
+}
+
+
+
 .about-me-section {
     background: #528691;
     display: flex;
@@ -179,6 +285,7 @@ html {
 }
 .skill-card:hover {
     cursor: pointer;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 .skill-card.blur {
     filter: blur(1px); /* Apply blur effect to blurred cards */
@@ -194,6 +301,8 @@ html {
     align-items: center;
     transition: height 0.3s ease;
     padding: 0px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .section-seperator {
@@ -324,37 +433,7 @@ html {
     background: violet;
 }
 
-.projects-section {
-    border: 2px solid cyan;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-}
-.project {
-    border: 2px solid blue;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 25px 0;
-    width: 100%;
-}
-.projects-section h1 {
-    font-size: 56px;
-}
-.project img {
-    max-width: 500px;
-    max-height: 400px;
-    width: auto;
-    height: auto;
-}
-.project h2 {
-    padding-bottom: 10px;
-}
-.project-hook {
-    max-width: 500px;
-}
+
 
 @media screen and (max-width: 1050px) {
     .skills-section {
