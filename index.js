@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // ---------------------------------------------------------------------------------------------
 
 // Set the time for the automatic sliding.
-const time = 3   // In seconds
+const time = 7   // In seconds
 
 // Get the arrows and carousels
 const prevArrows = document.querySelectorAll(".prev");
