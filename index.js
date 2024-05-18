@@ -169,17 +169,18 @@ const carousels = document.querySelectorAll(".carousel");
 var isCarouselTranisitioning = {};  // This dictionary maintains which of the carousels are in the middle of a transition
 var carouselSectionIndex = {};      // This keeps track of the section index for each carousel
 var carouselDirection = {}          // This keeps track of the carousel directions
+var carouselIntervaleID = {}        // This keeps track of the interval IDs for the carousels
 
 // Set the default parameters for each carousel
 carousels.forEach(function(element) {
-    isCarouselTranisitioning[element] = false;
-    carouselSectionIndex[element] = 0;
-    carouselDirection[element] = -1;    // 1 = previous;    -1 = next
+    isCarouselTranisitioning[element.id] = false;
+    carouselSectionIndex[element.id] = 0;
+    carouselDirection[element.id] = -1;    // 1 = previous;    -1 = next
+    carouselIntervaleID[element.id] = 0;
 
 });
 
 // This function sets the selected indicator
-// TODO: this function needs to be changed to work with a specific carousel
 function setIndex(carousel, index) {
 
     carousel.querySelector(".controls .selected").classList.remove("selected");
@@ -218,16 +219,16 @@ function startShow(carousel) {
 
     // Get the slider inside the carousel
     const slider = carousel.querySelector('.slider');
-    intervalId = setInterval(function() {
+    carouselIntervaleID[carousel.id] = setInterval(function() {
         // TODO: make sure the 3 in the line below isn't hardcoded
         // Move to the next slide in the carousel, if the end is reached, go round to the start
-        carouselSectionIndex[carousel] = (carouselSectionIndex[carousel] < 3) ? carouselSectionIndex[carousel] + 1 : 0;
+        carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < 3) ? carouselSectionIndex[carousel.id] + 1 : 0;
         // Update the indicators
-        setIndex(carousel, carouselSectionIndex[carousel]);
+        setIndex(carousel, carouselSectionIndex[carousel.id]);
         // Update the direction
-        if (carouselDirection[carousel] === 1) {
+        if (carouselDirection[carousel.id] === 1) {
             slider.prepend(slider.lastElementChild);
-            carouselDirection[carousel] = -1;
+            carouselDirection[carousel.id] = -1;
         }
         // Do the transform
         carousel.style.justifyContent = "flex-start";
@@ -244,22 +245,22 @@ prevArrows.forEach(function(element) {
         // Get the slider inside the carousel
         const slid = carousel.querySelector('.slider');
 
-        if (!isCarouselTranisitioning[carousel]) {      // Check if not currently transitioning
-            isCarouselTranisitioning[carousel] = true;  // Set transitioning flag
+        if (!isCarouselTranisitioning[carousel.id]) {      // Check if not currently transitioning
+            isCarouselTranisitioning[carousel.id] = true;  // Set transitioning flag
             // Move to the previous slide in the carousel, loop if necessary
-            carouselSectionIndex[carousel] = (carouselSectionIndex[carousel] > 0) ? carouselSectionIndex[carousel] - 1 : 3;
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] > 0) ? carouselSectionIndex[carousel.id] - 1 : 3;
             // Update the indicators
-            setIndex(carousel, carouselSectionIndex[carousel]);
+            setIndex(carousel, carouselSectionIndex[carousel.id]);
             // Update the direction
-            if (carouselDirection[carousel] === -1) {
+            if (carouselDirection[carousel.id] === -1) {
                 slid.appendChild(slid.firstElementChild);
-                carouselDirection[carousel] = 1;
+                carouselDirection[carousel.id] = 1;
             }
             // Do the transform
             carousel.style.justifyContent = "flex-end";
             slid.style.transform = 'translate(25%)';
             setTimeout(function() {
-                isCarouselTranisitioning[carousel] = false; // Reset transitioning flag after transition
+                isCarouselTranisitioning[carousel.id] = false; // Reset transitioning flag after transition
             }, 500);
         }
     });
@@ -276,22 +277,22 @@ nextArrows.forEach(function(element) {
         const slid = carousel.querySelector('.slider');
     
 
-        if (!isCarouselTranisitioning[carousel]) {      // Check if not currently transitioning
-            isCarouselTranisitioning[carousel] = true;  // Set transitioning flag
+        if (!isCarouselTranisitioning[carousel.id]) {      // Check if not currently transitioning
+            isCarouselTranisitioning[carousel.id] = true;  // Set transitioning flag
             // Move to the next slide in the carousel, loop if necessary
-            carouselSectionIndex[carousel] = (carouselSectionIndex[carousel] < 3) ? carouselSectionIndex[carousel] + 1 : 0;
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < 3) ? carouselSectionIndex[carousel.id] + 1 : 0;
             // Update the indicators
-            setIndex(carousel, carouselSectionIndex[carousel]);
+            setIndex(carousel, carouselSectionIndex[carousel.id]);
             // Update the direction
-            if (carouselDirection[carousel] === 1) {
+            if (carouselDirection[carousel.id] === 1) {
                 slid.prepend(slid.lastElementChild);
-                carouselDirection[carousel] = -1;
+                carouselDirection[carousel.id] = -1;
             }
             // Do the transfrom
             carousel.style.justifyContent = "flex-start";
             slid.style.transform = 'translate(-25%)';
             setTimeout(function() {
-                isCarouselTranisitioning[carousel] = false; // Reset transitioning flag after transition
+                isCarouselTranisitioning[carousel.id] = false; // Reset transitioning flag after transition
             }, 500);
         }
     });
@@ -299,11 +300,10 @@ nextArrows.forEach(function(element) {
 
 carousels.forEach(function(element) {
     // Start the show for each carousel
-    // TODO: have them running at different times
     startShow(element);
     // Stop the automatic sliding when hovered over
     element.addEventListener("mouseover", function() {
-        clearInterval(intervalId);
+        clearInterval(carouselIntervaleID[element.id]);
     });
     // Restart the automatic sliding when the mouse leaves
     element.addEventListener("mouseout", function() {
@@ -315,7 +315,7 @@ carousels.forEach(function(element) {
     slider.addEventListener("transitionend", function() {
         // Get the carousel
         const carousel = slider.parentElement
-        if (carouselDirection[carousel] === -1) {
+        if (carouselDirection[carousel.id] === -1) {
             slider.appendChild(slider.firstElementChild);
         } else {
             slider.prepend(slider.lastElementChild);
