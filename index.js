@@ -328,3 +328,74 @@ carousels.forEach(function(element) {
         });
     });
 });
+
+
+// ---------------------------------------------------------------------------------------------
+//                                         Expand project
+// ---------------------------------------------------------------------------------------------
+
+// Get all the project expand buttons
+var expandButtons = document.querySelectorAll(".project .expansion .expand");
+
+// Add an event listener to each
+expandButtons.forEach(function(element) {
+    element.addEventListener("click", function() {
+    
+        var totalHeight = 15;
+        var button = this;
+
+        // Get the "expansion" section this button is in
+        var expansionElement = button.parentNode;
+
+        // Get the splitter inside the expansion
+        var splitter = expansionElement.querySelector(".splitter");
+
+        // Get the length of the splitter that is hidden
+        totalHeight += splitter.offsetHeight
+    
+        expansionElement.style.height = totalHeight + "px";
+        expansionElement.style.maxHeight = totalHeight + "px"
+
+        // Get the project this expansion element is in
+        project = expansionElement.parentNode;
+        const contractButton = project.querySelector(".contract");
+        
+        button.style.display = "none";
+        contractButton.style.display = "block";
+        
+        return false;
+    });
+});
+
+// Get all the project contract buttons
+var contractButtons = document.querySelectorAll(".project .contract");
+
+// Add an event listener to each
+contractButtons.forEach(function(element) {
+    element.addEventListener("click", function() {
+
+        var button = this;
+        const height = 150;
+
+        // Get the projec this button is in
+        var project = button.parentNode;
+
+        // Get the expansion inside the project
+        var expansionElement = project.querySelector(".expansion");
+
+        // Get the splitter inside the expansion
+        var splitter = expansionElement.querySelector(".splitter");
+    
+        expansionElement.style.height = height + "px";
+        // expansionElement.style.maxHeight = height + "px"
+    
+        // Get the expand button
+        const expandButton = expansionElement.querySelector(".expand");
+        
+        button.style.display = "none";
+        expandButton.style.display = "block";
+        
+        return false;
+
+    })
+});
