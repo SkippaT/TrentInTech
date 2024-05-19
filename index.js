@@ -1,6 +1,3 @@
-
-
-
 // Set the hash portion of the URL to an empty string
 window.location.hash = '';
 
@@ -64,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Current skill: " + currentSkill);
             // Toggle the expansion if the same card is pressed twice in a row
             if (skill === currentSkill) {
-                console.log("1")
                 expansion.style.height = expansion.style.height === "100px" ? "0" : "100px";
                 // Remove blur from all cards
                 skillCards.forEach(card => {
@@ -72,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
                 return;
             } else {
-                console.log("2")
                 // Apply blur to all cards except the clicked one
                 skillCards.forEach(card => {
                     if (card !== clickedCard) {
@@ -159,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // ---------------------------------------------------------------------------------------------
 
 // Set the time for the automatic sliding.
-const time = 7   // In seconds
+const time = 3   // In seconds
 
 // Get the arrows and carousels
 const prevArrows = document.querySelectorAll(".prev");
@@ -170,6 +165,7 @@ var isCarouselTranisitioning = {};  // This dictionary maintains which of the ca
 var carouselSectionIndex = {};      // This keeps track of the section index for each carousel
 var carouselDirection = {}          // This keeps track of the carousel directions
 var carouselIntervaleID = {}        // This keeps track of the interval IDs for the carousels
+var carouselNumberOfSections = []   // This keeps track of how many sections each carousel has
 
 // Set the default parameters for each carousel
 carousels.forEach(function(element) {
@@ -177,6 +173,9 @@ carousels.forEach(function(element) {
     carouselSectionIndex[element.id] = 0;
     carouselDirection[element.id] = -1;    // 1 = previous;    -1 = next
     carouselIntervaleID[element.id] = 0;
+    var slider = element.querySelector('.slider');
+    carouselNumberOfSections[element.id] = slider.childElementCount;
+    slider.style.width = slider.childElementCount*100 + "%";
 
 });
 
@@ -222,7 +221,7 @@ function startShow(carousel) {
     carouselIntervaleID[carousel.id] = setInterval(function() {
         // TODO: make sure the 3 in the line below isn't hardcoded
         // Move to the next slide in the carousel, if the end is reached, go round to the start
-        carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < 3) ? carouselSectionIndex[carousel.id] + 1 : 0;
+        carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id]-1) ? carouselSectionIndex[carousel.id] + 1 : 0;
         // Update the indicators
         setIndex(carousel, carouselSectionIndex[carousel.id]);
         // Update the direction
@@ -232,7 +231,8 @@ function startShow(carousel) {
         }
         // Do the transform
         carousel.style.justifyContent = "flex-start";
-        slider.style.transform = 'translate(-25%)';
+        const translatePercentage = 100/carouselNumberOfSections[carousel.id];
+        slider.style.transform = "translate(-" + translatePercentage + "%)";
     }, time*1000);
 }
 
@@ -243,22 +243,23 @@ prevArrows.forEach(function(element) {
         // Get the carousel the arrow is inside
         const carousel = element.parentElement.parentElement;
         // Get the slider inside the carousel
-        const slid = carousel.querySelector('.slider');
+        const slider = carousel.querySelector('.slider');
 
         if (!isCarouselTranisitioning[carousel.id]) {      // Check if not currently transitioning
             isCarouselTranisitioning[carousel.id] = true;  // Set transitioning flag
             // Move to the previous slide in the carousel, loop if necessary
-            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] > 0) ? carouselSectionIndex[carousel.id] - 1 : 3;
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] > 0) ? carouselSectionIndex[carousel.id] - 1 : carouselNumberOfSections[carousel.id]-1;
             // Update the indicators
             setIndex(carousel, carouselSectionIndex[carousel.id]);
             // Update the direction
             if (carouselDirection[carousel.id] === -1) {
-                slid.appendChild(slid.firstElementChild);
+                slider.appendChild(slider.firstElementChild);
                 carouselDirection[carousel.id] = 1;
             }
             // Do the transform
             carousel.style.justifyContent = "flex-end";
-            slid.style.transform = 'translate(25%)';
+            const translatePercentage = 100/carouselNumberOfSections[carousel.id];
+            slider.style.transform = "translate(" + translatePercentage + "%)";
             setTimeout(function() {
                 isCarouselTranisitioning[carousel.id] = false; // Reset transitioning flag after transition
             }, 500);
@@ -274,23 +275,24 @@ nextArrows.forEach(function(element) {
         // Get the carousel the arrow is inside
         const carousel = element.parentElement.parentElement;
         // Get the slider inside the carousel
-        const slid = carousel.querySelector('.slider');
+        const slider = carousel.querySelector('.slider');
     
 
         if (!isCarouselTranisitioning[carousel.id]) {      // Check if not currently transitioning
             isCarouselTranisitioning[carousel.id] = true;  // Set transitioning flag
             // Move to the next slide in the carousel, loop if necessary
-            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < 3) ? carouselSectionIndex[carousel.id] + 1 : 0;
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id]-1) ? carouselSectionIndex[carousel.id] + 1 : 0;
             // Update the indicators
             setIndex(carousel, carouselSectionIndex[carousel.id]);
             // Update the direction
             if (carouselDirection[carousel.id] === 1) {
-                slid.prepend(slid.lastElementChild);
+                slider.prepend(slider.lastElementChild);
                 carouselDirection[carousel.id] = -1;
             }
             // Do the transfrom
             carousel.style.justifyContent = "flex-start";
-            slid.style.transform = 'translate(-25%)';
+            const translatePercentage = 100/carouselNumberOfSections[carousel.id];
+            slider.style.transform = "translate(-" + translatePercentage + "%)";
             setTimeout(function() {
                 isCarouselTranisitioning[carousel.id] = false; // Reset transitioning flag after transition
             }, 500);
@@ -317,8 +319,18 @@ carousels.forEach(function(element) {
         const carousel = slider.parentElement
         if (carouselDirection[carousel.id] === -1) {
             slider.appendChild(slider.firstElementChild);
+            var video = slider.querySelectorAll("section")[0].querySelector("video");
+            if (video !== null) {
+                video.play();
+                while(!video.ended) {
+
+                }
+                console.log("Video ended.");
+            }
         } else {
             slider.prepend(slider.lastElementChild);
+            console.log("1: ");
+            console.log(slider.childNodes);
         }
     
         slider.style.transition = "none";

@@ -54,7 +54,9 @@
                 <div class="carousel-container">
                     <div class="carousel" id="carousel1">
                         <div class="slider">
-                            <section>Content for section 1</section>
+                            <section>
+                                <img src="./images/snowboard-adobe.png" alt="Me with a snowboard">
+                            </section>
                             <section>
                                 <img src="./images/snowboard-copy.png" alt="Me with a snowboard">
                             </section>
@@ -118,14 +120,20 @@
                 <div class="carousel-container">
                     <div class="carousel" id="carousel2">
                         <div class="slider">
-                            <section>Content for section 1</section>
                             <section>
-                                <img src="./images/snowboard-copy.png" alt="Me with a snowboard">
+                                <img src="./images/ScannerInstallUnderDesk.png" alt="Me with a snowboard">
                             </section>
                             <section>
-                                <img src="./images/snowboard.png" alt="Me with a snowboard">
+                                <img src="./images/ScannerUnderDesk.png" alt="Me with a snowboard">
                             </section>
-                            <section>Content for section 4</section>
+                            <section>
+                                <img src="./images/CardOnDesk.png" alt="Me with a snowboard">
+                            </section>
+                            <section>
+                                <video src="./videos/DevelopmentVideo.mp4" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                            </section>
                         </div>
 
                         <div class="controls">
@@ -141,38 +149,73 @@
                     </div>
                 </div>
                 <div class="project-hook-text">
-                    <h2>Interactive RFID Music and LED Controller</h2>
-                    <p>Project 1 description</p>
-                    <p>This is more of a description. It's slowly getting longer and longer because I am adding more and
-                        more
-                        words to it.</p>
-                    <h3>Equipment</h3>
-                    <p>This is a list of the equipment I used to complete the project.</p>
-                    <h3>Methodology</h3>
-                    <p>This is the methodology I used to complete the project</p>
+                    <h2>Interactive NFC Music and LED Controller</h2>
+                    <p>This project uses a Raspberry Pi computer to control music using the Spotify API.
+                        Connected to the Raspberry Pi is an NFC scanner which reads my 'Music Cards' and
+                        performs a certain action depending on what card was used.
+                    </p>
+                    <p>Also connected to the Raspberry Pi is an LED strip that is used for feedback and 
+                        because LEDs are awesome!
+                    </p>
                 </div>
             </div>
             <div class="expansion">
                 <div class="splitter">
                     <div class="split">
-                        <h3>Equipment</h3>
-                        <p>This is a list of the equipment I used to complete the project.</p>
-                        <h3>Methodology</h3>
-                        <p>This is the methodology I used to complete the project</p>
-                        <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <h3>What I used</h3>
+                        <ul>
+                            <li>Raspberry Pi 3 Model A+
+                                <ul>
+                                    <li>The brains of the operation</li>
+                                </ul>
+                            </li>
+                            <li>WS2812B LED strip
+                                <ul>
+                                    <li>5 metres with a total of 150 LEDs</li>
+                                </ul>
+                            </li>
+                            <li>NFC HAT for Raspberry Pi (PN532)
+                                <ul>
+                                    <li>The scanner for the NFC cards</li>
+                                </ul>
+                            </li>
+                            <li>13.56MHz NFC key cards
+                                <ul>
+                                    <li>The cards that control what the Raspberry Pi does</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h3>What I did</h3>
+                        <ol>
+                            <li>
+                                I began this project by first playing with the NFC scanner.
+                                I created programs that waited for a card to be scanned and then 
+                                printed the UID to the terminal.
+                            </li>
+                            <li>
+                                I next researched the Spotify API and created a program that takes user 
+                                input from the terminal to control my Spotify. This program could pause 
+                                and skip songs, play a playlist, album or song, toggle shuffle, adjust 
+                                volume and many other things.
+                            </li>
+                            <li>
+                                I then combinded the two programs I'd made. This meant I was controlling 
+                                Spotify with the NFC cards.
+                            </li>
+                            <li>
+                                The next step was creating some functions for the LED strip to perform. 
+                                Some of these functions are purely for show and others are for feedback 
+                                after a card is pressed.
+                            </li>
+                            <li>
+                                With the application working properly, the final step was to install the 
+                                device in my room. To do this, I 3D printed a mount for the NFC scanner 
+                                underneath my bedside table. The LEDs were attached around the perimeter 
+                                of my bed out of sight.
+                            </li>
+                        </ol>
                     </div>
                     <div class="split">
-                        <h3>Equipment</h3>
-                        <p>This is a list of the equipment I used to complete the project.</p>
-                        <h3>Methodology</h3>
-                        <p>This is the methodology I used to complete the project</p>
                         <h3>Chanllenges and solutions</h3>
                         <p>Some problems I came across were... I solved them by...</p>
                         <h3>Final outcome</h3>

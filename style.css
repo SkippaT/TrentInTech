@@ -118,7 +118,7 @@ html {
 /* ----------------------------- Project Section ----------------------------- */
 
 .projects-section {
-    border: 2px solid cyan;
+    /* border: 2px solid cyan; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,11 +159,6 @@ html {
     margin: 0px 20px;
 }
 
-.arrow {
-    cursor: pointer;
-    font-size: 36px;
-}
-
 .project-seperator {
     border: 0.5px solid #294866; /* Example border style */
     width: 90vw;
@@ -177,9 +172,8 @@ html {
     height: 150px;
     position: relative;
     overflow: hidden;
-
+    
     transition: height 0.3s ease;
-
 }
 
 .project .splitter {
@@ -191,11 +185,39 @@ html {
 }
 .project .splitter .split {
     /* border: 2px solid orchid; */
+    width: 40%;
+    max-width: 75%;
+    min-width: 400px;
+    text-align: justify;
 }
 
 .project h3 {
     padding-top: 25px;
     padding-bottom: 10px;
+    font-size: 26px;
+}
+
+.expansion ul {
+    list-style: disc inside;
+}
+
+.expansion li {
+    margin-bottom: 20px;
+}
+
+.expansion li ul {
+    list-style: circle inside;
+    margin-left: 20px;
+}
+
+.expansion ol {
+    list-style: decimal outside;
+    padding-left: 1.5em;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 36px;
 }
 
 .arrow.expand {
@@ -214,7 +236,6 @@ html {
 }
 
 
-
 /* ------------------- Carousels ------------------- */
 
 .carousel-container {
@@ -225,18 +246,19 @@ html {
     /* border: 2px solid green; */
     border-radius: 10px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    height: 400px;
+    /* height: 400px; */
     width: 100%;
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
+    aspect-ratio: 700/400;
 }
 .slider {
     /* border: 2px solid orange; */
     height: 100%;
     display: flex;
-    width: 400%;
+    /* width: 400%; */
     transition: all 0.3s ease;
     flex-shrink: 0;
 }
