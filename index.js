@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const skillCards = document.querySelectorAll(".skill-card");
     var expansion;
     var description;
-    const expansions = document.querySelectorAll(".expansion");
+    const expansions = document.querySelectorAll(".skills-section .expansion");
     const skillsSection = document.querySelector(".about-me-section");
     var currentExpansion = null;
     var currentSkill = null;
