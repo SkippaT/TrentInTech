@@ -1,6 +1,10 @@
 // Set the hash portion of the URL to an empty string
 window.location.hash = '';
 
+// ---------------------------------------------------------------------------------------------
+//                                       SUB HEADING
+// ---------------------------------------------------------------------------------------------
+
 // Slogans for subheading
 const slogans = ["Engineering Student", "Tech Hobbyist", "Circuitry Connoisseur", "Code Whisperer"]; // Add as many slogans as you want
 var currentSloganIndex = 0;
@@ -18,6 +22,9 @@ function changeSlogan() {
 
 setInterval(changeSlogan, 4000); // Change the slogan every 4 seconds
 
+// ---------------------------------------------------------------------------------------------
+//                                       SKILLS SECTION
+// ---------------------------------------------------------------------------------------------
 
 const skillsDictionary = new Map();
 skillsDictionary.set("Teamwork", "Developed through collaborative university projects and tech hackathons. I believe in the power of collective intelligence and understand the importance of working harmoniously to achieve common goals.");
@@ -108,6 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
         currentSkill = null;
     });
 });
+
+// ---------------------------------------------------------------------------------------------
+//                                       MENU
+// ---------------------------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
     const toggleMenuButton = document.querySelector('.toggle-menu');
@@ -382,7 +393,7 @@ carousels.forEach(function(element) {
 
 
 // ---------------------------------------------------------------------------------------------
-//                                         Expand project
+//                                         EXPAND PROJECT
 // ---------------------------------------------------------------------------------------------
 
 // Get all the project expand buttons
