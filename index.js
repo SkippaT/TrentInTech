@@ -321,16 +321,16 @@ carousels.forEach(function(element) {
             slider.appendChild(slider.firstElementChild);
             var video = slider.querySelectorAll("section")[0].querySelector("video");
             if (video !== null) {
+                // If the section is a video, play it and stop the slideshow
                 video.play();
-                while(!video.ended) {
-
-                }
-                console.log("Video ended.");
+                clearInterval(carouselIntervaleID[element.id]);
+                video.addEventListener('ended', () => {
+                    // Restart the automatic sliding
+                    startShow(element);
+                });
             }
         } else {
             slider.prepend(slider.lastElementChild);
-            console.log("1: ");
-            console.log(slider.childNodes);
         }
     
         slider.style.transition = "none";
