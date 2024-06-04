@@ -362,13 +362,14 @@ carousels.forEach(function(element) {
             // Go through each video and pause it
             slider.querySelectorAll("video").forEach(function(video) {
                 if (video !== face) {
-                    console.log("They don't equal, pause");
                     video.pause();
                     video.currentTime = 0;
                     carouselVideoPlaying[element.id] = false;
                 }
+                if (face.nodeName === "VIDEO") {
+                    carouselVideoPlaying[element.id] = true;
+                }
             });
-
         }
     
         slider.style.transition = "none";
