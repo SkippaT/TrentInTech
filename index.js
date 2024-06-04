@@ -165,7 +165,8 @@ var isCarouselTranisitioning = {};  // This dictionary maintains which of the ca
 var carouselSectionIndex = {};      // This keeps track of the section index for each carousel
 var carouselDirection = {}          // This keeps track of the carousel directions
 var carouselIntervaleID = {}        // This keeps track of the interval IDs for the carousels
-var carouselNumberOfSections = []   // This keeps track of how many sections each carousel has
+var carouselNumberOfSections = {}   // This keeps track of how many sections each carousel has
+var carouselVideoPlaying = {}       // This keeps track of if a carousel is playing a video
 
 // Set the default parameters for each carousel
 carousels.forEach(function(element) {
@@ -176,8 +177,18 @@ carousels.forEach(function(element) {
     var slider = element.querySelector('.slider');
     carouselNumberOfSections[element.id] = slider.childElementCount;
     slider.style.width = slider.childElementCount*100 + "%";
+    carouselVideoPlaying[element.id] = false;
 
+    // Get all the videos in the carousel section and add a listener for when the finish
+    var videos = element.querySelectorAll("video");
+    videos.forEach(function(video) {
+        video.addEventListener('ended', () => {
+            video.currentTime = 0;
+            carouselVideoPlaying[element.id] = false;
+        });
+    });
 });
+
 
 // This function sets the selected indicator
 function setIndex(carousel, index) {
@@ -219,20 +230,21 @@ function startShow(carousel) {
     // Get the slider inside the carousel
     const slider = carousel.querySelector('.slider');
     carouselIntervaleID[carousel.id] = setInterval(function() {
-        // TODO: make sure the 3 in the line below isn't hardcoded
-        // Move to the next slide in the carousel, if the end is reached, go round to the start
-        carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id]-1) ? carouselSectionIndex[carousel.id] + 1 : 0;
-        // Update the indicators
-        setIndex(carousel, carouselSectionIndex[carousel.id]);
-        // Update the direction
-        if (carouselDirection[carousel.id] === 1) {
-            slider.prepend(slider.lastElementChild);
-            carouselDirection[carousel.id] = -1;
+        if (!carouselVideoPlaying[carousel.id]) {
+            // Move to the next slide in the carousel, if the end is reached, go round to the start
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id]-1) ? carouselSectionIndex[carousel.id] + 1 : 0;
+            // Update the indicators
+            setIndex(carousel, carouselSectionIndex[carousel.id]);
+            // Update the direction
+            if (carouselDirection[carousel.id] === 1) {
+                slider.prepend(slider.lastElementChild);
+                carouselDirection[carousel.id] = -1;
+            }
+            // Do the transform
+            carousel.style.justifyContent = "flex-start";
+            const translatePercentage = 100/carouselNumberOfSections[carousel.id];
+            slider.style.transform = "translate(-" + translatePercentage + "%)";
         }
-        // Do the transform
-        carousel.style.justifyContent = "flex-start";
-        const translatePercentage = 100/carouselNumberOfSections[carousel.id];
-        slider.style.transform = "translate(-" + translatePercentage + "%)";
     }, time*1000);
 }
 
@@ -317,20 +329,46 @@ carousels.forEach(function(element) {
     slider.addEventListener("transitionend", function() {
         // Get the carousel
         const carousel = slider.parentElement
-        if (carouselDirection[carousel.id] === -1) {
+        if (carouselDirection[element.id] === -1) {
             slider.appendChild(slider.firstElementChild);
             var video = slider.querySelectorAll("section")[0].querySelector("video");
             if (video !== null) {
                 // If the section is a video, play it and stop the slideshow
                 video.play();
-                clearInterval(carouselIntervaleID[element.id]);
-                video.addEventListener('ended', () => {
-                    // Restart the automatic sliding
-                    startShow(element);
-                });
+                carouselVideoPlaying[element.id] = true;
+                
             }
         } else {
             slider.prepend(slider.lastElementChild);
+            var video = slider.lastElementChild.querySelector("video");
+            if (video !== null) {
+                // If the section is a video, play it and stop the slideshow
+                video.play();
+                carouselVideoPlaying[element.id] = true;
+                
+            }
+        }
+
+        if (element.id === "carousel2") {
+
+            // Get the current face of the slider
+            var face;
+            if (carouselDirection[element.id] === -1) {
+                face = slider.querySelectorAll("section")[0].querySelector("img, video");
+            } else {
+                face = slider.lastElementChild.querySelector("img, video");
+            }
+
+            // Go through each video and pause it
+            slider.querySelectorAll("video").forEach(function(video) {
+                if (video !== face) {
+                    console.log("They don't equal, pause");
+                    video.pause();
+                    video.currentTime = 0;
+                    carouselVideoPlaying[element.id] = false;
+                }
+            });
+
         }
     
         slider.style.transition = "none";
