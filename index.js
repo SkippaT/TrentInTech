@@ -403,7 +403,7 @@ var expandButtons = document.querySelectorAll(".project .expansion .expand");
 expandButtons.forEach(function(element) {
     element.addEventListener("click", function() {
     
-        var totalHeight = 15;
+        var totalHeight = 35;
         var button = this;
 
         // Get the "expansion" section this button is in
