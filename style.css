@@ -220,6 +220,9 @@ hr {
     justify-content: center;
     padding: 25px;
 }
+.project-sep {
+    opacity: 0.5;
+}
 
 .project {
     /* border: 2px solid blueviolet; */
@@ -245,7 +248,7 @@ hr {
     font-size: 56px;
 }
 .project-hook h2 {
-    padding-bottom: 10px;
+    padding-bottom: 0.5rem;
     font-size: 30px;
 }
 .project-hook-text {
@@ -254,9 +257,28 @@ hr {
     margin: 0px 20px;
 }
 
-.project-sep {
-    opacity: 0.5;
+.project-hook-text p {
+    padding-top: 0.5rem;
 }
+
+.project-hook-text ul {
+    list-style: disc inside;
+}
+
+.project-hook-text li {
+    margin-bottom: 0.5rem;
+}
+
+.project-hook-text li ul {
+    list-style: circle inside;
+    margin-left: 20px;
+}
+
+.project-hook-text ol {
+    list-style: decimal outside;
+    padding-left: 1.5em;
+}
+
 
 .project .expansion {
     /* border: 2px solid red; */
@@ -289,6 +311,7 @@ hr {
     padding-bottom: 10px;
     font-size: 26px;
 }
+
 
 .expansion ul {
     list-style: disc inside;
