@@ -192,7 +192,7 @@ carousels.forEach(function(element) {
     var videos = element.querySelectorAll("video");
     videos.forEach(function(video) {
         video.addEventListener('ended', () => {
-            video.currentTime = 0;
+            // video.currentTime = 0;
             carouselVideoPlaying[element.id] = false;
         });
     });
@@ -358,28 +358,26 @@ carousels.forEach(function(element) {
             }
         }
 
-        if (element.id === "carousel2") {
 
-            // Get the current face of the slider
-            var face;
-            if (carouselDirection[element.id] === -1) {
-                face = slider.querySelectorAll("section")[0].querySelector("img, video");
-            } else {
-                face = slider.lastElementChild.querySelector("img, video");
-            }
-
-            // Go through each video and pause it
-            slider.querySelectorAll("video").forEach(function(video) {
-                if (video !== face) {
-                    video.pause();
-                    video.currentTime = 0;
-                    carouselVideoPlaying[element.id] = false;
-                }
-                if (face.nodeName === "VIDEO") {
-                    carouselVideoPlaying[element.id] = true;
-                }
-            });
+        // Get the current face of the slider
+        var face;
+        if (carouselDirection[element.id] === -1) {
+            face = slider.querySelectorAll("section")[0].querySelector("img, video");
+        } else {
+            face = slider.lastElementChild.querySelector("img, video");
         }
+
+        // Go through each video and pause it
+        slider.querySelectorAll("video").forEach(function(video) {
+            if (video !== face) {
+                video.pause();
+                video.currentTime = 0;
+                carouselVideoPlaying[element.id] = false;
+            }
+            if (face.nodeName === "VIDEO") {
+                carouselVideoPlaying[element.id] = true;
+            }
+        });
     
         slider.style.transition = "none";
         slider.style.transform = "translate(0)";

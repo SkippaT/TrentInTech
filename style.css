@@ -251,6 +251,11 @@ hr {
     padding-bottom: 0.5rem;
     font-size: 30px;
 }
+.project-hook h3 {
+    text-align: center;
+    font-weight: 500;
+    padding-top: 15px;
+}
 .project-hook-text {
     /* border: 2px solid yellow; */
     max-width: 500px;
@@ -258,7 +263,7 @@ hr {
 }
 
 .project-hook-text p {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
 }
 
 .project-hook-text ul {
@@ -306,7 +311,7 @@ hr {
     text-align: justify;
 }
 
-.project h3 {
+.project .expansion h3 {
     padding-top: 25px;
     padding-bottom: 10px;
     font-size: 26px;
