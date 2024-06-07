@@ -407,7 +407,7 @@ hr {
 .sep {
     /* border: 2px solid green; */
     padding: 25px 0;
-    background-image: linear-gradient(to bottom, #172d67, #361254);
+    background-image: linear-gradient(to bottom, #172d67, #410f6a);
 }
 .sep hr {
     border: none;
@@ -416,43 +416,141 @@ hr {
 /* ----------------------------- About Me Section ----------------------------- */
 
 .about-me-section {
-    background: #528691;
-    background-image: linear-gradient(to bottom, #361254, #6712ad);
-    /* background: #420078; */
+    background: #410f6a;
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
-    /* color: #E6D9CE; */
 }
-.about-me-section h1 {
-    font-weight: 700;
-}
-.intro {
+.about-me-section h1, h2{
     /* background: blue; */
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    width: 75%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 75px;
+}
+
+.intro {
     text-align: center;
     width: 75%;
     max-width: 700px;
     margin: 0 auto;
-    padding-bottom: 30px
+    padding-bottom: 30px;
 }
-.intro h1 {
-    padding-top: 30px;
-    padding-bottom: 10px;
+h2, i {
     font-size: 48px;
+    letter-spacing: normal;
+    padding: 0;
+    text-align: center;
 }
 
+/* ----------------------------- Studies Section ----------------------------- */
+
+.studies-section {
+    /* border: 2px solid gold; */
+    background-image: linear-gradient(to bottom, #410f6a, #8b15e9);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.studies-section .intro p {
+    padding: 25px 0;
+}
+
+.studies-section .container {
+    /* border: 2px solid darkorange; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+}
+
+
+.degree {
+    /* border: 2px solid cyan; */
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.degree h3, i {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.course h4 {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+/* ----------------------------- Skills Section ----------------------------- */
+
+/* .skilll {
+    align-self: center;
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+.outer {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.15);
+}
+.inner {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 460;
+    stroke-dashoffset: 460;
+    animation: anim 1s linear forwards;
+}
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@keyframes anim {
+    100% {
+        stroke-dashoffset: calc(460*0.65);
+    }
+} */
+
 .skills-section {
-    /* background: purple; */
+    background-image: linear-gradient(to top, #0a1c84, #8b15e9);
     /* border: 2px solid red; */
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
     align-items: center;
-    padding: 25px;
+    padding: 25px 0 50px 0;
     flex-wrap: wrap;
 }
+
 .skills-content {
     /* border: 2px solid greenyellow; */
+    margin: 0;
+    padding: 0;
     width: 750px;
 }
 .skills-row {
@@ -463,6 +561,9 @@ hr {
     justify-content: space-between;
     gap: 30px;
     margin-top: 20px;
+}
+.skills-row:first-child {
+    margin: 0;
 }
 .skill-card {
     /* border: 2px solid green; */
@@ -504,15 +605,12 @@ hr {
     border-bottom-right-radius: 10px;
 }
 
-.section-seperator {
-    border: 0.5px solid #E6D9CE; /* Example border style */
-    width: 90vw;
-    align-self: center;
-}
+/* ----------------------------- Passions Section ----------------------------- */
 
 .passions-section {
     /* border: 5px solid green; */
-    /* background: blueviolet; */
+    background-image: linear-gradient(to bottom, #0a1c84, #15e923);
+    background: #0a1c84;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(9, 75px);
@@ -525,31 +623,7 @@ hr {
     justify-content: center;
     font-size: 54px;
 }
-.rainbow {
-    background-image: linear-gradient(45deg, #E6D9CE, #ff0, #0f0, #0ff, #00f, #f0f, #E6D9CE);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: none;
-    color: #E6D9CE;
-    transition: color 3s ease; /* Add a color transition */
-}
 
-@keyframes rainbowFade {
-    0% { background-position: 0 50%; color: #E6D9CE; } /* Start with red color */
-    14% { color: orange; } /* Transition from red to orange */
-    28% { color: yellow; } /* Transition from orange to yellow */
-    42% { color: lime; } /* Transition from yellow to lime */
-    56% { color: cyan; } /* Transition from lime to cyan */
-    70% { color: blue; } /* Transition from cyan to blue */
-    84% { color: magenta; } /* Transition from blue to magenta */
-    100% { background-position: 100% 50%; color: #E6D9CE; } /* End with red color */
-}
-
-.rainbow:hover {
-    animation: rainbowFade 10s infinite;
-    color: #E6D9CE;
-}
 
 .passion {
     /* border: 2px solid blue; */
@@ -570,11 +644,17 @@ hr {
 }
 .holder i {
     font-size: 36px;
+    text-align: center;
     transition: opacity 0.3s ease;
 }
 
 .passion h1 {
+    width: 100%;
+    font-size: 24px;
+    letter-spacing: normal;
+    padding: 0;
     transition: opacity 0.3s ease;
+    text-align: center;
 }
 .passions-section .description {
     position: absolute;
@@ -626,38 +706,7 @@ hr {
 }
 
 
-/* ----------------------------- Studies Section ----------------------------- */
 
-.studies-section {
-    /* background: #E6D9CE; */
-    /* background-image: linear-gradient(to top, #172d67, #420078); */
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 200px;
-}
-
-.studies-section .container {
-    /* border: 2px solid darkorange; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-evenly;
-    gap: 30px;
-}
-
-.degree {
-    /* border: 2px solid darkblue; */
-    width: 500px;
-}
-.degree h2 {
-    padding-bottom: 10px;
-}
-
-.course h4 {
-    padding-top: 15px;
-    padding-bottom: 5px;
-}
 
 /* ----------------------------- Responsive Window ----------------------------- */
 
