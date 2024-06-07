@@ -64,8 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 description = document.getElementById("description3");
             }
 
-            console.log("Skill: " + skill);
-            console.log("Current skill: " + currentSkill);
             // Toggle the expansion if the same card is pressed twice in a row
             if (skill === currentSkill) {
                 expansion.style.height = expansion.style.height === "100px" ? "0" : "100px";
