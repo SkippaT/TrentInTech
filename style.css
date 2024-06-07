@@ -235,7 +235,7 @@ hr {
 }
 
 .project-hook {
-    /* border: 2px solid blue; */
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -247,43 +247,61 @@ hr {
 .projects-section h1 {
     font-size: 56px;
 }
-.project-hook h2 {
-    padding-bottom: 0.5rem;
-    font-size: 30px;
-}
-.project-hook h3 {
-    text-align: center;
-    font-weight: 500;
-    padding-top: 15px;
-}
 .project-hook-text {
     /* border: 2px solid yellow; */
     max-width: 500px;
     margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
+.project-hook-text h2 {
+    padding-bottom: 0.5rem;
+    font-size: 30px;
+}
+.project-hook-text h3 {
+    text-align: center;
+    font-weight: 500;
+    padding-top: 15px;
+}
 .project-hook-text p {
     padding-top: 1rem;
 }
-
 .project-hook-text ul {
     list-style: disc inside;
 }
-
 .project-hook-text li {
     margin-bottom: 0.5rem;
 }
-
 .project-hook-text li ul {
     list-style: circle inside;
     margin-left: 20px;
 }
-
 .project-hook-text ol {
     list-style: decimal outside;
     padding-left: 1.5em;
 }
-
+.project-hook-text .icons {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.project-hook-text i {
+    /* border: 2px solid brown; */
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.project-hook-text i img {
+    /* border: 2px solid pink; */
+    width: 100%;
+    height: auto;
+}
 
 .project .expansion {
     /* border: 2px solid red; */
