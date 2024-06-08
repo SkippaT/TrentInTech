@@ -146,9 +146,9 @@ hr {
     height: 200px;
     background-image: conic-gradient(
         transparent, transparent, transparent, #15ff00);
-    transition: transform 0s; /* Ensures no animation by default */
+    transition: transform 0s;
     animation: animate 6s linear infinite;
-    animation-play-state: running; /* Pause animation initially */
+    animation-play-state: running;
 }
 
 .profile-text .bord::before {
@@ -157,11 +157,11 @@ hr {
         transparent, transparent, transparent, #00ccff);
 }
 .profile-text .bord:hover::after {
-    animation-play-state: paused; /* Play animation on hover */
+    animation-play-state: paused;
     
 }
 .profile-text .bord:hover::before {
-    animation-play-state: paused; /* Play animation on hover */
+    animation-play-state: paused;
 }
 @keyframes animate {
     0% {
@@ -180,6 +180,8 @@ hr {
     border-radius: 3rem;
     background: transparent;
     background-image: linear-gradient(to bottom, #37208b, #2c2380);
+    /* background: #172d67; */
+    /* background: transparent; */
     z-index: 3;
     font-size: 24px;
     font-weight: 200;
@@ -588,6 +590,7 @@ svg {
     background-image: linear-gradient(to top, #172d67, #7712ca);
     /* border: 2px solid red; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 50px;
     align-items: center;
