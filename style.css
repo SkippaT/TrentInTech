@@ -7,7 +7,6 @@
 
 body {
     background: #172d67;
-    color: black;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
     color: #F5F5DC;
@@ -83,7 +82,7 @@ html {
 }
 
 hr {
-    border: 0.5px solid #F5F5DC; /* Example border style */
+    border: 0.5px solid #F5F5DC;
     width: 90vw;
     align-self: center;
     margin: 50px auto;
@@ -212,7 +211,6 @@ hr {
 
 .projects-section {
     /* border: 2px solid cyan; */
-    background-image: linear-gradient(to bottom, #172d67, #8b15e9);
     background: #172d67;
     display: flex;
     flex-direction: column;
@@ -466,6 +464,7 @@ hr {
 
 .about-me-section {
     background: #410f6a;
+    /* background-image: linear-gradient(to bottom, #410f6a, #8b15e9); */
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
@@ -501,7 +500,7 @@ h2, i {
 
 .studies-section {
     /* border: 2px solid gold; */
-    background-image: linear-gradient(to bottom, #410f6a, #8b15e9);
+    background-image: linear-gradient(to bottom, #410f6a, #7712ca);
     display: flex;
     flex-direction: column;
     padding-bottom: 100px;
@@ -586,7 +585,7 @@ svg {
 } */
 
 .skills-section {
-    background-image: linear-gradient(to top, #0a1c84, #8b15e9);
+    background-image: linear-gradient(to top, #172d67, #7712ca);
     /* border: 2px solid red; */
     display: flex;
     justify-content: center;
@@ -658,8 +657,8 @@ svg {
 
 .passions-section {
     /* border: 5px solid green; */
-    background-image: linear-gradient(to bottom, #0a1c84, #15e923);
-    background: #0a1c84;
+    background-image: linear-gradient(to bottom, #410f6a, #172d67);
+    background: #172d67;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(9, 75px);

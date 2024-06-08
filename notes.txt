@@ -1,46 +1,34 @@
-Pages:
-    Home
-    About me
-    Projects
-    Contact me
+Body:
+    Background:     #172d67         Navy blue
 
-Add link to resume pdf
+    Color:          #F5F5DC         Cream
 
-For projects, have rows for each project and the user can expand a row/project and more information and information will be displayed.
+NavBar:
+    Backgound:      #172d67         Navy blue
 
+    Color:          #F5F5DC         Cream
 
+ProfileSection:
+    Backgorund:     #8b15e9         Light purple
+                    #172d67         Navy blue
 
-Pick number 5 or 11
-.code {
-    color: #50C8B0;
-}
-.code2 {
-    color: #205050;
-}
-.code3 {
-    color: #318080;
-}
-.code4 {
-    color: #205058;
-}
-.code5 {
-    color: #58E0C0;
-}
-.code6 {
-    color: #50D0B8;
-}
-.code7 {
-    color: #58e08a;
-}
-.code8 {
-    color: #3fcf74;
-}
-.code9 {
-    color: #3ce178;
-}
-.code10 {
-    color: #2dff22;
-}
-.code11 {
-    color: #6cffa2;
-}
+ProjectSection:
+    Backgorund:     #172d67         Navy blue
+
+Sep:
+    Backgorund:     #172d67         Navy blue
+                    #410f6a         Dark purple
+
+AboutMeTitle:
+    Backgorund:     #410f6a         Dark purple
+
+StudiesSection:
+    Backgorund:     #410f6a         Dark purple
+                    #7712ca         Mid purple
+
+SkillsSection:
+    Backgorund:     #7712ca         Mid purple
+                    #172d67         Navy blue
+
+PassionsSection:
+    Backgorund:     #172d67         Navy blue
