@@ -31,7 +31,7 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px;
     top: 0;
     left: 50%;
     transform: translate(-50%);
@@ -541,108 +541,118 @@ h2, i {
 
 /* ----------------------------- Skills Section ----------------------------- */
 
-/* .skilll {
-    align-self: center;
-    width: 160px;
-    height: 160px;
-    position: relative;
-}
-.outer {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-                -6px -6px 10px -1px rgba(255, 255, 255, 0.15);
-}
-.inner {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-}
-circle {
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 460;
-    stroke-dashoffset: 460;
-    animation: anim 1s linear forwards;
-}
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-@keyframes anim {
-    100% {
-        stroke-dashoffset: calc(460*0.65);
-    }
-} */
-
 .skills-section {
-    background-image: linear-gradient(to top, #172d67, #7712ca);
     /* border: 2px solid red; */
+    background-image: linear-gradient(to top, #172d67, #7712ca);
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
     align-items: center;
     padding: 25px 0 50px 0;
-    flex-wrap: wrap;
+}
+.tech-section img {
+    width: auto;
+    height: 75px;
 }
 
 .skills-content {
     /* border: 2px solid greenyellow; */
     margin: 0;
     padding: 0;
+}
+.tech-content {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+
+.inter-content {
     width: 750px;
 }
+
 .skills-row {
     /* border: 2px solid orange; */
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
+    
     justify-content: space-between;
-    gap: 30px;
-    margin-top: 20px;
-}
-.skills-row:first-child {
-    margin: 0;
+    margin-top: 30px;
+
+    &:first-child {
+        margin: 0;
+    }
 }
 .skill-card {
     /* border: 2px solid green; */
-    border-radius: 5px;
-    width: 200px;
-    transition: filter 0.3s ease; /* Add transition for smooth effect */
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     padding: 10px 0;
-    
+    text-align: center;
+}
+.tech-card {
+    /* border: 2px solid orange; */
+    width: 300px;
+    height: 300px;
+}
+.inter-card {
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    transition: filter 0.3s ease;
 }
 .skill-card i {
     font-size: 40px;
 }
-.skill-card h4 {
+.inter-card h4 {
     padding-top: 10px;
 }
-.skill-card p {
+
+.progress-segment {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.seg {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    margin-right: 2px;
+    height: 8px;
+
+    &:first-child {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    &:last-child {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    &.beginner {
+        background: #4CAF50 !important;
+    }
+    &.intermediate {
+        background: #2196F3 !important;
+    }
+    &.advanced {
+        background: #FF9800 !important;
+    }
+    &.expert {
+        background: #F44336 !important;
+    }
+}
+
+.inter-card p {
     display: none;
 }
-.skill-card:hover {
-    cursor: pointer;
+.inter-card:hover {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
-.skill-card.blur {
+.inter-card.blur {
     filter: blur(1px); /* Apply blur effect to blurred cards */
 }
 
-.skills-content .expansion {
+.inter-content .expansion {
     background: rgba(0, 0, 0, 0.2);
     display: flex;
     overflow: hidden;
@@ -655,6 +665,7 @@ svg {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 
 /* ----------------------------- Passions Section ----------------------------- */
 

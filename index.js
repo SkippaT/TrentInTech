@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var currentSkill = null;
 
     skillCards.forEach(card => {
-        card.addEventListener("click", event => {
+        card.addEventListener("mouseenter", event => {
             // Get the name of the skill
-            const clickedCard = event.currentTarget;
-            const skill = clickedCard.querySelector("h4").textContent;
+            const targetCard = event.currentTarget;
+            const skill = targetCard.querySelector("h4").textContent;
 
             // Get the relevant expansion and description
             if (skill === "Teamwork" || skill === "Leadership" || skill === "Communication") {
@@ -65,17 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Toggle the expansion if the same card is pressed twice in a row
-            if (skill === currentSkill) {
-                expansion.style.height = expansion.style.height === "100px" ? "0" : "100px";
-                // Remove blur from all cards
-                skillCards.forEach(card => {
-                    card.classList.remove("blur");
-                });
-                return;
-            } else {
+            if (skill !== currentSkill) {
                 // Apply blur to all cards except the clicked one
                 skillCards.forEach(card => {
-                    if (card !== clickedCard) {
+                    if (card !== targetCard) {
                         card.classList.add("blur");
                     } else {
                         card.classList.remove("blur");
@@ -98,9 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
             currentExpansion = expansion;
             currentSkill = skill;
         });
-    });
 
-    skillsSection.addEventListener("click", function () {
+        // Clse the expansion area when the mouse leaves the card
+        card.addEventListener("mouseleave", event => {
         // Reset height of expansion
         expansions.forEach(expansion => {
             expansion.style.height = "0"; // Set height to 0
@@ -111,8 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         currentExpansion = null; // Reset currentExpansion
         currentSkill = null;
+        });
     });
 });
+
+
 
 // ---------------------------------------------------------------------------------------------
 //                                       MENU
