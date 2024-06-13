@@ -465,9 +465,9 @@ hr {
 /* ----------------------------- About Me Section ----------------------------- */
 
 .about-me-section {
+    /* border: 2px solid red; */
     background: #410f6a;
     /* background-image: linear-gradient(to bottom, #410f6a, #8b15e9); */
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
 }
@@ -542,12 +542,11 @@ h2, i {
 /* ----------------------------- Skills Section ----------------------------- */
 
 .skills-section {
-    /* border: 2px solid red; */
+    /* border: 2px solid palevioletred; */
     background-image: linear-gradient(to top, #172d67, #7712ca);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
     align-items: center;
     padding: 25px 0 50px 0;
 }
@@ -592,6 +591,7 @@ h2, i {
 }
 .tech-card {
     /* border: 2px solid orange; */
+    min-width: 300px;
     width: 300px;
     height: 300px;
 }
