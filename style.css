@@ -456,7 +456,7 @@ hr {
 .sep {
     /* border: 2px solid green; */
     padding: 25px 0;
-    background-image: linear-gradient(to bottom, #172d67, #410f6a);
+    background-image: linear-gradient(to bottom, #172d67, #6a0f5e);
 }
 .sep hr {
     border: none;
@@ -466,7 +466,7 @@ hr {
 
 .about-me-section {
     /* border: 2px solid red; */
-    background: #410f6a;
+    background: #6a0f5e;
     /* background-image: linear-gradient(to bottom, #410f6a, #8b15e9); */
     display: flex;
     flex-direction: column;
@@ -502,7 +502,8 @@ h2, i {
 
 .studies-section {
     /* border: 2px solid gold; */
-    background-image: linear-gradient(to bottom, #410f6a, #7712ca);
+    background-image: linear-gradient(to bottom, #6a0f5e, #410f6a);
+    /* background: #410f6a; */
     display: flex;
     flex-direction: column;
     padding-bottom: 100px;
@@ -543,12 +544,17 @@ h2, i {
 
 .skills-section {
     /* border: 2px solid palevioletred; */
-    background-image: linear-gradient(to top, #172d67, #7712ca);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 25px 0 50px 0;
+}
+.tech-section {
+    background: #410f6a;
+}
+.inter-section {
+    background-image: linear-gradient(to top, #172d67, #410f6a);
 }
 .tech-section img {
     width: auto;
@@ -593,7 +599,17 @@ h2, i {
     /* border: 2px solid orange; */
     min-width: 300px;
     width: 300px;
-    height: 300px;
+    /* height: 250px; */
+}
+.tech-card p {
+    text-align: justify;
+}
+.tech-card ul {
+    text-align: left;
+    list-style-position: outside;
+}
+.tech-card li {
+    margin-bottom: 2px;
 }
 .inter-card {
     width: 200px;

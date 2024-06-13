@@ -17,17 +17,17 @@ ProjectSection:
 
 Sep:
     Backgorund:     #172d67         Navy blue
-                    #410f6a         Dark purple
+                    #6a0f5e         Dark pink
 
 AboutMeTitle:
-    Backgorund:     #410f6a         Dark purple
+    Backgorund:     #6a0f5e         Dark pink
 
 StudiesSection:
-    Backgorund:     #410f6a         Dark purple
-                    #7712ca         Mid purple
+    Backgorund:     #6a0f5e         Dark pink
+                    #410f6a         Dark purple
 
 SkillsSection:
-    Backgorund:     #7712ca         Mid purple
+    Backgorund:     #410f6a         Dark purple
                     #172d67         Navy blue
 
 PassionsSection:
