@@ -130,7 +130,7 @@
             </div>
             <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
-        <hr class="project-sep">
+        <hr class="project-sep">    <!-- --------------------------Project Seperator-------------------------- -->
         <div class="project">
             <div class="project-hook">
                 <div class="carousel-container">
@@ -146,7 +146,7 @@
                                 <img src="./images/Spotipy/CardOnDesk.png" alt="Me with a snowboard">
                             </section>
                             <section>
-                                <video src="./videos/Untitled.mp4" type="video/mp4">
+                                <video src="./videos/Spotipy/DevelopmentVid.mp4" type="video/mp4">
                                     You're browser does not support the video.
                                 </video>
                             </section>
@@ -168,7 +168,8 @@
                     <div class="icons">
                         <i><img src="./images/Spotipy/SpotifyIcon.png" alt="Spotify Icon"></i>
                         <i><img src="./images/Spotipy/NFCIcon.png" alt="NFC Icon"></i>
-                        <i><img src="./images/Spotipy/RPiIcon.png" alt="NFC Icon"></i>
+                        <i><img src="./images/Spotipy/RPiIcon.png" alt="Raspberry Pi logo"></i>
+                        <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
                     </div>
                     <h2>Interactive NFC Music and LED Controller</h2>
                     <p>This project uses a Raspberry Pi computer to control music using the Spotify API.
@@ -252,14 +253,15 @@
             <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
     </div>
-    <hr class="project-sep">
+    <hr class="project-sep">      <!-- --------------------------Project Seperator-------------------------- -->
     <div class="project">
         <div class="project-hook">
             <div class="project-hook-text">
                 <div class="icons">
                     <i><img src="./images/TrafficLights/TrafficLightsIcon.png" alt="Spotify Icon"></i>
                     <i><img src="./images/TrafficLights/BreadboardIcon.png" alt="NFC Icon"></i>
-                    <i><img src="./images/Spotipy/RPiIcon.png" alt="NFC Icon"></i>
+                    <i><img src="./images/Spotipy/RPiIcon.png" alt="Raspberry Pi logo"></i>
+                    <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
                 </div>
                 <h2>Where it All Began</h2>
                 <h3>Raspberry Pi Traffic Light System</h3>
@@ -375,14 +377,133 @@
         </div>
         <i class="arrow contract fa-solid fa-chevron-up"></i>
     </div>
+    <hr class="project-sep">    <!-- --------------------------Project Seperator-------------------------- -->
+        <div class="project">
+            <div class="project-hook">
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel4">
+                        <div class="slider">
+                            <section>
+                                <img src="./images/SmartCanvas/CreateUser.png" alt="Smart Canvas create user page">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/Login.png" alt="Smart Canvas login page">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/AddCanvas.png" alt="Smart Canvas landing page">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/FilledCanvas.png" alt="Smart Canvas filled canvas">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/EditUser.png" alt="Smart Canvas edit user page">
+                            </section>
+                        </div>
+
+                        <div class="controls">
+                            <span class="arrow prev"><i class="fa-solid fa-chevron-left"></i></span>
+                            <span class="arrow next"><i class="fa-solid fa-chevron-right"></i></span>
+                            <ul>
+                                <li class="selected"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-hook-text">
+                    <div class="icons">
+                        <i><img src="./images/SkillsIcons/JavaIcon.png" alt="Java Icon"></i>
+                        <i><img src="./images/SkillsIcons/DatabaseIcon.png" alt="NFC Icon"></i>
+                    </div>
+                    <h2>Smart Canvas</h2>
+                    <p>
+                        This university project was completed using Java and JavaFX to create a basic 
+                        graphic design application. The goal was to make a simplified version of the 
+                        Canva software available online.
+                    </p>
+                    <p>
+                        The application uses SQLite to store user information such as usernames and passwords. 
+                        Following an MCV framework the design of this application is very concise and 
+                        organised.
+                    </p>
+                </div>
+            </div>
+            <div class="expansion">
+                <div class="splitter">
+                    <div class="split">
+                        <h3>Equipment</h3>
+                        <ul>
+                            <li>Computer for programming</li>
+                        </ul>
+                        <h3>Features</h3>
+                        <ul>
+                            <li>SQL database</li>
+                            <li>Password encryption</li>
+                            <li>Option to save canvas as png</li>
+                            <li>Ability to add text, images, rectangles and circles to canvas</li>
+                            <li>Anything added to the canvas can be heavily modified</li>
+                            <li>Users can update account details</li>
+                        </ul>
+                        <h3>Process</h3>
+                        <ol>
+                            <li>
+                                I began this project by first playing with the NFC scanner.
+                                I created programs that waited for a card to be scanned and then 
+                                printed the UID to the terminal.
+                            </li>
+                            <li>
+                                I next researched the Spotify API and created a program that takes user 
+                                input from the terminal to control my Spotify. This program could pause 
+                                and skip songs, play a playlist, album or song, toggle shuffle, adjust 
+                                volume and many other things.
+                            </li>
+                            <li>
+                                I then combinded the two programs I'd made. This meant I was controlling 
+                                Spotify with the NFC cards.
+                            </li>
+                            <li>
+                                The next step was creating some functions for the LED strip to perform. 
+                                Some of these functions are purely for show and others are for feedback 
+                                after a card is pressed.
+                            </li>
+                            <li>
+                                With the application working properly, the final step was to install the 
+                                device in my room. To do this, I 3D printed a mount for the NFC scanner 
+                                underneath my bedside table. The LEDs were attached around the perimeter 
+                                of my bed out of sight.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="split">
+                        <h3>Chanllenges and solutions</h3>
+                        <p>Some problems I came across were... I solved them by...</p>
+                        <h3>Final outcome</h3>
+                        <p>I drifted from where I originally wanted to go and now have...</p>
+                        <h3>Learnings</h3>
+                        <p>MVC framework, Improved SQL knowledge, JavaFX</p>
+                        <h3>Future Improvements</h3>
+                        <p>To further enhance this project I would...</p>
+                    </div>
+                </div>
+                <i class="arrow expand fa-solid fa-chevron-down"></i>
+            </div>
+            <i class="arrow contract fa-solid fa-chevron-up"></i>
+        </div>
+    </div>
 
     <div class="sep">
         <hr>
     </div>
 
+    <!-- ----------------------------------------- About Me Section ----------------------------------------- -->
+
     <div class="about-me-section" id="about-me-section">
         <h1>About Me</h1>
 
+        <!-- ----------------------------------------- Studies ----------------------------------------- -->
         <div class="studies-section">
             <div class="intro">
                 <i class="fa-solid fa-user-graduate"></i>
@@ -435,6 +556,7 @@
             </div>
         </div>
 
+        <!-- ----------------------------------------- Skills Section ----------------------------------------- -->
         <div class="skills-section tech-section">
             <div class="intro">
                 <i class="fa-solid fa-user-gear"></i>
@@ -690,6 +812,7 @@
             </div>
         </div>
 
+        <!-- ----------------------------------------- Passions Section ----------------------------------------- -->
 
         <div class="passions-section">
             <div class="title">

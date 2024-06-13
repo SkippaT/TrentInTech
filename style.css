@@ -299,8 +299,9 @@ hr {
 }
 .project-hook-text i img {
     /* border: 2px solid pink; */
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    width: auto;
+    max-height: 100px;
 }
 
 .project .expansion {
@@ -423,6 +424,7 @@ hr {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    color: #4f4f4f;
 }
 .arrow.prev {
     left: 10px;
@@ -443,10 +445,10 @@ hr {
 .controls ul li {
     width: 10px;
     height: 10px;
-    border: 2px solid #333;
+    border: 2px solid #4f4f4f;
     border-radius: 50%;
     margin: 10px;
-    background: #333;
+    background: #4f4f4f;
     /* cursor: pointer; */
 }
 .controls ul li.selected {
