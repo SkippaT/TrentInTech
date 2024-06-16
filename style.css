@@ -80,6 +80,10 @@ html {
 .nav-section img {
     max-height: 20px;
 }
+.toggle-menu {
+    color: #F5F5DC;
+    margin-top: 7px;
+}
 
 hr {
     border: 0.5px solid #F5F5DC;
@@ -244,6 +248,7 @@ hr {
     justify-content: space-around;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap;
     /* position: relative;
     overflow: hidden; */
 }
@@ -399,6 +404,7 @@ hr {
     display: flex;
     justify-content: flex-start;
     aspect-ratio: 700/400;
+    margin: 25px 0;
 }
 .slider {
     /* border: 2px solid orange; */
@@ -422,6 +428,7 @@ hr {
     max-height: 100%;
     width: auto;
     height: auto;
+    min-width: 100px;
 }
 .controls .arrow {
     position: absolute;
@@ -552,7 +559,7 @@ h2, i {
 /* ----------------------------- Skills Section ----------------------------- */
 
 .skills-section {
-    /* border: 2px solid palevioletred; */
+    border: 2px solid palevioletred;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -571,9 +578,10 @@ h2, i {
 }
 
 .skills-content {
-    /* border: 2px solid greenyellow; */
+    border: 2px solid greenyellow;
     margin: 0;
     padding: 0;
+    max-width: 90%;
 }
 .tech-content {
     width: 80%;
@@ -588,19 +596,20 @@ h2, i {
 }
 
 .skills-row {
-    /* border: 2px solid orange; */
+    border: 2px solid orange;
     display: flex;
     flex-wrap: wrap;
     
     justify-content: space-between;
     margin-top: 30px;
 
+    gap: 10px;
     &:first-child {
         margin: 0;
     }
 }
 .skill-card {
-    /* border: 2px solid green; */
+    border: 2px solid green;
     padding: 10px 0;
     text-align: center;
 }
@@ -798,41 +807,27 @@ h2, i {
 /* ----------------------------- Responsive Window ----------------------------- */
 
 @media screen and (max-width: 1050px) {
-    .skills-section {
+    /* .inter-section {
         gap: 20px;
-    }
+    } */
+
 }
 
-@media screen and (max-width: 775px) {
-    .code {
-        display: none;
+@media screen and (max-width: 800px) {
+    .nav-section {
+        padding: 0 20px;
+        align-items: center;
     }
-    .about-me-intro {
-        max-width: 80%;
-    }
-
-    .skills-row {
-        gap: 0;
-    }
-    .skill-card {
-        width: 150px;
-    }
-
-    .skills-row:first-child {
-        margin-top: 0;
-    }
-
     .nav-section button {
         display: inline;
     }
-
     .nav-section .links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: #f8efe7;
+        background-color: #172d67;
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -841,11 +836,11 @@ h2, i {
     .nav-section .links a {
         width: 100%;
         display: block;
-        padding: 10px 0;
+        padding: 10px;
         border-radius: 5px;
     }
     .nav-section .links a:hover {
-        background: #CDC5BF;
+        background: #223f92;
     }
 
     .nav-section .links a::before {
@@ -854,10 +849,25 @@ h2, i {
     .nav-section .links.show {
         display: flex;
     }
+    .passions-section {
+        display: none;
+    }
+    .code {
+        display: none;
+    }
+    .about-me-intro {
+        max-width: 80%;
+    }
+
+    .skill-card {
+        width: 150px;
+    }
+    
 }
+
 @media screen and (max-width: 575px) {
-    .skills-section {
-        padding: 10px;
+    .profile-text #sub-heading {
+        font-size: 28px;
     }
     .skill-card {
         width: 100px;
@@ -872,6 +882,9 @@ h2, i {
 }
 
 @media screen and (max-width: 425px) {
+    .profile-text #sub-heading {
+        font-size: 16px;
+    }
     .about-me-section {
         padding: 0;
     }
