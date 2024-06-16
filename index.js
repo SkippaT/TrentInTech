@@ -35,7 +35,7 @@ skillsDictionary.set("Work Ethic", "Demonstrated through my dedication to my stu
 skillsDictionary.set("Project Management", "Developed by overseeing various tech projects, from inception to completion. I effectively plan, organise, and manage resources, recognising that good project management leads to timely and successful project outcomes.");
 skillsDictionary.set("Adaptability", "Cultivated by keeping up with the fast-paced tech world. I quickly learn and apply new technologies, a necessary skill in an industry that's always advancing.");
 skillsDictionary.set("Organisation", "Proven by balancing my studies, tech projects, and personal interests effectively. I manage my time well, recognising that good organisation enhances productivity and reduces stress.");
-skillsDictionary.set("Technical Skills", "Acquired through my double degree and personal tech projects. I'm proficient in various programming languages and tech tools, skills that are essential in today's digital world.");
+skillsDictionary.set("Passion for Learning", "I have a strong passion for learning.");
 
 document.addEventListener("DOMContentLoaded", function () {
     const skillCards = document.querySelectorAll(".skill-card");
