@@ -91,9 +91,67 @@ document.addEventListener("DOMContentLoaded", function () {
             currentExpansion = expansion;
             currentSkill = skill;
         });
+        card.addEventListener("click", event => {
+            // Get the name of the skill
+            const targetCard = event.currentTarget;
+            const skill = targetCard.querySelector("h4").textContent;
+
+            // Get the relevant expansion and description
+            if (skill === "Teamwork" || skill === "Leadership" || skill === "Communication") {
+                expansion = document.getElementById("expansion1");
+                description = document.getElementById("description1");
+            } else if (skill === "Problem Solving" || skill === "Work Ethic" || skill === "Project Management") {
+                expansion = document.getElementById("expansion2");
+                description = document.getElementById("description2");
+            } else {
+                expansion = document.getElementById("expansion3");
+                description = document.getElementById("description3");
+            }
+
+            // Toggle the expansion if the same card is pressed twice in a row
+            if (skill !== currentSkill) {
+                // Apply blur to all cards except the clicked one
+                skillCards.forEach(card => {
+                    if (card !== targetCard) {
+                        card.classList.add("blur");
+                    } else {
+                        card.classList.remove("blur");
+                    }
+                });
+            }
+
+            // Close the current expansion if it"s open
+            if (currentExpansion) {
+                currentExpansion.style.height = "0";
+            }
+
+            // Change height of expansion
+            expansion.style.height = "100px"; // Set the height as per your requirement
+            event.stopPropagation(); // Stop event propagation
+
+            description.textContent = skillsDictionary.get(skill);
+
+            // Update the current expansion
+            currentExpansion = expansion;
+            currentSkill = skill;
+        });
 
         // Clse the expansion area when the mouse leaves the card
         card.addEventListener("mouseleave", event => {
+            // Reset height of expansion
+            expansions.forEach(expansion => {
+                expansion.style.height = "0"; // Set height to 0
+            });
+            // Remove blur from all cards
+            skillCards.forEach(card => {
+                card.classList.remove("blur");
+            });
+            currentExpansion = null; // Reset currentExpansion
+            currentSkill = null;
+        });
+    });
+
+    skillsSection.addEventListener("click", function () {
         // Reset height of expansion
         expansions.forEach(expansion => {
             expansion.style.height = "0"; // Set height to 0
@@ -104,9 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         currentExpansion = null; // Reset currentExpansion
         currentSkill = null;
-        });
     });
 });
+
+
 
 
 
