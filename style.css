@@ -52,10 +52,12 @@ html {
     cursor: pointer;
 }
 .nav-section .links {
+    /* border: 0.5px solid green; */
     display: flex;
     flex-direction: row;
 }
 .nav-section .links a {
+    /* border: 0.5px solid red; */
     text-decoration: none;
     padding: 5px 20px;
     color: #F5F5DC;
@@ -83,6 +85,40 @@ html {
 .toggle-menu {
     color: #F5F5DC;
     margin-top: 7px;
+}
+
+.nav-section .dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    top: 6px;
+}
+.nav-section .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #244397;
+    border-radius: 10px;
+    width: 110%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    z-index: 1;
+    /* padding: 10px 0 10px 10px; */
+    padding: 10px 0;
+}
+
+.nav-section .dropdown-content a {
+    padding: 7px;
+    padding-left: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-section .dropdown:hover .dropdown-content {
+    display: block;
+}
+.nav-section .nav-section .links .dropdown a:last-child {
+    margin-right: 0;
 }
 
 hr {
@@ -125,90 +161,61 @@ hr {
     padding-bottom: 25px;
 }
 
-.profile-text .buttons {
+.profile-section .buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.profile-text .bord {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 50px;
-    border-radius: 3rem;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
 }
-.profile-text .bord::after, 
-.profile-text .bord::before {
+.profile-section .buttons a {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.profile-section .buttons a {
+    padding: 1.25em;
+    border: 2px solid #A8A897;
+    border-radius: .75em;
+    font-weight: 700;
+    color: #172d67;
+    text-transform: uppercase;
+    background: #F5F5DC;
+    transform-style: preserve-3d;
+    transition: .15s cubic-bezier(0, 0, .6, 1);
+}
+.profile-section .buttons a::before {
     content: '';
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background-image: conic-gradient(
-        transparent, transparent, transparent, #15ff00);
-    transition: transform 0s;
-    animation: animate 6s linear infinite;
-    animation-play-state: running;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #F5F5DC;
+    box-shadow: 0 0 0 2px #A8A897, 0.625em #D1D1BC;
+    transform: translate3d(0, .75em, -1em);
+    transition: .15s cubic-bezier(0, 0, .6, 1);
 }
-
-.profile-text .bord::before {
-    rotate: 180deg;
-    background-image: conic-gradient(
-        transparent, transparent, transparent, #00ccff);
+.profile-section .buttons a:hover {
+    background: #E3E3CC;
+    transform: translate(0, .25em);
 }
-.profile-text .bord:hover::after {
-    animation-play-state: paused;
-    
+.profile-section .buttons a:hover::before {
+    box-shadow: 0 0 0 2px #A8A897 0.5em 0 0 #D1D1BC;
+    transform: translate3d(0, .5em, -1em);
 }
-.profile-text .bord:hover::before {
-    animation-play-state: paused;
+.profile-section .buttons a:active {
+    background: #C5C5B2;
+    transform: translate(0, .75em);
 }
-@keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.profile-section .buttons a:active::before {
+    box-shadow: 0 0 0 2px #A8A897 0 0 #D1D1BC;
+    transform: translate3d(0, .0, -1em);
 }
-.profile-text .bord span {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    inset: 2px;
-    border-radius: 3rem;
-    background: transparent;
-    background-image: linear-gradient(to bottom, #37208b, #2c2380);
-    /* background: #172d67; */
-    /* background: transparent; */
-    z-index: 3;
-    font-size: 24px;
-    font-weight: 200;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-}
-.profile-text .bord a {
-    text-decoration: none;
-    color: #F5F5DC;
-}
-
-/* .profile-text a {
-    background: #fff;
-    border: 2px solid greenyellow;
-    color: #000;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    padding: 10px 30px;
-    border-radius: 3rem;
-} */
 
 .profile-image-section {
     /* background-color: green; */
@@ -233,6 +240,9 @@ hr {
 }
 .projects-section h1 {
     padding-bottom: 50px;
+}
+.projects-section h2 {
+    text-align: center;
 }
 
 .project {
@@ -885,9 +895,6 @@ hr {
 }
 
 
-
-
-
 /* ----------------------------- Responsive Window ----------------------------- */
 
 @media screen and (max-width: 1050px) {
@@ -933,6 +940,14 @@ hr {
     .nav-section .links.show {
         display: flex;
     }
+    .nav-section .dropdown {
+        top: 0;
+    }
+    .nav-section .dropdown-content {
+        margin-top: 0;
+    }
+
+
     .passions-section {
         display: none;
     }
