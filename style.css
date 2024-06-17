@@ -422,6 +422,7 @@ hr {
     align-items: center;
     flex: 1;
     width: 25%;
+    position: relative;
 }
 .slider section img, video {
     max-width: 100%;
@@ -429,6 +430,17 @@ hr {
     width: auto;
     height: auto;
     min-width: 100px;
+}
+.slider section .overlay-text {
+    position: absolute;
+    z-index: 4;
+    top: 50px;
+    right: 15px;
+    max-width: 35%;
+    font-size: 20px;
+    font-family: monospace;
+    color: #ff9d00;
+    text-align: right;
 }
 .controls .arrow {
     position: absolute;
@@ -559,7 +571,7 @@ h2, i {
 /* ----------------------------- Skills Section ----------------------------- */
 
 .skills-section {
-    border: 2px solid palevioletred;
+    /* border: 2px solid palevioletred; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -578,7 +590,7 @@ h2, i {
 }
 
 .skills-content {
-    border: 2px solid greenyellow;
+    /* border: 2px solid greenyellow; */
     margin: 0;
     padding: 0;
     max-width: 90%;
@@ -596,7 +608,7 @@ h2, i {
 }
 
 .skills-row {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     display: flex;
     flex-wrap: wrap;
     
@@ -609,7 +621,7 @@ h2, i {
     }
 }
 .skill-card {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     padding: 10px 0;
     text-align: center;
 }
