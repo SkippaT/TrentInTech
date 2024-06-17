@@ -125,84 +125,61 @@ hr {
     padding-bottom: 25px;
 }
 
-.profile-text .bord {
+.profile-section .buttons {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    width: 150px;
-    height: 50px;
-    border-radius: 3rem;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
 }
-.profile-text .bord::after, 
-.profile-text .bord::before {
+.profile-section .buttons a {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.profile-section .buttons a {
+    padding: 1.25em;
+    border: 2px solid #b18597;
+    border-radius: .75em;
+    font-weight: 700;
+    color: #382b22;
+    text-transform: uppercase;
+    background: #fff0f0;
+    transform-style: preserve-3d;
+    transition: .15s cubic-bezier(0, 0, .6, 1);
+}
+.profile-section .buttons a::before {
     content: '';
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background-image: conic-gradient(
-        transparent, transparent, transparent, #15ff00);
-    transition: transform 0s;
-    animation: animate 6s linear infinite;
-    animation-play-state: running;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #f9c4d2;
+    box-shadow: 0 0 0 2px #b18597, 0.625em #ffe3e2;
+    transform: translate3d(0, .75em, -1em);
+    transition: .15s cubic-bezier(0, 0, .6, 1);
 }
-
-.profile-text .bord::before {
-    rotate: 180deg;
-    background-image: conic-gradient(
-        transparent, transparent, transparent, #00ccff);
+.profile-section .buttons a:hover {
+    background: #ffe9e9;
+    transform: translate(0, .25em);
 }
-.profile-text .bord:hover::after {
-    animation-play-state: paused;
-    
+.profile-section .buttons a:hover::before {
+    box-shadow: 0 0 0 2px #b18597 0.5em 0 0 #ffe3e2;
+    transform: translate3d(0, .5em, -1em);
 }
-.profile-text .bord:hover::before {
-    animation-play-state: paused;
+.profile-section .buttons a:active {
+    background: #ffe9e9;
+    transform: translate(0, .75em);
 }
-@keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.profile-section .buttons a:active::before {
+    box-shadow: 0 0 0 2px #b18597 0 0 #ffe3e2;
+    transform: translate3d(0, .0, -1em);
 }
-.profile-text .bord span {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    inset: 2px;
-    border-radius: 3rem;
-    background: transparent;
-    background-image: linear-gradient(to bottom, #37208b, #2c2380);
-    /* background: #172d67; */
-    /* background: transparent; */
-    z-index: 3;
-    font-size: 24px;
-    font-weight: 200;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-}
-.profile-text .bord a {
-    text-decoration: none;
-    color: #F5F5DC;
-}
-
-/* .profile-text a {
-    background: #fff;
-    border: 2px solid greenyellow;
-    color: #000;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    padding: 10px 30px;
-    border-radius: 3rem;
-} */
 
 .profile-image-section {
     /* background-color: green; */
@@ -879,130 +856,6 @@ hr {
 }
 
 
-.profile-section .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-.profile-section .buttons a {
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-}
-.profile-section .buttons a {
-    padding: 1.25em;
-    border: 2px solid #b18597;
-    border-radius: .75em;
-    font-weight: 700;
-    color: #382b22;
-    text-transform: uppercase;
-    background: #fff0f0;
-    transform-style: preserve-3d;
-    transition: .15s cubic-bezier(0, 0, .6, 1);
-}
-.profile-section .buttons a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    background: #f9c4d2;
-    box-shadow: 0 0 0 2px #b18597, 0.625em #ffe3e2;
-    transform: translate3d(0, .75em, -1em);
-    transition: .15s cubic-bezier(0, 0, .6, 1);
-}
-.profile-section .buttons a:hover {
-    background: #ffe9e9;
-    transform: translate(0, .25em);
-}
-.profile-section .buttons a:hover::before {
-    box-shadow: 0 0 0 2px #b18597 0.5em 0 0 #ffe3e2;
-    transform: translate3d(0, .5em, -1em);
-}
-.profile-section .buttons a:active {
-    background: #ffe9e9;
-    transform: translate(0, .75em);
-}
-.profile-section .buttons a:active::before {
-    box-shadow: 0 0 0 2px #b18597 0 0 #ffe3e2;
-    transform: translate3d(0, .0, -1em);
-}
-
-
-
-
-
-
-
-
-.testing-section {
-    border: 2px solid gold;
-    height: 500px;
-    width: 100vw;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-}
-.testing-section button {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-}
-.testing-section button.learn-more {
-    padding: 1.25em;
-    border: 2px solid #b18597;
-    border-radius: .75em;
-    font-weight: 700;
-    color: #382b22;
-    text-transform: uppercase;
-    background: #fff0f0;
-    transform-style: preserve-3d;
-    transition: .15s cubic-bezier(0, 0, .6, 1);
-}
-.testing-section button.learn-more::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    background: #f9c4d2;
-    box-shadow: 0 0 0 2px #b18597, 0.625em #ffe3e2;
-    transform: translate3d(0, .75em, -1em);
-    transition: .15s cubic-bezier(0, 0, .6, 1);
-}
-.testing-section button.learn-more:hover {
-    background: #ffe9e9;
-    transform: translate(0, .25em);
-}
-.testing-section button.learn-more:hover::before {
-    box-shadow: 0 0 0 2px #b18597 0.5em 0 0 #ffe3e2;
-    transform: translate3d(0, .5em, -1em);
-}
-.testing-section button.learn-more:active {
-    background: #ffe9e9;
-    transform: translate(0, .75em);
-}
-.testing-section button.learn-more:active::before {
-    box-shadow: 0 0 0 2px #b18597 0 0 #ffe3e2;
-    transform: translate3d(0, .0, -1em);
-}
 
 
 
