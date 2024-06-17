@@ -602,7 +602,7 @@ hr {
 .tech-section {
     background: #410f6a;
 }
-.inter-section {
+.soft-section {
     background-image: linear-gradient(to top, #172d67, #410f6a);
 }
 .tech-section img {
@@ -624,7 +624,7 @@ hr {
     gap: 25px;
 }
 
-.inter-content {
+.soft-content {
     width: 750px;
 }
 
@@ -662,7 +662,7 @@ hr {
 .tech-card li {
     margin-bottom: 2px;
 }
-.inter-card {
+.soft-card {
     width: 200px;
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -671,7 +671,7 @@ hr {
 .skill-card i {
     font-size: 40px;
 }
-.inter-card h4 {
+.soft-card h4 {
     padding-top: 10px;
 }
 
@@ -709,17 +709,17 @@ hr {
     }
 }
 
-.inter-card p {
+.soft-card p {
     display: none;
 }
-.inter-card:hover {
+.soft-card:hover {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
-.inter-card.blur {
+.soft-card.blur {
     filter: blur(1px); /* Apply blur effect to blurred cards */
 }
 
-.inter-content .expansion {
+.soft-content .expansion {
     background: rgba(0, 0, 0, 0.2);
     display: flex;
     overflow: hidden;
@@ -910,7 +910,7 @@ hr {
 /* ----------------------------- Responsive Window ----------------------------- */
 
 @media screen and (max-width: 1050px) {
-    /* .inter-section {
+    /* .soft-section {
         gap: 20px;
     } */
 
