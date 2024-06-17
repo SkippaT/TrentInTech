@@ -6,7 +6,7 @@ window.location.hash = '';
 // ---------------------------------------------------------------------------------------------
 
 // Slogans for subheading
-const slogans = ["Engineering Student", "Tech Hobbyist", "Circuitry Connoisseur", "Code Whisperer"]; // Add as many slogans as you want
+const slogans = ["Engineering Student", "Tech Hobbyist", "Circuitry Connoisseur", "Code Whisperer"];
 var currentSloganIndex = 0;
 
 function changeSlogan() {
@@ -27,15 +27,15 @@ setInterval(changeSlogan, 4000); // Change the slogan every 4 seconds
 // ---------------------------------------------------------------------------------------------
 
 const skillsDictionary = new Map();
-skillsDictionary.set("Teamwork", "Developed through collaborative university projects and tech hackathons. I believe in the power of collective intelligence and understand the importance of working harmoniously to achieve common goals.");
-skillsDictionary.set("Leadership", "Cultivated as a project lead in several university assignments. I motivate and guide my team towards our objectives, understanding that effective leadership is key to the success of any project.");
-skillsDictionary.set("Communication", "Honed through group presentations and interactions during my double degree. I effectively convey complex technical concepts to diverse audiences, a crucial skill for collaboration and mutual understanding.");
+skillsDictionary.set("Teamwork", "Developed through collaborative university projects and social sports. I appreciate the power of collective input and understand the importance of working together to achieve common goals.");
+skillsDictionary.set("Leadership", "With experience as a project lead in several university assignments and as a captain in competitive teams, I understand that effective leadership is the key to success. I enjoy motivating others and being someone people can turn to for guideance.");
+skillsDictionary.set("Communication", "Honed through group projects and presentations. I can effectively convey complex technical concepts to diverse audiences and do so with confidence. I am comfortable speaking in a room full people and love open discussions.");
 skillsDictionary.set("Problem Solving", "Gained through tackling coding challenges and troubleshooting tech issues. I enjoy finding solutions to complex problems, a skill that's vital in the ever-evolving tech industry.");
-skillsDictionary.set("Work Ethic", "Demonstrated through my dedication to my studies and tech projects. I believe in delivering high-quality work consistently, understanding that a strong work ethic is the foundation of professional success.");
-skillsDictionary.set("Project Management", "Developed by overseeing various tech projects, from inception to completion. I effectively plan, organise, and manage resources, recognising that good project management leads to timely and successful project outcomes.");
-skillsDictionary.set("Adaptability", "Cultivated by keeping up with the fast-paced tech world. I quickly learn and apply new technologies, a necessary skill in an industry that's always advancing.");
-skillsDictionary.set("Organisation", "Proven by balancing my studies, tech projects, and personal interests effectively. I manage my time well, recognising that good organisation enhances productivity and reduces stress.");
-skillsDictionary.set("Passion for Learning", "I have a strong passion for learning.");
+skillsDictionary.set("Work Ethic", "Demonstrated through my dedication to my studies, tech projects and fitness. I always strive to do the best I can won't give up when things get difficult. My work ethic and determination is something I most proud of.");
+skillsDictionary.set("Project Management", "Developed by working in many tech projects - from start to finish - I understand how to effectively plan, organise, and manage resources, recognising that good project management leads to timely and successful project outcomes.");
+skillsDictionary.set("Adaptability", "I am a quick leaner and a keen one, this allows me to alter my work or approach suddenly. I can quickly learn and apply new technologies and skill which is a big advantage in the fast-paced tech world.");
+skillsDictionary.set("Organisation", "Proven by balancing my studies, tech projects, and personal interests effectively. I manage my time well, recognising that good organisation enhances productivity and reduces stress. Furthermore, I ensure that the work I'm involved with is well organised.");
+skillsDictionary.set("Passion for Learning", "I have a strong passion for learning and this is what allows me to create diverse tech projects that can be implemented in many environments.");
 
 document.addEventListener("DOMContentLoaded", function () {
     const skillCards = document.querySelectorAll(".skill-card");
