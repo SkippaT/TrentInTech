@@ -284,7 +284,6 @@ prevArrows.forEach(function(element) {
     });
 });
 
-
 nextArrows.forEach(function(element) {
     element.addEventListener("click", function() {
         // This is for whenever the "next arrow" is clicked
@@ -339,8 +338,10 @@ carousels.forEach(function(element) {
             var video = slider.querySelectorAll("section")[0].querySelector("video");
             if (video !== null) {
                 // If the section is a video, play it and stop the slideshow
-                video.play();
-                carouselVideoPlaying[element.id] = true;
+                if (isElementInViewport(video)) {
+                    video.play();
+                    carouselVideoPlaying[element.id] = true;
+                }
                 
             }
         } else {
@@ -348,8 +349,10 @@ carousels.forEach(function(element) {
             var video = slider.lastElementChild.querySelector("video");
             if (video !== null) {
                 // If the section is a video, play it and stop the slideshow
-                video.play();
-                carouselVideoPlaying[element.id] = true;
+                if (isElementInViewport(video)) {
+                    video.play();
+                    carouselVideoPlaying[element.id] = true;
+                }
                 
             }
         }
@@ -370,7 +373,7 @@ carousels.forEach(function(element) {
                 video.currentTime = 0;
                 carouselVideoPlaying[element.id] = false;
             }
-            if (face.nodeName === "VIDEO") {
+            if (face.nodeName === "VIDEO" && isElementInViewport(video)) {
                 carouselVideoPlaying[element.id] = true;
             }
         });
@@ -382,6 +385,14 @@ carousels.forEach(function(element) {
         });
     });
 });
+
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
 
 
 // ---------------------------------------------------------------------------------------------
