@@ -86,6 +86,7 @@ html {
     color: #F5F5DC;
     margin-top: 7px;
 }
+
 .nav-section .dropdown {
     position: relative;
     display: inline-block;
@@ -93,7 +94,6 @@ html {
     padding: 0;
     top: 6px;
 }
-
 .nav-section .dropdown-content {
     display: none;
     position: absolute;
@@ -940,6 +940,14 @@ hr {
     .nav-section .links.show {
         display: flex;
     }
+    .nav-section .dropdown {
+        top: 0;
+    }
+    .nav-section .dropdown-content {
+        margin-top: 0;
+    }
+
+
     .passions-section {
         display: none;
     }
