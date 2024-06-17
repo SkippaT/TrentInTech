@@ -192,9 +192,13 @@ hr {
     letter-spacing: 0.15em;
     cursor: pointer;
 }
+.profile-text .bord a {
+    text-decoration: none;
+    color: #F5F5DC;
+}
 
-.profile-text a {
-    /* background: #fff; */
+/* .profile-text a {
+    background: #fff;
     border: 2px solid greenyellow;
     color: #000;
     text-decoration: none;
@@ -204,7 +208,7 @@ hr {
     font-weight: 400;
     padding: 10px 30px;
     border-radius: 3rem;
-}
+} */
 
 .profile-image-section {
     /* background-color: green; */
