@@ -389,8 +389,8 @@ carousels.forEach(function(element) {
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
-        rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        rect.top >= -100 &&
+        rect.bottom <= 75 + (window.innerHeight || document.documentElement.clientHeight)
     );
 }
 

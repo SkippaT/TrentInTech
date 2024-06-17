@@ -18,7 +18,17 @@
         <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
         <div class="links">
             <a href="#projects-section" class="nav-link"><span class="code">01.</span> Projects</a>
-            <a href="#about-me-section" class="nav-link"><span class="code">02.</span> About Me</a>
+
+            <div class="dropdown">
+                <a href="#about-me-section" class="nav-link about-me-dropdown" id="testt"><span class="code">02.</span> About Me</a>
+
+                <div class="dropdown-content">
+                    <a href="#studies-section">Studies</a>
+                    <a href="#tech-section">Technical Skills</a>
+                    <a href="#inter-section">Soft Skills</a>
+                </div>
+            </div>
+            
             <a href="./TrentMitchellCV.pdf" target="blank"><span class="code">03.</span> Resume</a>
             <a href="#contact-me-section" class="nav-link"><span class="code">04.</span> Contact</a>
         </div>
@@ -504,7 +514,7 @@
         <h1>About Me</h1>
 
         <!-- ----------------------------------------- Studies ----------------------------------------- -->
-        <div class="studies-section">
+        <div class="studies-section" id="studies-section">
             <div class="intro">
                 <i class="fa-solid fa-user-graduate"></i>
                 <h2>Studies</h2>
@@ -561,7 +571,7 @@
         </div>
 
         <!-- ----------------------------------------- Skills Section ----------------------------------------- -->
-        <div class="skills-section tech-section">
+        <div class="skills-section tech-section" id="tech-section">
             <div class="intro">
                 <i class="fa-solid fa-user-gear"></i>
                 <h2>Technical Skills</h2>
@@ -747,7 +757,7 @@
             </div>
         </div>
 
-        <div class="skills-section inter-section">
+        <div class="skills-section inter-section" id="inter-section">
             <div class="intro">
                 <i class="fa-solid fa-users-gear"></i>
                 <h2>Soft Skills</h2>
