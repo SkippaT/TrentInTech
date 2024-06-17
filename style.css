@@ -565,21 +565,28 @@ hr {
 
 .degree {
     /* border: 2px solid cyan; */
+    border-radius: 30px;
     width: 500px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 15px;
+    letter-spacing: 0.04em;
 }
-.degree h3, i {
+.degree p {
+    line-height: 1.15em;
+}
+.degree h3, .degree i {
     padding-bottom: 10px;
     text-align: center;
 }
 .degree h3 {
-    font-size: 24px;
+    font-size: 28px;
 }
-
 .course h4 {
     padding-top: 15px;
     padding-bottom: 5px;
+    font-size: 20px;
+    
 }
 
 /* ----------------------------- Skills Section ----------------------------- */
@@ -768,6 +775,7 @@ hr {
     font-size: 36px;
     text-align: center;
     transition: opacity 0.3s ease;
+    padding-bottom: 10px;
 }
 
 .passion h1 {
@@ -846,10 +854,12 @@ hr {
 .contact-me-section h1 {
     /* background: blue; */
     text-align: center;
+    font-size: calc(7vw);
     font-size: 80px;
+    font-size: min(80px, calc(7vw));    /* maybe through a max in with the calc, so it doesn't get too small */
     letter-spacing: 0.2em;
     font-weight: 700;
-    width: 75%;
+    /* width: 75%; */
     max-width: 700px;
     margin: 0 auto;
     padding-top: 30px;
@@ -876,6 +886,7 @@ hr {
     font-size: 48px;
     text-decoration: none;
     color: #F5F5DC;
+    padding-bottom: 10px;
 }
 .contact-me-section .contact-details .contact-card h2 {
     font-size: 24px;
