@@ -52,10 +52,12 @@ html {
     cursor: pointer;
 }
 .nav-section .links {
+    /* border: 0.5px solid green; */
     display: flex;
     flex-direction: row;
 }
 .nav-section .links a {
+    /* border: 0.5px solid red; */
     text-decoration: none;
     padding: 5px 20px;
     color: #F5F5DC;
@@ -83,6 +85,40 @@ html {
 .toggle-menu {
     color: #F5F5DC;
     margin-top: 7px;
+}
+.nav-section .dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    top: 6px;
+}
+
+.nav-section .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #244397;
+    border-radius: 10px;
+    width: 110%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    z-index: 1;
+    /* padding: 10px 0 10px 10px; */
+    padding: 10px 0;
+}
+
+.nav-section .dropdown-content a {
+    padding: 7px;
+    padding-left: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-section .dropdown:hover .dropdown-content {
+    display: block;
+}
+.nav-section .nav-section .links .dropdown a:last-child {
+    margin-right: 0;
 }
 
 hr {
@@ -204,6 +240,9 @@ hr {
 }
 .projects-section h1 {
     padding-bottom: 50px;
+}
+.projects-section h2 {
+    text-align: center;
 }
 
 .project {
@@ -854,9 +893,6 @@ hr {
 
     }
 }
-
-
-
 
 
 /* ----------------------------- Responsive Window ----------------------------- */
