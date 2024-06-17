@@ -854,10 +854,12 @@ hr {
 .contact-me-section h1 {
     /* background: blue; */
     text-align: center;
+    font-size: calc(7vw);
     font-size: 80px;
+    font-size: min(80px, calc(7vw));    /* maybe through a max in with the calc, so it doesn't get too small */
     letter-spacing: 0.2em;
     font-weight: 700;
-    width: 75%;
+    /* width: 75%; */
     max-width: 700px;
     margin: 0 auto;
     padding-top: 30px;
@@ -884,6 +886,7 @@ hr {
     font-size: 48px;
     text-decoration: none;
     color: #F5F5DC;
+    padding-bottom: 10px;
 }
 .contact-me-section .contact-details .contact-card h2 {
     font-size: 24px;
