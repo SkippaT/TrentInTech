@@ -121,6 +121,66 @@ html {
     margin-right: 0;
 }
 
+.back-to-top {
+    z-index: 99;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: #F5F5DC;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid #F5F5DC;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    background-color: #F5F5DC;
+    color: #172d67;
+}
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+/* fadeInUp */
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+/* fadeOutDown */
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
 hr {
     border: 0.5px solid #F5F5DC;
     width: 90vw;
