@@ -12,9 +12,7 @@
 
 <body>
     <div class="nav-section">
-        <a href="#">
-            <img src="./images/TrentInTechLogo.png" alt="TrentInTech logo">
-        </a>
+        <a href="#"><img src="./images/TrentInTechLogo.png" alt="TrentInTech logo"></a>
         <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
         <div class="links">
             <a href="#projects-section" class="nav-link"><span class="code">01.</span> Projects</a>
@@ -142,42 +140,95 @@
                             </li>
                             <li>
                                 The next step was to create the Q learning agent. This included defining a state, action 
-                                space and reward system.
+                                space and reward system.<br>
+                                Along with this, I created the static timer system that would rotate between the possible 
+                                configurations every 7 iterations.
                             </li>
                             <li>
-                                The next step was creating some functions for the LED strip to perform. 
-                                Some of these functions are purely for show and others are for feedback 
-                                after a card is pressed.
-                            </li>
-                            <li>
-                                With the application working properly, the final step was to install the 
-                                device in my room. To do this, I 3D printed a mount for the NFC scanner 
-                                underneath my bedside table. The LEDs were attached around the perimeter 
-                                of my bed out of sight.
+                                At this stage, everything has been built and I began testing and fine tuning everything. 
+                                This was a long and slow process but was crucial in optimising my learning agent and 
+                                ensuring that my results were accurate.
                             </li>
                         </ol>
-                        <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <h3>Challenges and solutions</h3>
+                        <p>
+                            A challenge I came across was how to configure the static timer system. It was important that 
+                            I made this system perform as best as possible because otherwise I will be cheating when I 
+                            compare my results with a subpar static system.
+                        </p>
                     </div>
                     <div class="split">
                         <h3>Q Learning Agent</h3>
-                        <p>This is a list of the equipment I used to complete the project.</p>
-                        <h3>States, Actions, Rewards</h3>
-                        <p>This is the methodology I used to complete the project</p>
-                        <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <p>
+                            To build the Q learning agent I initially disabled most of the lanes in the intersection, only 
+                            allowing vehicles to come from the North and South. This meant that there were only two possibile 
+                            configurations for the traffic lights, North or South.
+                        </p>
+                        <h4>States</h4>
+                        <p>
+                            My definition for a state includes the current direction of the traffic lights and the length of 
+                            each queue at the intersection (each a separate feature).<br>
+                            Further research I conducted showed that 
+                            including the current traffic light configuration was not necessary. Also from my research, I found 
+                            many other good features could be included in a state. These include the time since the lights were 
+                            last changed and the exact position of each vehicle in the simulation.<br>
+                            I did not want to add any more detail to my state because the training time for the learning agent 
+                            would have been far too large.
+                        </p>
+                        <h4>Actions</h4>
+                        <p>
+                            The actions that my learning agent could choose from are each of the possible configurations of the 
+                            traffic lights.
+                        </p>
+                        <h4>Rewards</h4>
+                        <p>
+                            The reward system for this learning agent was very difficult to implement and was adjusted many 
+                            times. The final reward system that I used is shown below.
+                        </p>
+                        <ol>
+                            <li>
+                                Every time a vehicle leaves a queue and enters the intersection the reward is incremented
+                                by 3.
+                            </li>
+                            <li>
+                                Every time the traffic lights change direction the reward is decremented by 8. 
+                                This is to punish the agent for changing the lights. The more the lights change, the more 
+                                time they spend yellow (X) and no vehicles can clear the intersection.
+                            </li>
+                            <li>
+                                If the first vehicle in the queue leaves the reward is incremented by 3, otherwise the 
+                                reward is decremented by the length of the queue with a maximum loss of 3.
+                            </li>
+                        </ol>
+                        <br>
+                        <p>
+                            When running simulations with my Q learning agent, the program first runs 3 episodes of 5000 
+                            iterations. For the first episode the epsilon value is set to 0.6 (60% of actions are chosen 
+                            at random), the next episode has an epsilon of 0.4 and then 0.2. These epsilon values ensure 
+                            that the learning agent has an opportunity to completely fill its Q table.
+                        </p>
+                        <h3>Testing and Results</h3>
+                        <p>
+                            To test the performance of my learning agent I compared it against the static timer method in a 
+                            wide range of scenarios. It was important that I tested the systems with a variety of scenarios 
+                            so that I could discover where each of them perform best and worst. 
+                        </p>
+                        <h4>Even Distribution</h4>
+                        <p>
+                            Equal chance from each direction.
+                        </p>
+                        <h4>Heavy Traffic from the East</h4>
+                        <p>
+                            Nearly 60% of generated vehicles come from the East
+                        </p>
+                        <h4>Heavy Traffic from the South and East</h4>
+                        <p>
+                            Over 65% of vehicles are generated in the South or East.
+                        </p>
+                        <p>
+                            The results I gathered from all my tests and scenarios prove that the learning agent I developed 
+                            outperforms traditional static timer methods.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>

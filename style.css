@@ -23,7 +23,6 @@ html {
 }
 
 .nav-section {
-    background: #f8efe7;
     background: #172d67;
     margin-top: 20px;
     /* border-radius: 50px; */
@@ -31,6 +30,7 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 15px;
     top: 0;
     left: 50%;
@@ -80,6 +80,7 @@ html {
     width: 80%;
 }
 .nav-section img {
+    /* border: 0.5px solid green; */
     max-height: 20px;
 }
 .toggle-menu {
@@ -199,7 +200,6 @@ hr {
 /* ----------------------------- Profile Section ----------------------------- */
 
 .profile-section {
-    /* background-color: aquamarine; */
     /* border: 2px solid greenyellow; */
     background-image: linear-gradient(to top, #172d67, #8b15e9);
     display: flex;
@@ -211,7 +211,6 @@ hr {
 }
 
 .profile-text {
-    /* background-color: pink; */
     /* border: 2px solid red; */
     text-align: left;
     padding: 50px;
@@ -244,8 +243,8 @@ hr {
     text-decoration: none;
 }
 .profile-section .buttons a {
-    padding: 1.25em;
     /* border: 2px solid #A8A897; */
+    padding: 1.25em;
     border-radius: .75em;
     font-weight: 700;
     color: #172d67;
@@ -287,7 +286,6 @@ hr {
 }
 
 .profile-image-section {
-    /* background-color: green; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -425,6 +423,11 @@ hr {
     padding-top: 25px;
     padding-bottom: 10px;
     font-size: 26px;
+}
+.project .expansion h4 {
+    font-size: 20px;
+    padding: 5px 0;
+    font-weight: 500;
 }
 .project .expansion p {
     padding-bottom: 5px;
