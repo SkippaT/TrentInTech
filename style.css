@@ -1052,6 +1052,10 @@ hr {
         font-size: 12px;
         padding: 5px 0px;
     }
+    
+    .soft-section .description {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 425px) {
