@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Change height of expansion
-            expansion.style.height = "100px"; // Set the height as per your requirement
+            expansion.style.height = "100px";
             event.stopPropagation(); // Stop event propagation
 
             description.textContent = skillsDictionary.get(skill);
