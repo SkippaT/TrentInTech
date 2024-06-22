@@ -406,8 +406,8 @@
                         The traffic light system includes:
                     </p>
                     <ul>
-                        <li>Green, yellow and red light for vehicles</li>
-                        <li>Green and red light for pedestrians</li>
+                        <li>Green, yellow and red lights for vehicles</li>
+                        <li>Green and red lights for pedestrians</li>
                         <li>Button for pedestrians</li>
                         <li>Buzzer (beeper) for pedestrians</li>
                     </ul>
@@ -449,7 +449,7 @@
             <div class="expansion">
                 <div class="splitter">
                     <div class="split">
-                        <h3>Equipment</h3>
+                        <h3>Hardware</h3>
                             <ul>
                                 <li>Raspberry Pi 4 Model B+
                                     <ul>
@@ -463,48 +463,52 @@
                                 <li>Jumper wires</li>
                             </ul>
                             <h3>Process</h3>
+                            <p>
+                                This being my first tech project, I took baby steps in the development process and had no 
+                                end product in mind, I simply wanted to learn.
+                            </p>
                             <ol>
                                 <li>
-                                    I began this project by first playing with the NFC scanner.
-                                    I created programs that waited for a card to be scanned and then 
-                                    printed the UID to the terminal.
+                                    I began by controlling a single LED with the Raspberry Pi and quickly progressed to 
+                                    controlling three LEDs using a timer in Python.
                                 </li>
                                 <li>
-                                    I next researched the Spotify API and created a program that takes user 
-                                    input from the terminal to control my Spotify. This program could pause 
-                                    and skip songs, play a playlist, album or song, toggle shuffle, adjust 
-                                    volume and many other things.
+                                    A button was then introduced and used to control the three LEDs just installed. I wrote 
+                                    code that would treat the three LEDs as the lights for vehicles and the button as a 
+                                    pedestrian button. This meant that the lights were green until the button was pressed. 
+                                    After the press, the lights changed to yellow for a few seconds and then to red. After 
+                                    a few more seconds the lights went back to green.
                                 </li>
                                 <li>
-                                    I then combinded the two programs I'd made. This meant I was controlling 
-                                    Spotify with the NFC cards.
+                                    I then added the two lights for the pedestrians and wrote code for them to be red unless 
+                                    the pedestrian button was pressed and the vehicles' lights are red. I also wrote code 
+                                    to make the pedestrian lights flash red for a few seconds before being a solid red.
                                 </li>
                                 <li>
-                                    The next step was creating some functions for the LED strip to perform. 
-                                    Some of these functions are purely for show and others are for feedback 
-                                    after a card is pressed.
-                                </li>
-                                <li>
-                                    With the application working properly, the final step was to install the 
-                                    device in my room. To do this, I 3D printed a mount for the NFC scanner 
-                                    underneath my bedside table. The LEDs were attached around the perimeter 
-                                    of my bed out of sight.
+                                    The last addition to this project was the buzzer. This buzzer immitates the tone heard 
+                                    at traffic lights and can be used to indicate when pedestrians can and cannot cross the 
+                                    road.
                                 </li>
                             </ol>
                     </div>
                     <div class="split">
-                        <h3>Equipment</h3>
-                        <p>This is a list of the equipment I used to complete the project.</p>
-                        <h3>Methodology</h3>
-                        <p>This is the methodology I used to complete the project</p>
                         <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
+                        <p>
+                            I came across an obstacle just about every step of the way. This being my first project I was 
+                            fully prepared for plenty of speed bumps and did not let them get in my way.<br>
+                            The problems I encountered were very simple and caused by a lack of experience. I overcame them 
+                            by following instructions on how to complete similar projects.
+                        </p>
                         <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <p>
+                            After finishing this project I was left with a real world simulation of a simple set of traffic 
+                            lights. The traffic lights for vehicles remain green and the pedestrian lights red until the user 
+                            presses the pedestrian button. This then changes the vehicles' lights to yellow for a few seconds. 
+                            The vehicles' lights then go red and the pedestrian lights go green. After a few seconds the 
+                            green pedestrian light flashes red for a bit and then goes solid red at the same time as the 
+                            vehicles' lights going green. Whenever the pedestrian lights are red, the buzzer beeps at a slow 
+                            frequency, when the lights change to green, the frequency of beeps becomes much faster.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
