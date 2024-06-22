@@ -121,6 +121,67 @@ html {
     margin-right: 0;
 }
 
+.back-to-top {
+    display: none;
+    z-index: 99;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: #F5F5DC;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid #F5F5DC;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    background-color: #F5F5DC;
+    color: #172d67;
+}
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+/* fadeInUp */
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+/* fadeOutDown */
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
 hr {
     border: 0.5px solid #F5F5DC;
     width: 90vw;
@@ -128,6 +189,7 @@ hr {
     margin: 50px auto;
 }
 
+/* ----------------------------- Profile Section ----------------------------- */
 
 .profile-section {
     /* background-color: aquamarine; */
@@ -176,7 +238,7 @@ hr {
 }
 .profile-section .buttons a {
     padding: 1.25em;
-    border: 2px solid #A8A897;
+    /* border: 2px solid #A8A897; */
     border-radius: .75em;
     font-weight: 700;
     color: #172d67;
@@ -195,18 +257,18 @@ hr {
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    background: #F5F5DC;
+    background: #bebeaa;
     box-shadow: 0 0 0 2px #A8A897, 0.625em #D1D1BC;
-    transform: translate3d(0, .75em, -1em);
+    transform: translate3d(0, .65em, -1em);
     transition: .15s cubic-bezier(0, 0, .6, 1);
 }
 .profile-section .buttons a:hover {
     background: #E3E3CC;
-    transform: translate(0, .25em);
+    transform: translate(0, .2em);
 }
 .profile-section .buttons a:hover::before {
     box-shadow: 0 0 0 2px #A8A897 0.5em 0 0 #D1D1BC;
-    transform: translate3d(0, .5em, -1em);
+    transform: translate3d(0, .45em, -1em);
 }
 .profile-section .buttons a:active {
     background: #C5C5B2;
@@ -304,6 +366,7 @@ hr {
     padding-left: 1.5em;
 }
 .project-hook-text .icons {
+    /* border: 2px solid khaki; */
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
@@ -321,9 +384,8 @@ hr {
 }
 .project-hook-text i img {
     /* border: 2px solid pink; */
-    /* width: 100%; */
     width: auto;
-    max-height: 100px;
+    max-height: 100%;
 }
 
 .project .expansion {
@@ -544,7 +606,7 @@ hr {
     /* background: #410f6a; */
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
+    padding: 0 10px 100px 10px;
 }
 
 .studies-section .intro p {
@@ -602,7 +664,7 @@ hr {
 .tech-section {
     background: #410f6a;
 }
-.inter-section {
+.soft-section {
     background-image: linear-gradient(to top, #172d67, #410f6a);
 }
 .tech-section img {
@@ -624,7 +686,7 @@ hr {
     gap: 25px;
 }
 
-.inter-content {
+.soft-content {
     width: 750px;
 }
 
@@ -662,7 +724,7 @@ hr {
 .tech-card li {
     margin-bottom: 2px;
 }
-.inter-card {
+.soft-card {
     width: 200px;
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -671,7 +733,7 @@ hr {
 .skill-card i {
     font-size: 40px;
 }
-.inter-card h4 {
+.soft-card h4 {
     padding-top: 10px;
 }
 
@@ -709,17 +771,17 @@ hr {
     }
 }
 
-.inter-card p {
+.soft-card p {
     display: none;
 }
-.inter-card:hover {
+.soft-card:hover {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
-.inter-card.blur {
+.soft-card.blur {
     filter: blur(1px); /* Apply blur effect to blurred cards */
 }
 
-.inter-content .expansion {
+.soft-content .expansion {
     background: rgba(0, 0, 0, 0.2);
     display: flex;
     overflow: hidden;
@@ -768,7 +830,7 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
 }
 .holder i {
@@ -788,9 +850,10 @@ hr {
 }
 .passions-section .description {
     position: absolute;
-    transition: opacity 0.3s ease; /* Add transition for smooth fading */
-    top: 50%; /* Position description at the center vertically */
-    left: 50%; /* Position description at the center horizontally */
+    transition: opacity 0.3s ease;
+    width: 15vw;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
 }
@@ -909,13 +972,13 @@ hr {
 /* ----------------------------- Responsive Window ----------------------------- */
 
 @media screen and (max-width: 1050px) {
-    /* .inter-section {
+    /* .soft-section {
         gap: 20px;
     } */
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 810px) {
     .nav-section {
         padding: 0 20px;
         align-items: center;
@@ -933,6 +996,9 @@ hr {
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .nav-section img {
+        max-height: 14px;
     }
 
     .nav-section .links a {
@@ -956,6 +1022,11 @@ hr {
     }
     .nav-section .dropdown-content {
         margin-top: 0;
+    }
+
+    .profile-section {
+        padding: 50px 0;
+        flex-direction: column;
     }
 
 
@@ -989,6 +1060,10 @@ hr {
         font-size: 12px;
         padding: 5px 0px;
     }
+    
+    .soft-section .description {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -997,5 +1072,18 @@ hr {
     }
     .about-me-section {
         padding: 0;
+    }
+
+    .projects-section .carousel-container {
+        width: 90%;
+    }
+
+    .project-hook-text i {
+        width: 50px;
+        height: 50px;
+    }
+    .project .splitter .split {
+        min-width: 200px;
+        width: 95%;
     }
 }
