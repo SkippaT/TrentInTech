@@ -211,7 +211,7 @@
                         <p>
                             To test the performance of my learning agent I compared it against the static timer method in a 
                             wide range of scenarios. It was important that I tested the systems with a variety of scenarios 
-                            so that I could discover where each of them perform best and worst. 
+                            so that I could discover where each of them perform best and worst.
                         </p>
                         <h4>Even Distribution</h4>
                         <p>
@@ -277,19 +277,21 @@
                         <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
                     </div>
                     <h2>Interactive NFC Music and LED Controller</h2>
-                    <p>This project uses a Raspberry Pi computer to control music using the Spotify API.
-                        Connected to the Raspberry Pi is an NFC scanner which reads my 'Music Cards' and
+                    <p>
+                        This project uses a Raspberry Pi to control music using the Spotify API.
+                        Connected to the Raspberry Pi is an NFC scanner which reads my 'Music Cards' (NFC cards) and
                         performs a certain action depending on what card was used.
                     </p>
-                    <p>Also connected to the Raspberry Pi is an LED strip that is used for feedback and 
-                        because LEDs are awesome!
+                    <p>
+                        Also connected to the Raspberry Pi is an LED strip that is used for feedback and performs 'light 
+                        shows' based on which card is scanned.
                     </p>
                 </div>
             </div>
             <div class="expansion">
                 <div class="splitter">
                     <div class="split">
-                        <h3>Equipment</h3>
+                        <h3>Hardware</h3>
                         <ul>
                             <li>Raspberry Pi 3 Model A+
                                 <ul>
@@ -344,13 +346,40 @@
                     </div>
                     <div class="split">
                         <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <p>
+                            A problem I encountered in the testing process of this project was not being able to read cards 
+                            while the LED strip was completing a light sequence. The problem existed because my Python 
+                            program would wait for a card to be scanned and then run a function depending on the card. 
+                            If the instruction on the card was to perform a light sequence with the LEDs, then the program 
+                            would stop reading the scanner. This meant that I would have to wait for the light sequence to 
+                            finish before I could scan the next card.
+                        </p>
+                        <p style="padding-bottom: 15px;">
+                            To fix this problem I introduced threading to my program. Now when I scan a card that initiates 
+                            a light sequence, a separate thread is created that will control the LEDs while the main thread 
+                            continues to wait for a card to be scanned.
+                        </p>
+                        <p>
+                            Another obstacle I ran into was how to install the scanner under my bedside table close enough 
+                            that it can read the NFC cards through the wood. Thankfully I was able to 3D print two rails 
+                            that I screwed under the wood. I could then slide the Raspberry Pi along the rails where it can 
+                            sit in place and wait for a card to be scanned.<br>
+                            I also printed a small catcher for the cables that was screwed under the wood to keep the cables 
+                            organsied.
+                        </p>
+                        <h3>Final Product</h3>
+                        <p>
+                            The final outcome of this project is a record player/light controller hidden underneath my 
+                            bedside table and controlled by NFC cards. I can select a card, slide it along my bedside 
+                            table and my favourite artist will start playing. Slide another card and the LEDs in my room 
+                            will create a rainbow fade effect.
+                        </p>
+                        <h3>Future Work</h3>
+                        <p>
+                            The NFC cards currently have no style. I would like to print some graphics onto them to make them 
+                            easier to read and look better.<br>
+                            I also will be creating more complex and entertaining light sequences with the LEDs.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
