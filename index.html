@@ -614,20 +614,8 @@
                     <div class="split">
                         <h3>Purpose</h3>
                         <p>
-                            The drive for this application is to improve the throughput at an intersection with traffic
-                            lights.
-                        </p>
-                        <p>
-                            A traditional intersection uses a static timer method to cycle between the lights. This
-                            means that
-                            the intersection will remain the same for a set period before transitioning to the next
-                            configuration.
-                        </p>
-                        <p>
-                            An adaptive traffic light system will be able to spend any amount of time in whichever
-                            configuration
-                            it thinks is best. The system chooses the best configuration based on experience, using
-                            reinforcement learning.
+                            The goal of this project was to make an application similar to the graphic design software 
+                            Canva. 
                         </p>
                         <h3>Features</h3>
                         <ul>
@@ -641,40 +629,60 @@
                         <h3>Process</h3>
                         <ol>
                             <li>
-                                I began this project by first playing with the NFC scanner.
-                                I created programs that waited for a card to be scanned and then
-                                printed the UID to the terminal.
+                                I began this application with the login page and create user page. I first create the GUI's 
+                                and then worked on the code to add users to the database and authenticate user logins. I 
+                                also added a function to hash passwords.
                             </li>
                             <li>
-                                I next researched the Spotify API and created a program that takes user
-                                input from the terminal to control my Spotify. This program could pause
-                                and skip songs, play a playlist, album or song, toggle shuffle, adjust
-                                volume and many other things.
+                                I then built the base design of the application with no functionality.
                             </li>
                             <li>
-                                I then combinded the two programs I'd made. This meant I was controlling
-                                Spotify with the NFC cards.
+                                The logout button was enabled and so was the profile button. The profile button allows the 
+                                user to edit their account details, such as username and password. These updates are 
+                                reflected in the database and thus are persistent.
                             </li>
                             <li>
-                                The next step was creating some functions for the LED strip to perform.
-                                Some of these functions are purely for show and others are for feedback
-                                after a card is pressed.
+                                The next step was to allow the user to create a canvas and choose the dimensions in the 
+                                process.
                             </li>
                             <li>
-                                With the application working properly, the final step was to install the
-                                device in my room. To do this, I 3D printed a mount for the NFC scanner
-                                underneath my bedside table. The LEDs were attached around the perimeter
-                                of my bed out of sight.
+                                I then wrote the code for adding text, images and shapes to the canvas. Each of these 
+                                elements have their own sidebar full of options to edit the element (colour, size, etc).
+                            </li>
+                            <li>
+                                The last step was adding the ability for the user to save the canvas as a png image to 
+                                their machine.
                             </li>
                         </ol>
                     </div>
                     <div class="split">
+                        <h3>Learning Outomes</h3>
+                        <p>
+                            This project was part of an early University course I completed, therefore, it gave me plenty 
+                            of insights into the world of programming. Listed below are some of the things I gained 
+                            experience in.
+                        </p>
+                        <h4>Object-Oriented Programming</h4>
+                        <p>
+                            OOP is something I already had experience with but this course further solidified my understanding 
+                            of it and ability to implement it. As a well practiced Java developer, OOP is something that I 
+                            enjoy and understand well.
+                        </p>
+                        <h4>MVC Architecture</h4>
+                        <p>
+                            I followed the MVC architecture to separate my application into three components: the Model, 
+                            the View and the Controller. 
+                        </p>
+                        <h4>SQL and Database</h4>
+                        <h4>JavaFX</h4>
+                        <h4>Serialisation and deserialisation</h4>
+                        <h4>Unit Testing</h4>
                         <h3>Challenges and solutions</h3>
                         <p>Some problems I came across were... I solved them by...</p>
                         <h3>Final outcome</h3>
                         <p>I drifted from where I originally wanted to go and now have...</p>
                         <h3>Learnings</h3>
-                        <p>MVC framework, Improved SQL knowledge, JavaFX</p>
+                        <p>MVC framework, Improved SQL knowledge, JavaFX, serialization and deserialization, unit testing</p>
                         <h3>Future Improvements</h3>
                         <p>To further enhance this project I would...</p>
                     </div>
