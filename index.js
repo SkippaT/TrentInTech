@@ -28,28 +28,28 @@ function scrollFunction() {
   }
 }
 
-backToTopButton.addEventListener("click", smoothScrollBackToTop);
+// backToTopButton.addEventListener("click", smoothScrollBackToTop);
 
-// function backToTop() {
-//   window.scrollTo(0, 0);
-// }
+// // function backToTop() {
+// //   window.scrollTo(0, 0);
+// // }
 
-function smoothScrollBackToTop() {
-  const targetPosition = 0;
-  const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition;
-  const duration = 750;
-  let start = null;
+// function smoothScrollBackToTop() {
+//   const targetPosition = 0;
+//   const startPosition = window.pageYOffset;
+//   const distance = targetPosition - startPosition;
+//   const duration = 750;
+//   let start = null;
   
-  window.requestAnimationFrame(step);
+//   window.requestAnimationFrame(step);
 
-  function step(timestamp) {
-    if (!start) start = timestamp;
-    const progress = timestamp - start;
-    window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
-    if (progress < duration) window.requestAnimationFrame(step);
-  }
-}
+//   function step(timestamp) {
+//     if (!start) start = timestamp;
+//     const progress = timestamp - start;
+//     window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+//     if (progress < duration) window.requestAnimationFrame(step);
+//   }
+// }
 
 function easeInOutCubic(t, b, c, d) {
 	t /= d/2;

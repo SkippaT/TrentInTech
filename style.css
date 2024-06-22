@@ -139,6 +139,14 @@ html {
     transition-timing-function: ease-in-out;
     transition-property: background-color, color;
 }
+.back-to-top a {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 .back-to-top:hover,
 .back-to-top:focus {
@@ -417,6 +425,9 @@ hr {
     padding-top: 25px;
     padding-bottom: 10px;
     font-size: 26px;
+}
+.project .expansion p {
+    padding-bottom: 5px;
 }
 
 

@@ -33,7 +33,8 @@
             <a href="#contact-me-section" class="nav-link"><span class="code">04.</span> Contact</a>
         </div>
     </div>
-    <button class="back-to-top"><i class="fa-solid fa-angles-up"></i></button>
+
+    <button class="back-to-top"><a href="#"></a><i class="fa-solid fa-angles-up"></i></button>
 
     <div class="profile-section">
         <div class="profile-text">
@@ -109,9 +110,52 @@
                 <div class="splitter">
                     <div class="split">
                         <h3>Purpose</h3>
-                        <p>The drive for this application is to improve the throughput at an intersection with traffic lights.</p>
-                        <h3>Methodology</h3>
-                        <p>This is the methodology I used to complete the project</p>
+                        <p>
+                            The drive for this application is to improve the throughput at an intersection with traffic lights. 
+                        </p>
+                        <p>
+                            A traditional intersection uses a static timer method to cycle between the lights. This means that 
+                            the intersection will remain the same for a set period before transitioning to the next 
+                            configuration.
+                        </p>
+                        <p>
+                            An adaptive traffic light system will be able to spend any amount of time in whichever configuration 
+                            it thinks is best. The system chooses the best configuration based on experience, using 
+                            reinforcement learning.
+                        </p>
+                        <h3>Process</h3>
+                        <ol>
+                            <li>
+                                The first step for this project was to create the intersection environment.<br>
+                                This included building the intersection lanes, vehicles and the traffic lights. To keep 
+                                track of the location of the vehicles, they each have a set of coordinates that update 
+                                in each iteration. When a system (static or dynamic) sends a request to update the traffic 
+                                lights, they will first go yellow for three iterations, this is represented by an X.
+                            </li>
+                            <li>
+                                I then worked on the code to enable the simulation to run for a set number of iterations. 
+                                Each set of iterations is called an episode. These episodes provided copious amounts of data 
+                                for the Q learning agent to use.<br>
+                                Part of building the simulation was creating settings that allowed me to adjust the generation 
+                                of vehicles. I had the power to generate vehicles at any frequency and to skew the lanes 
+                                they come from.
+                            </li>
+                            <li>
+                                The next step was to create the Q learning agent. This included defining a state, action 
+                                space and reward system.
+                            </li>
+                            <li>
+                                The next step was creating some functions for the LED strip to perform. 
+                                Some of these functions are purely for show and others are for feedback 
+                                after a card is pressed.
+                            </li>
+                            <li>
+                                With the application working properly, the final step was to install the 
+                                device in my room. To do this, I 3D printed a mount for the NFC scanner 
+                                underneath my bedside table. The LEDs were attached around the perimeter 
+                                of my bed out of sight.
+                            </li>
+                        </ol>
                         <h3>Chanllenges and solutions</h3>
                         <p>Some problems I came across were... I solved them by...</p>
                         <h3>Final outcome</h3>
@@ -122,9 +166,9 @@
                         <p>To further enhance this project I would...</p>
                     </div>
                     <div class="split">
-                        <h3>Equipment</h3>
+                        <h3>Q Learning Agent</h3>
                         <p>This is a list of the equipment I used to complete the project.</p>
-                        <h3>Methodology</h3>
+                        <h3>States, Actions, Rewards</h3>
                         <p>This is the methodology I used to complete the project</p>
                         <h3>Chanllenges and solutions</h3>
                         <p>Some problems I came across were... I solved them by...</p>
