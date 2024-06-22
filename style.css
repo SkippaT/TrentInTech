@@ -84,7 +84,6 @@ html {
 }
 .toggle-menu {
     color: #F5F5DC;
-    margin-top: 7px;
 }
 
 .nav-section .dropdown {
@@ -606,7 +605,7 @@ hr {
     /* background: #410f6a; */
     display: flex;
     flex-direction: column;
-    padding: 0 10px 100px 10px;
+    padding: 0 15px 100px 15px;
 }
 
 .studies-section .intro p {
@@ -980,7 +979,7 @@ hr {
 
 @media screen and (max-width: 810px) {
     .nav-section {
-        padding: 0 20px;
+        padding: 5px 20px;
         align-items: center;
     }
     .nav-section button {
@@ -1047,6 +1046,16 @@ hr {
 }
 
 @media screen and (max-width: 575px) {
+
+    .back-to-top {
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #F5F5DC;
+    }
+
     .profile-text #sub-heading {
         font-size: 28px;
     }
