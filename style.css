@@ -366,6 +366,7 @@ hr {
     padding-left: 1.5em;
 }
 .project-hook-text .icons {
+    /* border: 2px solid khaki; */
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
@@ -383,9 +384,8 @@ hr {
 }
 .project-hook-text i img {
     /* border: 2px solid pink; */
-    /* width: 100%; */
     width: auto;
-    max-height: 100px;
+    max-height: 100%;
 }
 
 .project .expansion {
@@ -606,7 +606,7 @@ hr {
     /* background: #410f6a; */
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
+    padding: 0 10px 100px 10px;
 }
 
 .studies-section .intro p {
@@ -978,7 +978,7 @@ hr {
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 810px) {
     .nav-section {
         padding: 0 20px;
         align-items: center;
@@ -996,6 +996,9 @@ hr {
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .nav-section img {
+        max-height: 14px;
     }
 
     .nav-section .links a {
@@ -1019,6 +1022,11 @@ hr {
     }
     .nav-section .dropdown-content {
         margin-top: 0;
+    }
+
+    .profile-section {
+        padding: 50px 0;
+        flex-direction: column;
     }
 
 
@@ -1064,5 +1072,18 @@ hr {
     }
     .about-me-section {
         padding: 0;
+    }
+
+    .projects-section .carousel-container {
+        width: 90%;
+    }
+
+    .project-hook-text i {
+        width: 50px;
+        height: 50px;
+    }
+    .project .splitter .split {
+        min-width: 200px;
+        width: 95%;
     }
 }
