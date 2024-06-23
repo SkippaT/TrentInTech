@@ -197,6 +197,18 @@ hr {
     margin: 50px auto;
 }
 
+h1 {
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    /* width: 75%; */
+    /* max-width: 700px; */
+    /* margin: 0 auto; */
+    /* padding-top: 30px; */
+    /* padding-bottom: 75px; */
+}
+
 /* ----------------------------- Profile Section ----------------------------- */
 
 .profile-section {
@@ -300,7 +312,7 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 25px 10px 25px;
+    padding: 150px 25px 10px 25px;
 }
 .project-sep {
     opacity: 0.5;
@@ -333,9 +345,6 @@ hr {
     /* position: relative;
     overflow: hidden; */
 }
-.projects-section h1 {
-    font-size: 56px;
-}
 .project-hook-text {
     /* border: 2px solid yellow; */
     max-width: 500px;
@@ -346,7 +355,7 @@ hr {
 
 .project-hook-text h2 {
     padding-bottom: 0.5rem;
-    font-size: 30px;
+    font-size: 36px;
 }
 .project-hook-text h3 {
     text-align: center;
@@ -422,35 +431,61 @@ hr {
 .project .expansion h3 {
     padding-top: 25px;
     padding-bottom: 10px;
-    font-size: 26px;
+    font-size: 32px;
 }
 .project .expansion h4 {
-    font-size: 20px;
+    font-size: 24px;
     padding: 5px 0;
     font-weight: 500;
 }
 .project .expansion p {
-    padding-bottom: 7px;
+    padding-bottom: 1em;
 }
 
 
 .expansion ul {
-    list-style: disc inside;
+    list-style: disc outside;
+}
+.expansion ol {
+    list-style: decimal outside;
+}
+.expansion ul, .expansion ol {
+    padding-left: 1.5em;
+    padding-bottom: 0.5em;
 }
 
 .expansion li {
-    margin-bottom: 20px;
+    margin-bottom: 0.5em;
 }
 
 .expansion li ul {
-    list-style: circle inside;
-    margin-left: 20px;
-}
-
-.expansion ol {
-    list-style: decimal outside;
+    list-style: circle outside;
+    /* margin-left: 20px; */
     padding-left: 1.5em;
 }
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    text-align: center;
+    background-color: #8b15e9;
+}
+.second-heading {
+    text-align: center;
+    background-color: #8a15e975;
+}
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);;
+}
+table .percentage {
+    text-align: center;
+}
+
 
 .arrow {
     cursor: pointer;
@@ -585,11 +620,6 @@ hr {
     flex-direction: column;
 }
 .about-me-section h1, .about-me-section h2{
-    /* background: blue; */
-    text-align: center;
-    font-size: 80px;
-    letter-spacing: 0.2em;
-    font-weight: 700;
     width: 75%;
     max-width: 700px;
     margin: 0 auto;
@@ -929,12 +959,7 @@ hr {
 }
 .contact-me-section h1 {
     /* background: blue; */
-    text-align: center;
-    font-size: calc(7vw);
-    font-size: 80px;
-    font-size: min(80px, calc(7vw));    /* maybe through a max in with the calc, so it doesn't get too small */
-    letter-spacing: 0.2em;
-    font-weight: 700;
+    font-size: min(80px, calc(7vw));    /* maybe throw a max in with the calc, so it doesn't get too small */
     /* width: 75%; */
     max-width: 700px;
     margin: 0 auto;
