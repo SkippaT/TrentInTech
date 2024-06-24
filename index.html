@@ -284,7 +284,7 @@
                                 <img src="./images/Spotipy/CardOnDesk.png" alt="NFC card on desk">
                             </section>
                             <section>
-                                <video src="./videos/Spotipy/DevelopmentVid.mp4" type="video/mp4">
+                                <video src="./videos/Spotipy/Development.mov" type="video/mp4">
                                     You're browser does not support the video.
                                 </video>
                             </section>
@@ -441,18 +441,15 @@
                     </div>
                     <h2>Where it All Began</h2>
                     <h3>Raspberry Pi Traffic Light System</h3>
-                    <p>The first tech project I completed was a simple traffic light system using a
-                        Raspberry Pi.
+                    <p>
+                        This simple traffic light system built with a Raspberyy Pi was the first tech project I 
+                        completed.
                     </p>
                     <p>
-                        The traffic light system includes:
+                        My main goal with project was to learn as much as I could. I had not set outcome that I 
+                        was aiming for. I simply wanted to get exposure to the tech world. The project sparked my 
+                        passion for technology and provided a foundation my my future projects.
                     </p>
-                    <ul>
-                        <li>Green, yellow and red lights for vehicles</li>
-                        <li>Green and red lights for pedestrians</li>
-                        <li>Button for pedestrians</li>
-                        <li>Buzzer (beeper) for pedestrians</li>
-                    </ul>
                 </div>
                 <div class="carousel-container">
                     <div class="carousel" id="carousel3">
@@ -493,11 +490,7 @@
                     <div class="split">
                         <h3>Hardware</h3>
                         <ul>
-                            <li>Raspberry Pi 4 Model B+
-                                <ul>
-                                    <li>The brains of the operation</li>
-                                </ul>
-                            </li>
+                            <li>Raspberry Pi 4 Model B+</li>
                             <li>Breadboard</li>
                             <li>LEDs</li>
                             <li>Buzzer</li>
@@ -515,16 +508,16 @@
                                 controlling three LEDs using a timer in Python.
                             </li>
                             <li>
-                                A button was then introduced and used to control the three LEDs just installed. I wrote
-                                code that would treat the three LEDs as the lights for vehicles and the button as a
-                                pedestrian button. This meant that the lights were green until the button was pressed.
-                                After the press, the lights changed to yellow for a few seconds and then to red. After
-                                a few more seconds the lights went back to green.
+                                A button was then introduced and used to control the three LEDs. I wrote code that 
+                                made these traffic lights behave as they would for vehicles in the real world. 
+                                This meant that the lights were green until the button was pressed. After the press, 
+                                the lights changed to yellow for a few seconds and then to red. After a few more 
+                                seconds the lights went back to green.
                             </li>
                             <li>
-                                I then added the two lights for the pedestrians and wrote code for them to be red unless
-                                the pedestrian button was pressed and the vehicles' lights are red. I also wrote code
-                                to make the pedestrian lights flash red for a few seconds before being a solid red.
+                                I then added the two lights for the pedestrians and programmed them to only be green 
+                                when the vehicles' lights are red. I took these lights a step further and made the 
+                                red light flash when the timer was coming to an en.
                             </li>
                             <li>
                                 The last addition to this project was the buzzer. This buzzer immitates the tone heard
@@ -534,29 +527,33 @@
                         </ol>
                     </div>
                     <div class="split">
-                        <h3>Challenges and solutions</h3>
-                        <p>
-                            I came across an obstacle just about every step of the way. This being my first project I
-                            was
-                            fully prepared for plenty of speed bumps and did not let them get in my way.<br>
-                            The problems I encountered were very simple and caused by a lack of experience. I overcame
-                            them
-                            by following instructions on how to complete similar projects.
-                        </p>
                         <h3>Final outcome</h3>
                         <p>
                             After finishing this project I was left with a real world simulation of a simple set of
-                            traffic
-                            lights. The traffic lights for vehicles remain green and the pedestrian lights red until the
-                            user
-                            presses the pedestrian button. This then changes the vehicles' lights to yellow for a few
-                            seconds.
-                            The vehicles' lights then go red and the pedestrian lights go green. After a few seconds the
-                            green pedestrian light flashes red for a bit and then goes solid red at the same time as the
-                            vehicles' lights going green. Whenever the pedestrian lights are red, the buzzer beeps at a
-                            slow
-                            frequency, when the lights change to green, the frequency of beeps becomes much faster.
+                            traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
                         </p>
+                        <ul>
+                            <li>Traffic lights for vehicles remain green until pedestrian button is pressed</li>
+                            <li>Pedestrian lights remain red until the vehicles' lights are red</li>
+                            <li>The vehicles' lights turn yellow when the pedestrian button is pressed</li>
+                            <li>After a few seconds on yellow, the vehicles' lights change to red and the pedestrian 
+                                lights to green</li>
+                            <li>After a few seconds the pedestrians flash red for a few seconds</li>
+                            <li>Finally the lights return to their base state, green for vehicles, red for 
+                                predestrians</li>
+                            <li>While the pedestrian lights are red, the buzzer beeps at a slow frequency</li>
+                            <li>When the pedestrian lights are green the buzzer beeps at a fast frequency</li>
+                        </ul>
+                        <h3>Learning Outcomes</h3>
+                        <ul>
+                            <li>Good understanding of basic electronics</li>
+                            <li>Fundamentals of programming</li>
+                            <li>How to integrate hardware with software using the Raspberry Pi</li>
+                            <li>Developed problem-solving skills by troubleshooting issues that arose during 
+                                development
+                            </li>
+                            <li>Most importantly... Persistence!</li>
+                        </ul>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
