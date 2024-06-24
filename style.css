@@ -488,6 +488,42 @@ table .percentage {
     text-align: center;
 }
 
+.tool-tip {
+    position: relative;
+}
+.tool-tip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: rgb(19, 36, 84);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 2;
+    bottom: 150%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tool-tip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tool-tip:hover .tool-tip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 
 .arrow {
     cursor: pointer;

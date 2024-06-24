@@ -70,10 +70,6 @@
                     <div class="carousel" id="carousel1">
                         <div class="slider">
                             <section>
-                                <img src="./images/RLIntersection/SixLaneIntersection.png"
-                                    alt="Screenshot of intersection">
-                            </section>
-                            <section>
                                 <img src="./images/RLIntersection/SixLaneIntersectionResult.png"
                                     alt="Screenshot of intersection">
                             </section>
@@ -88,6 +84,12 @@
                                     You're browser does not support the video.
                                 </video>
                                 <div class="overlay-text">Heavy traffic from East</div>
+                            </section>
+                            <section>
+                                <video src="./videos/RLIntersection/SixLaneHeavyFromSouthAndEast.mov" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                                <div class="overlay-text">Heavy traffic from South and East</div>
                             </section>
                         </div>
 
@@ -217,29 +219,48 @@
                                 <td>Learning Agent</td>
                             </tr>
                             <tr>
-                                <td>Even distribution</td>
+                                <td>
+                                    <div class="tool-tip">Even distribution
+                                        <span class="tool-tip-text">
+                                            Approximately equal number of vehicles in each lane
+                                        </span>
+                                    </div>
+                                </td>
                                 <td class="percentage">97.41%</td>
                                 <td class="percentage">96.93%</td>
                             </tr>
                             <tr>
-                                <td>Heavy traffic from the East</td>
+                                <td>
+                                    <div class="tool-tip">Heavy traffic from the East
+                                        <span class="tool-tip-text">
+                                            Nearly 60% of vehicles from the Eastern lane
+                                        </span>
+                                    </div>
+                                </td>
                                 <td class="percentage">97.34%</td>
                                 <td class="percentage">60.67%</td>
                             </tr>
                             <tr>
-                                <td>Heavy traffic from the South and East</td>
+                                <td>
+                                    <div class="tool-tip">Heavy traffic from the South and East
+                                        <span class="tool-tip-text">
+                                            Over 65% of vehicles from the South or East
+                                        </span>
+                                    </div>
+                                </td>
                                 <td class="percentage">97.28%</td>
                                 <td class="percentage">92.93%</td>
                             </tr>
                         </table>
                         <p>
-                            After many hours of running simulations I could confidently confirm that my learning agent
+                            After many hours of running simulations I can confidently confirm that my learning agent
                             out performs the static timer method.
                         </p>
                         <p>
-                            When the traffic distribution is even, both methods perofrmed very well. However, when I
-                            imitated peak hour traffic by overloading one or two lanes, the static timer method did 
-                            much worse while my learning agent maintained its throughput percentage.
+                            Under even traffic distribution conditions, both methods performed well. However, when 
+                            simulating peak hour traffic by overloading one or two lanes, the static timer method's 
+                            performance significantly declined, whereas my learning agent maintained its throughput 
+                            efficiency.
                         </p>
                     </div>
                 </div>

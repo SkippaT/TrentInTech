@@ -33,9 +33,6 @@ SkillsSection:
 PassionsSection:
     Backgorund:     #172d67         Navy blue
 
-Add videos for RL traffic lights, less images
-Shorten traffic light text... Add tables and images
-
 Annotations for Spotipy
 
 Spotipy videos
