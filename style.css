@@ -23,7 +23,6 @@ html {
 }
 
 .nav-section {
-    background: #f8efe7;
     background: #172d67;
     margin-top: 20px;
     /* border-radius: 50px; */
@@ -31,6 +30,7 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 15px;
     top: 0;
     left: 50%;
@@ -80,6 +80,7 @@ html {
     width: 80%;
 }
 .nav-section img {
+    /* border: 0.5px solid green; */
     max-height: 20px;
 }
 .toggle-menu {
@@ -139,6 +140,14 @@ html {
     transition-timing-function: ease-in-out;
     transition-property: background-color, color;
 }
+.back-to-top a {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 .back-to-top:hover,
 .back-to-top:focus {
@@ -188,10 +197,21 @@ hr {
     margin: 50px auto;
 }
 
+h1 {
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    /* width: 75%; */
+    /* max-width: 700px; */
+    /* margin: 0 auto; */
+    /* padding-top: 30px; */
+    /* padding-bottom: 75px; */
+}
+
 /* ----------------------------- Profile Section ----------------------------- */
 
 .profile-section {
-    /* background-color: aquamarine; */
     /* border: 2px solid greenyellow; */
     background-image: linear-gradient(to top, #172d67, #8b15e9);
     display: flex;
@@ -203,7 +223,6 @@ hr {
 }
 
 .profile-text {
-    /* background-color: pink; */
     /* border: 2px solid red; */
     text-align: left;
     padding: 50px;
@@ -236,8 +255,8 @@ hr {
     text-decoration: none;
 }
 .profile-section .buttons a {
-    padding: 1.25em;
     /* border: 2px solid #A8A897; */
+    padding: 1.25em;
     border-radius: .75em;
     font-weight: 700;
     color: #172d67;
@@ -279,7 +298,6 @@ hr {
 }
 
 .profile-image-section {
-    /* background-color: green; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +312,7 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 25px 10px 25px;
+    padding: 150px 25px 10px 25px;
 }
 .project-sep {
     opacity: 0.5;
@@ -327,9 +345,6 @@ hr {
     /* position: relative;
     overflow: hidden; */
 }
-.projects-section h1 {
-    font-size: 56px;
-}
 .project-hook-text {
     /* border: 2px solid yellow; */
     max-width: 500px;
@@ -340,7 +355,7 @@ hr {
 
 .project-hook-text h2 {
     padding-bottom: 0.5rem;
-    font-size: 30px;
+    font-size: 36px;
 }
 .project-hook-text h3 {
     text-align: center;
@@ -416,27 +431,99 @@ hr {
 .project .expansion h3 {
     padding-top: 25px;
     padding-bottom: 10px;
-    font-size: 26px;
+    font-size: 32px;
+}
+.project .expansion h4 {
+    font-size: 24px;
+    padding: 5px 0;
+    font-weight: 500;
+}
+.project .expansion p {
+    padding-bottom: 1em;
 }
 
 
 .expansion ul {
-    list-style: disc inside;
+    list-style: disc outside;
+}
+.expansion ol {
+    list-style: decimal outside;
+}
+.expansion ul, .expansion ol {
+    padding-left: 1.5em;
+    padding-bottom: 0.5em;
 }
 
 .expansion li {
-    margin-bottom: 20px;
+    margin-bottom: 0.5em;
 }
 
 .expansion li ul {
-    list-style: circle inside;
-    margin-left: 20px;
-}
-
-.expansion ol {
-    list-style: decimal outside;
+    list-style: circle outside;
+    /* margin-left: 20px; */
     padding-left: 1.5em;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+th {
+    text-align: center;
+    background-color: #8b15e9;
+}
+.second-heading {
+    text-align: center;
+    background-color: #8a15e975;
+}
+tr:hover {
+    background-color: rgba(0, 0, 0, 0.2);;
+}
+table .percentage {
+    text-align: center;
+}
+
+.tool-tip {
+    position: relative;
+}
+.tool-tip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: rgb(19, 36, 84);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 2;
+    bottom: 150%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tool-tip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tool-tip:hover .tool-tip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 
 .arrow {
     cursor: pointer;
@@ -571,11 +658,6 @@ hr {
     flex-direction: column;
 }
 .about-me-section h1, .about-me-section h2{
-    /* background: blue; */
-    text-align: center;
-    font-size: 80px;
-    letter-spacing: 0.2em;
-    font-weight: 700;
     width: 75%;
     max-width: 700px;
     margin: 0 auto;
@@ -915,12 +997,7 @@ hr {
 }
 .contact-me-section h1 {
     /* background: blue; */
-    text-align: center;
-    font-size: calc(7vw);
-    font-size: 80px;
-    font-size: min(80px, calc(7vw));    /* maybe through a max in with the calc, so it doesn't get too small */
-    letter-spacing: 0.2em;
-    font-weight: 700;
+    font-size: min(80px, calc(7vw));    /* maybe throw a max in with the calc, so it doesn't get too small */
     /* width: 75%; */
     max-width: 700px;
     margin: 0 auto;

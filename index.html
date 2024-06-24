@@ -12,15 +12,14 @@
 
 <body>
     <div class="nav-section">
-        <a href="#">
-            <img src="./images/TrentInTechLogo.png" alt="TrentInTech logo">
-        </a>
+        <a href="#"><img src="./images/TrentInTechLogo.png" alt="TrentInTech logo"></a>
         <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
         <div class="links">
             <a href="#projects-section" class="nav-link"><span class="code">01.</span> Projects</a>
 
             <div class="dropdown">
-                <a href="#about-me-section" class="nav-link about-me-dropdown" id="testt"><span class="code">02.</span> About Me</a>
+                <a href="#about-me-section" class="nav-link about-me-dropdown" id="testt"><span class="code">02.</span>
+                    About Me</a>
 
                 <div class="dropdown-content">
                     <a href="#about-me-section">Studies</a>
@@ -28,12 +27,13 @@
                     <a href="#soft-section">Soft Skills</a>
                 </div>
             </div>
-            
+
             <a href="./TrentMitchellCV.pdf" target="blank"><span class="code">03.</span> Resume</a>
             <a href="#contact-me-section" class="nav-link"><span class="code">04.</span> Contact</a>
         </div>
     </div>
-    <button class="back-to-top"><i class="fa-solid fa-angles-up"></i></button>
+
+    <button class="back-to-top"><a href="#"></a><i class="fa-solid fa-angles-up"></i></button>
 
     <div class="profile-section">
         <div class="profile-text">
@@ -50,9 +50,6 @@
         </div>
     </div>
 
-    <hr>
-
-
     <div class="projects-section" id="projects-section">
         <h1>Projects</h1>
         <div class="project">
@@ -64,8 +61,8 @@
                         <i><img src="./images/RLIntersection/TrafficLightsIcon.png" alt="Traffic Lights Icon"></i>
                     </div>
                     <h2>Reinforcement Learning Adaptive Traffic Lights</h2>
-                    <p>This was a University project for a Machine Learning course. The goal was to make 
-                        a learning agent that can control traffic lights better than a traditional static 
+                    <p>This was a university project for a Machine Learning course. The goal was to make
+                        a learning agent that can control traffic lights better than a traditional static
                         timer method.
                     </p>
                 </div>
@@ -73,10 +70,8 @@
                     <div class="carousel" id="carousel1">
                         <div class="slider">
                             <section>
-                                <img src="./images/RLIntersection/SixLaneIntersection.png" alt="Screenshot of intersection">
-                            </section>
-                            <section>
-                                <img src="./images/RLIntersection/SixLaneIntersectionResult.png" alt="Screenshot of intersection">
+                                <img src="./images/RLIntersection/SixLaneIntersectionResult.png"
+                                    alt="Screenshot of intersection">
                             </section>
                             <section>
                                 <video src="./videos/RLIntersection/SixLaneEven.mov" type="video/mp4">
@@ -89,6 +84,12 @@
                                     You're browser does not support the video.
                                 </video>
                                 <div class="overlay-text">Heavy traffic from East</div>
+                            </section>
+                            <section>
+                                <video src="./videos/RLIntersection/SixLaneHeavyFromSouthAndEast.mov" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                                <div class="overlay-text">Heavy traffic from South and East</div>
                             </section>
                         </div>
 
@@ -109,54 +110,190 @@
                 <div class="splitter">
                     <div class="split">
                         <h3>Purpose</h3>
-                        <p>The drive for this application is to improve the throughput at an intersection with traffic lights.</p>
-                        <h3>Methodology</h3>
-                        <p>This is the methodology I used to complete the project</p>
-                        <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <p>
+                            The drive for this application was to improve the throughput at an intersection with traffic
+                            lights.
+                        </p>
+                        <p>
+                            A traditional intersection uses a static timer method to cycle between the lights. This
+                            means that the intersection will remain the same for a set period before transitioning 
+                            to the next configuration.
+                        </p>
+                        <p>
+                            An adaptive traffic light system will be able to spend any amount of time in whichever
+                            configuration it thinks is best. The system chooses the best configuration based on 
+                            experience, using reinforcement learning.
+                        </p>
+                        <h3>Process</h3>
+                        <ol>
+                            <li>
+                                <ul>
+                                    <li>Create the intersection environment.</li>
+                                    <li>Create vehicle objects with parameters including: location, direction and final
+                                        destination.</li>
+                                    <li>Define the traffic light system.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Write simulation program.</li>
+                                    <li>Create configurable settings for the simulations.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Create Q learning agent. Define states, action space and reward system.</li>
+                                    <li>Create the static timer system to perform optimally.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Run tests under different scenarios.</li>
+                                    <li>Fine tune the learning agent.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <h3>Static Timer Method</h3>
+                        <p>
+                            A challenge I came across was how to configure the static timer system. It was important
+                            that I made this system perform as best as possible because otherwise I will be cheating 
+                            when I compare my results with a subpar static system.
+                        </p>
+                        <p>
+                            I ran many simulations (1000 iterations) each with a different number of iterations 
+                            between light changes. Through different scenarios it was found that the number of 
+                            iterations before changing the lights should be 7.
+                        </p>
+                        <p>
+                            This resulted in my static timer system cycling between the traffic light configurations 
+                            every 10 iterations (7 for the configuration + 3 for the yellow).
+                        </p>
                     </div>
                     <div class="split">
-                        <h3>Equipment</h3>
-                        <p>This is a list of the equipment I used to complete the project.</p>
-                        <h3>Methodology</h3>
-                        <p>This is the methodology I used to complete the project</p>
-                        <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <h3>Q Learning Agent</h3>
+                        <h4>States</h4>
+                        <p>
+                            My definition for a state includes the current direction of the traffic lights and the
+                            length of each queue at the intersection (each a separate feature).
+                        </p>
+                        <h4>Actions</h4>
+                        <p>
+                            The actions that my learning agent can choose from are each of the possible configurations
+                            of the traffic lights.
+                        </p>
+                        <h4>Rewards</h4>
+                        <ol>
+                            <li>
+                                Every time a vehicle leaves a queue and enters the intersection the reward is
+                                incremented by 3.
+                            </li>
+                            <li>
+                                Every time the traffic lights change direction the reward is decremented by 8.
+                                This is to punish the agent for changing the lights. The more the lights change, the
+                                more time they spend yellow (X) and no vehicles can clear the intersection.
+                            </li>
+                            <li>
+                                If the first vehicle in the queue leaves the reward is incremented by 3, otherwise the
+                                reward is decremented by the length of the queue with a maximum loss of 3.
+                            </li>
+                        </ol>
+                        <p>
+                            When running simulations with my Q learning agent, the program first runs 3 episodes of 5000
+                            iterations. For the first episode the epsilon value is set to 0.6 (60% of actions are chosen
+                            at random), the next episode has an epsilon of 0.4 and then 0.2. These epsilon values ensure
+                            that the learning agent has an opportunity to completely fill its Q table.
+                        </p>
+                        <h3>Testing and Results</h3>
+                        <p>
+                            To test the performance of my learning agent I compared it against the static timer method
+                            in a wide range of scenarios, some of the results are shown below.
+                        </p>
+                        <table>
+                            <tr>
+                                <th>Traffic Scenario</th>
+                                <th colspan="2">Throughput Percentage</th>
+                            </tr>
+                            <tr class="second-heading">
+                                <td></td>
+                                <td>Static Timer</td>
+                                <td>Learning Agent</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tool-tip">Even distribution
+                                        <span class="tool-tip-text">
+                                            Approximately equal number of vehicles in each lane
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="percentage">97.41%</td>
+                                <td class="percentage">96.93%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tool-tip">Heavy traffic from the East
+                                        <span class="tool-tip-text">
+                                            Nearly 60% of vehicles from the Eastern lane
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="percentage">97.34%</td>
+                                <td class="percentage">60.67%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tool-tip">Heavy traffic from the South and East
+                                        <span class="tool-tip-text">
+                                            Over 65% of vehicles from the South or East
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="percentage">97.28%</td>
+                                <td class="percentage">92.93%</td>
+                            </tr>
+                        </table>
+                        <p>
+                            After many hours of running simulations I can confidently confirm that my learning agent
+                            out performs the static timer method.
+                        </p>
+                        <p>
+                            Under even traffic distribution conditions, both methods performed well. However, when 
+                            simulating peak hour traffic by overloading one or two lanes, the static timer method's 
+                            performance significantly declined, whereas my learning agent maintained its throughput 
+                            efficiency.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
             </div>
             <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
-        <hr class="project-sep">    <!-- --------------------------Project Seperator-------------------------- -->
+        <hr class="project-sep"> <!-- --------------------------Project Seperator-------------------------- -->
         <div class="project">
             <div class="project-hook">
                 <div class="carousel-container">
                     <div class="carousel" id="carousel2">
                         <div class="slider">
                             <section>
-                                <img src="./images/Spotipy/ScannerInstallUnderDesk.png" alt="Scanner under desk">
-                            </section>
-                            <section>
                                 <img src="./images/Spotipy/ScannerUnderDesk.png" alt="Scanner under desk">
                             </section>
                             <section>
-                                <img src="./images/Spotipy/CardOnDesk.png" alt="NFC card on desk">
+                                <video src="./videos/Spotipy/Development.mov" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
                             </section>
                             <section>
-                                <video src="./videos/Spotipy/DevelopmentVid.mp4" type="video/mp4">
+                                <video src="./videos/Spotipy/Swipe.mov" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                            </section>
+                            <section>
+                                <video src="./videos/Spotipy/RGBfade.mov" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                            </section>
+                            <section>
+                                <video src="./videos/Spotipy/Skip.mov" type="video/mp4">
                                     You're browser does not support the video.
                                 </video>
                             </section>
@@ -167,6 +304,7 @@
                             <span class="arrow next"><i class="fa-solid fa-chevron-right"></i></span>
                             <ul>
                                 <li class="selected"></li>
+                                <li></li>
                                 <li></li>
                                 <li></li>
                                 <li></li>
@@ -182,80 +320,102 @@
                         <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
                     </div>
                     <h2>Interactive NFC Music and LED Controller</h2>
-                    <p>This project uses a Raspberry Pi computer to control music using the Spotify API.
-                        Connected to the Raspberry Pi is an NFC scanner which reads my 'Music Cards' and
+                    <p>
+                        This project uses a Raspberry Pi to control music using the Spotify API.
+                        Connected to the Raspberry Pi is an NFC scanner which reads my 'Music Cards' (NFC cards) and
                         performs a certain action depending on what card was used.
                     </p>
-                    <p>Also connected to the Raspberry Pi is an LED strip that is used for feedback and 
-                        because LEDs are awesome!
+                    <p>
+                        Also connected to the Raspberry Pi is an LED strip that is used for feedback and performs 'light
+                        shows' based on which card is scanned.
                     </p>
                 </div>
             </div>
             <div class="expansion">
                 <div class="splitter">
                     <div class="split">
-                        <h3>Equipment</h3>
+                        <h3>Hardware</h3>
                         <ul>
-                            <li>Raspberry Pi 3 Model A+
-                                <ul>
-                                    <li>The brains of the operation</li>
-                                </ul>
-                            </li>
-                            <li>WS2812B LED strip
-                                <ul>
-                                    <li>5 metres with a total of 150 LEDs</li>
-                                </ul>
-                            </li>
-                            <li>NFC HAT for Raspberry Pi (PN532)
-                                <ul>
-                                    <li>The scanner for the NFC cards</li>
-                                </ul>
-                            </li>
-                            <li>13.56MHz NFC key cards
-                                <ul>
-                                    <li>The cards that control what the Raspberry Pi does</li>
-                                </ul>
-                            </li>
+                            <li>Raspberry Pi 3 Model A+</li>
+                            <li>WS2812B LED strip</li>
+                            <li>NFC HAT for Raspberry Pi (PN532)</li>
+                            <li>13.56MHz NFC key cards</li>
                         </ul>
                         <h3>Process</h3>
                         <ol>
                             <li>
                                 I began this project by first playing with the NFC scanner.
-                                I created programs that waited for a card to be scanned and then 
+                                I created programs that waited for a card to be scanned and then
                                 printed the UID to the terminal.
                             </li>
                             <li>
-                                I next researched the Spotify API and created a program that takes user 
-                                input from the terminal to control my Spotify. This program could pause 
-                                and skip songs, play a playlist, album or song, toggle shuffle, adjust 
+                                I next researched the Spotify API and created a program that takes user
+                                input from the terminal to control my Spotify. This program could pause
+                                and skip songs, play a playlist, album or song, toggle shuffle, adjust
                                 volume and many other things.
                             </li>
                             <li>
-                                I then combinded the two programs I'd made. This meant I was controlling 
+                                I then combinded the two programs I'd made. This meant I was controlling
                                 Spotify with the NFC cards.
                             </li>
                             <li>
-                                The next step was creating some functions for the LED strip to perform. 
-                                Some of these functions are purely for show and others are for feedback 
+                                The next step was creating some functions for the LED strip to perform.
+                                Some of these functions are purely for show and others are for feedback
                                 after a card is pressed.
                             </li>
                             <li>
-                                With the application working properly, the final step was to install the 
-                                device in my room. To do this, I 3D printed a mount for the NFC scanner 
-                                underneath my bedside table. The LEDs were attached around the perimeter 
+                                With the application working properly, the final step was to install the
+                                device in my room. To do this, I 3D printed a mount for the NFC scanner
+                                underneath my bedside table. The LEDs were attached around the perimeter
                                 of my bed out of sight.
                             </li>
                         </ol>
                     </div>
                     <div class="split">
-                        <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <h3>Challenges and solutions</h3>
+                        <p>
+                            A problem I encountered in the testing process of this project was not being able to read
+                            cards
+                            while the LED strip was completing a light sequence. The problem existed because my Python
+                            program would wait for a card to be scanned and then run a function depending on the card.
+                            If the instruction on the card was to perform a light sequence with the LEDs, then the
+                            program
+                            would stop reading the scanner. This meant that I would have to wait for the light sequence
+                            to
+                            finish before I could scan the next card.
+                        </p>
+                        <p style="padding-bottom: 15px;">
+                            To fix this problem I introduced threading to my program. Now when I scan a card that
+                            initiates
+                            a light sequence, a separate thread is created that will control the LEDs while the main
+                            thread
+                            continues to wait for a card to be scanned.
+                        </p>
+                        <p>
+                            Another obstacle I ran into was how to install the scanner under my bedside table close
+                            enough
+                            that it can read the NFC cards through the wood. Thankfully I was able to 3D print two rails
+                            that I screwed under the wood. I could then slide the Raspberry Pi along the rails where it
+                            can
+                            sit in place and wait for a card to be scanned.<br>
+                            I also printed a small catcher for the cables that was screwed under the wood to keep the
+                            cables
+                            organsied.
+                        </p>
+                        <h3>Final Product</h3>
+                        <p>
+                            The final outcome of this project is a record player/light controller hidden underneath my
+                            bedside table and controlled by NFC cards. I can select a card, slide it along my bedside
+                            table and my favourite artist will start playing. Slide another card and the LEDs in my room
+                            will create a rainbow fade effect.
+                        </p>
+                        <h3>Future Work</h3>
+                        <p>
+                            The NFC cards currently have no style. I would like to print some graphics onto them to make
+                            them
+                            easier to read and look better.<br>
+                            I also will be creating more complex and entertaining light sequences with the LEDs.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
@@ -263,7 +423,7 @@
             <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
 
-        <hr class="project-sep">      <!-- --------------------------Project Seperator-------------------------- -->
+        <hr class="project-sep"> <!-- --------------------------Project Seperator-------------------------- -->
         <div class="project">
             <div class="project-hook">
                 <div class="project-hook-text">
@@ -275,18 +435,15 @@
                     </div>
                     <h2>Where it All Began</h2>
                     <h3>Raspberry Pi Traffic Light System</h3>
-                    <p>The first tech project I completed was a simple traffic light system using a 
-                        Raspberry Pi.
+                    <p>
+                        This simple traffic light system built with a Raspberyy Pi was the first tech project I 
+                        completed.
                     </p>
                     <p>
-                        The traffic light system includes:
+                        My main goal with project was to learn as much as I could. I had not set outcome that I 
+                        was aiming for. I simply wanted to get exposure to the tech world. The project sparked my 
+                        passion for technology and provided a foundation my my future projects.
                     </p>
-                    <ul>
-                        <li>Green, yellow and red light for vehicles</li>
-                        <li>Green and red light for pedestrians</li>
-                        <li>Button for pedestrians</li>
-                        <li>Buzzer (beeper) for pedestrians</li>
-                    </ul>
                 </div>
                 <div class="carousel-container">
                     <div class="carousel" id="carousel3">
@@ -325,184 +482,251 @@
             <div class="expansion">
                 <div class="splitter">
                     <div class="split">
-                        <h3>Equipment</h3>
-                            <ul>
-                                <li>Raspberry Pi 4 Model B+
-                                    <ul>
-                                        <li>The brains of the operation</li>
-                                    </ul>
-                                </li>
-                                <li>Breadboard</li>
-                                <li>LEDs</li>
-                                <li>Buzzer</li>
-                                <li>Switch</li>
-                                <li>Jumper wires</li>
-                            </ul>
-                            <h3>Process</h3>
-                            <ol>
-                                <li>
-                                    I began this project by first playing with the NFC scanner.
-                                    I created programs that waited for a card to be scanned and then 
-                                    printed the UID to the terminal.
-                                </li>
-                                <li>
-                                    I next researched the Spotify API and created a program that takes user 
-                                    input from the terminal to control my Spotify. This program could pause 
-                                    and skip songs, play a playlist, album or song, toggle shuffle, adjust 
-                                    volume and many other things.
-                                </li>
-                                <li>
-                                    I then combinded the two programs I'd made. This meant I was controlling 
-                                    Spotify with the NFC cards.
-                                </li>
-                                <li>
-                                    The next step was creating some functions for the LED strip to perform. 
-                                    Some of these functions are purely for show and others are for feedback 
-                                    after a card is pressed.
-                                </li>
-                                <li>
-                                    With the application working properly, the final step was to install the 
-                                    device in my room. To do this, I 3D printed a mount for the NFC scanner 
-                                    underneath my bedside table. The LEDs were attached around the perimeter 
-                                    of my bed out of sight.
-                                </li>
-                            </ol>
+                        <h3>Hardware</h3>
+                        <ul>
+                            <li>Raspberry Pi 4 Model B+</li>
+                            <li>Breadboard</li>
+                            <li>LEDs</li>
+                            <li>Buzzer</li>
+                            <li>Switch</li>
+                            <li>Jumper wires</li>
+                        </ul>
+                        <h3>Process</h3>
+                        <p>
+                            This being my first tech project, I took baby steps in the development process and had no
+                            end product in mind, I simply wanted to learn.
+                        </p>
+                        <ol>
+                            <li>
+                                I began by controlling a single LED with the Raspberry Pi and quickly progressed to
+                                controlling three LEDs using a timer in Python.
+                            </li>
+                            <li>
+                                A button was then introduced and used to control the three LEDs. I wrote code that 
+                                made these traffic lights behave as they would for vehicles in the real world. 
+                                This meant that the lights were green until the button was pressed. After the press, 
+                                the lights changed to yellow for a few seconds and then to red. After a few more 
+                                seconds the lights went back to green.
+                            </li>
+                            <li>
+                                I then added the two lights for the pedestrians and programmed them to only be green 
+                                when the vehicles' lights are red. I took these lights a step further and made the 
+                                red light flash when the timer was coming to an en.
+                            </li>
+                            <li>
+                                The last addition to this project was the buzzer. This buzzer immitates the tone heard
+                                at traffic lights and can be used to indicate when pedestrians can and cannot cross the
+                                road.
+                            </li>
+                        </ol>
                     </div>
                     <div class="split">
-                        <h3>Equipment</h3>
-                        <p>This is a list of the equipment I used to complete the project.</p>
-                        <h3>Methodology</h3>
-                        <p>This is the methodology I used to complete the project</p>
-                        <h3>Chanllenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>Through completing this project I learned...</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <h3>Final Outcome</h3>
+                        <p>
+                            After finishing this project I was left with a real world simulation of a simple set of
+                            traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
+                        </p>
+                        <ul>
+                            <li>Traffic lights for vehicles remain green until pedestrian button is pressed</li>
+                            <li>Pedestrian lights remain red until the vehicles' lights are red</li>
+                            <li>The vehicles' lights turn yellow when the pedestrian button is pressed</li>
+                            <li>After a few seconds on yellow, the vehicles' lights change to red and the pedestrian 
+                                lights to green</li>
+                            <li>After a few seconds the pedestrians flash red for a few seconds</li>
+                            <li>Finally the lights return to their base state, green for vehicles, red for 
+                                predestrians</li>
+                            <li>While the pedestrian lights are red, the buzzer beeps at a slow frequency</li>
+                            <li>When the pedestrian lights are green the buzzer beeps at a fast frequency</li>
+                        </ul>
+                        <h3>Learning Outcomes</h3>
+                        <ul>
+                            <li>Good understanding of basic electronics</li>
+                            <li>Fundamentals of programming</li>
+                            <li>How to integrate hardware with software using the Raspberry Pi</li>
+                            <li>Developed problem-solving skills by troubleshooting issues that arose during 
+                                development
+                            </li>
+                            <li>Most importantly... Persistence!</li>
+                        </ul>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
             </div>
             <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
-        <hr class="project-sep">    <!-- --------------------------Project Seperator-------------------------- -->
-            <div class="project">
-                <div class="project-hook">
-                    <div class="carousel-container">
-                        <div class="carousel" id="carousel4">
-                            <div class="slider">
-                                <section>
-                                    <img src="./images/SmartCanvas/CreateUser.png" alt="Smart Canvas create user page">
-                                </section>
-                                <section>
-                                    <img src="./images/SmartCanvas/Login.png" alt="Smart Canvas login page">
-                                </section>
-                                <section>
-                                    <img src="./images/SmartCanvas/AddCanvas.png" alt="Smart Canvas landing page">
-                                </section>
-                                <section>
-                                    <img src="./images/SmartCanvas/FilledCanvas.png" alt="Smart Canvas filled canvas">
-                                </section>
-                                <section>
-                                    <img src="./images/SmartCanvas/EditUser.png" alt="Smart Canvas edit user page">
-                                </section>
-                            </div>
+        <hr class="project-sep"> <!-- --------------------------Project Seperator-------------------------- -->
+        <div class="project">
+            <div class="project-hook">
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel4">
+                        <div class="slider">
+                            <section>
+                                <img src="./images/SmartCanvas/CreateUser.png" alt="Smart Canvas create user page">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/Login.png" alt="Smart Canvas login page">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/AddCanvas.png" alt="Smart Canvas landing page">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/FilledCanvas.png" alt="Smart Canvas filled canvas">
+                            </section>
+                            <section>
+                                <img src="./images/SmartCanvas/EditUser.png" alt="Smart Canvas edit user page">
+                            </section>
+                        </div>
 
-                            <div class="controls">
-                                <span class="arrow prev"><i class="fa-solid fa-chevron-left"></i></span>
-                                <span class="arrow next"><i class="fa-solid fa-chevron-right"></i></span>
-                                <ul>
-                                    <li class="selected"></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
+                        <div class="controls">
+                            <span class="arrow prev"><i class="fa-solid fa-chevron-left"></i></span>
+                            <span class="arrow next"><i class="fa-solid fa-chevron-right"></i></span>
+                            <ul>
+                                <li class="selected"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="project-hook-text">
-                        <div class="icons">
-                            <i><img src="./images/SkillsIcons/JavaIcon.png" alt="Java Icon"></i>
-                            <i><img src="./images/SkillsIcons/DatabaseIcon.png" alt="NFC Icon"></i>
-                        </div>
-                        <h2>Smart Canvas</h2>
-                        <p>
-                            This university project was completed using Java and JavaFX to create a basic 
-                            graphic design application. The goal was to make a simplified version of the 
-                            Canva software available online.
-                        </p>
-                        <p>
-                            The application uses SQLite to store user information such as usernames and passwords. 
-                            Following an MCV framework the design of this application is very concise and 
-                            organised.
-                        </p>
                     </div>
                 </div>
-                <div class="expansion">
-                    <div class="splitter">
-                        <div class="split">
-                            <h3>Equipment</h3>
-                            <ul>
-                                <li>Computer for programming</li>
-                            </ul>
-                            <h3>Features</h3>
-                            <ul>
-                                <li>SQL database</li>
-                                <li>Password encryption</li>
-                                <li>Option to save canvas as png</li>
-                                <li>Ability to add text, images, rectangles and circles to canvas</li>
-                                <li>Anything added to the canvas can be heavily modified</li>
-                                <li>Users can update account details</li>
-                            </ul>
-                            <h3>Process</h3>
-                            <ol>
-                                <li>
-                                    I began this project by first playing with the NFC scanner.
-                                    I created programs that waited for a card to be scanned and then 
-                                    printed the UID to the terminal.
-                                </li>
-                                <li>
-                                    I next researched the Spotify API and created a program that takes user 
-                                    input from the terminal to control my Spotify. This program could pause 
-                                    and skip songs, play a playlist, album or song, toggle shuffle, adjust 
-                                    volume and many other things.
-                                </li>
-                                <li>
-                                    I then combinded the two programs I'd made. This meant I was controlling 
-                                    Spotify with the NFC cards.
-                                </li>
-                                <li>
-                                    The next step was creating some functions for the LED strip to perform. 
-                                    Some of these functions are purely for show and others are for feedback 
-                                    after a card is pressed.
-                                </li>
-                                <li>
-                                    With the application working properly, the final step was to install the 
-                                    device in my room. To do this, I 3D printed a mount for the NFC scanner 
-                                    underneath my bedside table. The LEDs were attached around the perimeter 
-                                    of my bed out of sight.
-                                </li>
-                            </ol>
-                        </div>
-                        <div class="split">
-                            <h3>Chanllenges and solutions</h3>
-                            <p>Some problems I came across were... I solved them by...</p>
-                            <h3>Final outcome</h3>
-                            <p>I drifted from where I originally wanted to go and now have...</p>
-                            <h3>Learnings</h3>
-                            <p>MVC framework, Improved SQL knowledge, JavaFX</p>
-                            <h3>Future Improvements</h3>
-                            <p>To further enhance this project I would...</p>
-                        </div>
+                <div class="project-hook-text">
+                    <div class="icons">
+                        <i><img src="./images/SkillsIcons/JavaIcon.png" alt="Java Icon"></i>
+                        <i><img src="./images/SkillsIcons/DatabaseIcon.png" alt="NFC Icon"></i>
                     </div>
-                    <i class="arrow expand fa-solid fa-chevron-down"></i>
+                    <h2>Smart Canvas</h2>
+                    <p>
+                        This university project was completed using Java and JavaFX to create a basic
+                        graphic design application. The goal was to make a simplified version of the
+                        Canva software available online.
+                    </p>
+                    <p>
+                        The application uses SQLite to store user information such as usernames and passwords.
+                        Following an MVC architecture the design of this application is concise and organised.
+                    </p>
                 </div>
-                <i class="arrow contract fa-solid fa-chevron-up"></i>
             </div>
+            <div class="expansion">
+                <div class="splitter">
+                    <div class="split">
+                        <h3>Purpose</h3>
+                        <p>
+                            The goal of this project was to make an application similar to the graphic design software
+                            Canva.
+                        </p>
+                        <p>
+                            I also had strong motivation to follow good programming practices, working on concepts 
+                            such as OOP, MVC architecture and unit testing.
+                        </p>
+                        <h3>Process</h3>
+                        <ol>
+                            <li>
+                                I began this application with the login page and create user page. I first create the
+                                GUI's and then worked on the code to add users to the database and authenticate user 
+                                logins. I also added a function to hash passwords.
+                            </li>
+                            <li>
+                                I then built the base design of the application with no functionality.
+                            </li>
+                            <li>
+                                The logout button was enabled and so was the profile button. The profile button allows
+                                the user to edit their account details, such as username and password. These updates 
+                                are reflected in the database and thus are persistent.
+                            </li>
+                            <li>
+                                The next step was to allow the user to create a canvas and choose the dimensions in the
+                                process.
+                            </li>
+                            <li>
+                                I then wrote the code for adding text, images and shapes to the canvas. Each of these
+                                elements have their own sidebar full of options to edit the element (colour, size, etc).
+                            </li>
+                            <li>
+                                The last step was adding the ability for the user to save the canvas as a png image to
+                                their machine.
+                            </li>
+                        </ol>
+                        <h3>Final Outcome</h3>
+                        <p>
+                            The final product has the following functionalities.
+                        </p>
+                        <ul>
+                            <li>The application can have many users</li>
+                            <ul>
+                                <li>User information stored in an SQLite database</li>
+                                <li>Users can create a profile with a unique username, password, name and image</li>
+                                <li>Passwords are encrypted</li>
+                            </ul>
+                            <li>Ability to login and logout</li>
+                            <li>After logging in the user can edit their profile (change username, image etc.)</li>
+                            <li>The user can create a canvas with custom dimensions</li>
+                            <li>After creating a canvas, elements can be added (text, image, circle and rectangle)</li>
+                            <li>The background of the canvas can be modified</li>
+                            <li>Each element can be modified (size, rotation, colour, border etc.)</li>
+                            <li>Elements can be placed wherever the user wants</li>
+                            <li>The user can zoom in and out of the canvas</li>
+                            <li>Canvas's can be saved as PNG images to the users' machine</li>
+                        </ul>
+                    </div>
+                    <div class="split">
+                        <h3>Learning Outomes</h3>
+                        <p>
+                            This project was part of an early university course I completed, therefore, it gave me
+                            plenty of insights into the world of programming. Listed below are some of the things I 
+                            gained experience in.
+                        </p>
+                        <h4>Object-Oriented Programming</h4>
+                        <p>
+                            OOP is something I already had experience with but this course further solidified my
+                            understanding of it and ability to implement it. In this project I was able to practice 
+                            principles like encapsulation, inheritence and polymorphism.
+                        </p>
+                        <h4>MVC Architecture</h4>
+                        <p>
+                            I followed the MVC architecture to separate my application into three components: the Model,
+                            the View and the Controller. The model component is represented by classes such as User, 
+                            DatabaseManager and the DAO. The view component handled the rendering of the elements on 
+                            the user interface. Holding these two components together was the controller, these class 
+                            are responsible for processing user inputs and updating the model accordingly. Using the 
+                            MVC architecture allows the application to be more scalable and maintainable.
+                        </p>
+                        <h4>SQL and Database</h4>
+                        <p>
+                            To manage and store user information I integrated an SQL database. This allowed me to 
+                            apply the database design and management skills I gained in other university courses. 
+                            I used SQL queries to insert, update and retrieve data, ensuring efficient management 
+                            of user data and persistent storage of graphic elements. I learnt how to store images 
+                            in the database and also followed good practice by hashing passwords before storing them.
+                        </p>
+                        <h4>JavaFX</h4>
+                        <p>
+                            JavaFX was the chosen toolkit for developing the user interface. It provided a rich set 
+                            of libraries for building a modern and responsive GUI. Using JavaFX I learnt about how 
+                            user interfaces are designed and implemented while gaining insight into the extensive  
+                            control a programmer has in application development.
+                        </p>
+                        <h4>Serialisation and deserialisation</h4>
+                        <p>
+                            Serialisation was crucial for converting complex objects into a format that could easily 
+                            be stored in my database. On the other hand, deserialisation allowed me to reconstruct 
+                            these objects from the stored data. This project was my first exposure to these concepts 
+                            and was an excellent application to apply them.
+                        </p>
+                        <h4>Unit Testing</h4>
+                        <p>
+                            Building a complex application like this meant that unit testing was a critical step in 
+                            ensuring the reliability and robustness of the application. Using JUnit I was able to 
+                            automate the tests which helped me to maintain the code quality but also gave me valuable 
+                            experience in writing and managing unit tests for software projects.
+                        </p>
+                    </div>
+                </div>
+                <i class="arrow expand fa-solid fa-chevron-down"></i>
+            </div>
+            <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
+    </div>
     </div>
 
     <div class="sep">
@@ -519,8 +743,8 @@
             <div class="intro">
                 <i class="fa-solid fa-user-graduate"></i>
                 <h2>Studies</h2>
-                <p>I'm studying a <strong>double degree</strong> comprised of a <strong>Bachelor of Engineering 
-                    (Honours)</strong> and a <strong>Bachelor of Computer Science</strong>. 
+                <p>I'm studying a <strong>double degree</strong> comprised of a <strong>Bachelor of Engineering
+                        (Honours)</strong> and a <strong>Bachelor of Computer Science</strong>.
                     My program duration is 5 years and I'm scheduled to graduate in November 2025.
                 </p>
             </div>
@@ -529,30 +753,30 @@
                     <i class="fa-solid fa-microchip"></i>
                     <h3>Computer and Network Engineering</h3>
                     <p>
-                        This degree pairs <strong>Computer Engineering</strong> with <strong>Network 
-                        Engineering</strong>. The degree focuses on the <strong>hardware</strong> side of 
-                        computers and has introduced me to many <strong>Electrical Engineering</strong> 
+                        This degree pairs <strong>Computer Engineering</strong> with <strong>Network
+                            Engineering</strong>. The degree focuses on the <strong>hardware</strong> side of
+                        computers and has introduced me to many <strong>Electrical Engineering</strong>
                         concepts. Furthermore, I have been taught a wide range of topics around <strong>
-                        networks</strong>.
+                            networks</strong>.
                     </p>
                     <div class="course">
                         <h4>Embedded Systems</h4>
                         <p>
-                            This course introduced me to digital hardware technology and computer architecture. 
-                            I gained hands on experience with the <strong>ATmega32A microcontroller</strong> as 
-                            well as experience with the <strong>ARM architecture</strong> through the 
-                            <strong>STM32F439 microcontroller</strong>. This is where I was first exposed to the 
+                            This course introduced me to digital hardware technology and computer architecture.
+                            I gained hands on experience with the <strong>ATmega32A microcontroller</strong> as
+                            well as experience with the <strong>ARM architecture</strong> through the
+                            <strong>STM32F439 microcontroller</strong>. This is where I was first exposed to the
                             <strong>Assembly language</strong> and thoroughly enjoyed it.
                         </p>
                     </div>
                     <div class="course">
                         <h4>Electrical Engineering</h4>
                         <p>
-                            Throughout this degree I have completed many courses focused on <strong>Electrical 
-                            and Electronic Engineering</strong>. From these courses I have picked skills for 
-                            analysising and designing <strong>basic electronic circuits</strong>, 
-                            <strong>amplifier circuits</strong> and <strong>amplifier frequency responses</strong>. 
-                            I have worked with <strong>seminconductors</strong>, <strong>current mirrors</strong>, 
+                            Throughout this degree I have completed many courses focused on <strong>Electrical
+                                and Electronic Engineering</strong>. From these courses I have picked skills for
+                            analysising and designing <strong>basic electronic circuits</strong>,
+                            <strong>amplifier circuits</strong> and <strong>amplifier frequency responses</strong>.
+                            I have worked with <strong>seminconductors</strong>, <strong>current mirrors</strong>,
                             <strong>single- and multi-stage amplifiers</strong> and <strong>power amplifiers</strong>.
                         </p>
                     </div>
@@ -560,68 +784,71 @@
                         <h4>Network Engineering</h4>
                         <p>
                             From my Network Engineering courses I have learnt the fundamentals of the <strong>
-                            OSI 7-layer model</strong> with a stronger understanding on <strong>Layer-2 switching
-                            </strong> and <strong>Layer-3 routing</strong>. I have been taught the key concepts 
+                                OSI 7-layer model</strong> with a stronger understanding on <strong>Layer-2 switching
+                            </strong> and <strong>Layer-3 routing</strong>. I have been taught the key concepts
                             for <strong>IP technology</strong> and was able to learn through hands on lab work.
                         </p>
                     </div>
                     <div class="course">
                         <h4>Computer Architecture and Organisation</h4>
                         <p>
-                            This course expanded my knowledge on the underlying technology that makes up a 
-                            computer. In this course I learnt about computer <strong>Instruction Set 
-                            Architecture</strong>, <strong>Computer Arithmetic</strong>, <strong>Processor 
-                            and Memory Organisation</strong> and <strong>Parallel and multi-core Processors</strong>.
+                            This course expanded my knowledge on the underlying technology that makes up a
+                            computer. In this course I learnt about computer <strong>Instruction Set
+                                Architecture</strong>, <strong>Computer Arithmetic</strong>, <strong>Processor
+                                and Memory Organisation</strong> and <strong>Parallel and multi-core
+                                Processors</strong>.
                         </p>
                     </div>
-                    
+
                 </div>
                 <div class="degree">
                     <i class="fa-solid fa-laptop-code"></i>
                     <h3>Computer Science</h3>
                     <p>
-                        From this degree I have learnt the foundational concepts of Computer Science including 
-                        <strong>mathematics</strong>, <strong>algorithms and data structures</strong> and 
-                        <strong>computing theory</strong>. This degree equipped me with <strong>advanced 
-                        programming skills</strong> and the ability to implement <strong>Artificial Intelligence</strong> 
+                        From this degree I have learnt the foundational concepts of Computer Science including
+                        <strong>mathematics</strong>, <strong>algorithms and data structures</strong> and
+                        <strong>computing theory</strong>. This degree equipped me with <strong>advanced
+                            programming skills</strong> and the ability to implement <strong>Artificial
+                            Intelligence</strong>
                         into applications.
                     </p>
                     <div class="course">
                         <h4>Artificial Intelligence</h4>
                         <p>
-                            This course covered a broad range of AI topics as well as the threory and meaning of 
-                            <em>Artificial Intelligence</em>. The topics covered in this course included 
-                            <strong>strategies for solving problems</strong>, <strong>knowledge representation</strong>, 
+                            This course covered a broad range of AI topics as well as the threory and meaning of
+                            <em>Artificial Intelligence</em>. The topics covered in this course included
+                            <strong>strategies for solving problems</strong>, <strong>knowledge representation</strong>,
                             <strong>automated planning</strong>, <strong>intelligent agents</strong> and <strong>
-                            reasoning under uncertainty</strong>.
+                                reasoning under uncertainty</strong>.
                         </p>
                     </div>
                     <div class="course">
                         <h4>Machine Learning</h4>
                         <p>
-                            I've taken a deeper step into this branch of AI to expand my skillset. From this 
+                            I've taken a deeper step into this branch of AI to expand my skillset. From this
                             course I gained hands on experience with machine learning concepts such as <strong>
-                            supervised and unsupervised learning</strong> and <strong>deep neural networks</strong>. 
-                            I learnt how to apply and modify these techniques to make predictions based on 
+                                supervised and unsupervised learning</strong> and <strong>deep neural networks</strong>.
+                            I learnt how to apply and modify these techniques to make predictions based on
                             real world datasets.
                         </p>
                     </div>
                     <div class="course">
                         <h4>Programming</h4>
                         <p>
-                            I have excelled in many programming courses covering languages such as <strong>Java</strong>, 
-                            <strong>C++</strong> and <strong>Python</strong>. I have been taught key <strong>Software 
-                            Engineering principles</strong> and enhanced my <strong>teamwork skills</strong> through 
+                            I have excelled in many programming courses covering languages such as
+                            <strong>Java</strong>,
+                            <strong>C++</strong> and <strong>Python</strong>. I have been taught key <strong>Software
+                                Engineering principles</strong> and enhanced my <strong>teamwork skills</strong> through
                             many group software projects.
                         </p>
                     </div>
                     <div class="course">
                         <h4>Databases</h4>
                         <p>
-                            Through real world scenarios I have been taught good <strong>database design and 
-                            management skills</strong>. I understand the available database options and can 
-                            provide <strong>database solutions</strong> to clients based on the requirements 
-                            of their application. Furthermore, I have plenty of experience with using 
+                            Through real world scenarios I have been taught good <strong>database design and
+                                management skills</strong>. I understand the available database options and can
+                            provide <strong>database solutions</strong> to clients based on the requirements
+                            of their application. Furthermore, I have plenty of experience with using
                             <strong>SQL</strong> and am capable of writing <strong>complex queries</strong>.
                         </p>
                     </div>
@@ -646,7 +873,7 @@
                         <div class="seg expert"></div>
                     </div>
                     <ul>
-                        <li>Learnt through University</li>
+                        <li>Learnt through university</li>
                         <li>Lots of experience with Java</li>
                         <li>Used for personal and RMIT projects</li>
                         <li>Excelled in multiple Java courses at RMIT</li>
@@ -678,7 +905,7 @@
                         <div class="seg"></div>
                     </div>
                     <ul>
-                        <li>Learnt through University projects</li>
+                        <li>Learnt through university projects</li>
                         <li>Created multiple applications using C++</li>
                         <li>Used C for embedded software at RMIT</li>
                         <li>Well experienced in both languages</li>
@@ -695,7 +922,7 @@
                     </div>
                     <p style="text-align: center; padding-bottom: 10px;">(HTML, CSS, JavaScript)</p>
                     <ul>
-                        <li>Has beed used for University projects</li>
+                        <li>Has beed used for university projects</li>
                         <li>Mostly self taught</li>
                         <li>Used to create websites like this one</li>
                     </ul>
@@ -725,7 +952,7 @@
                         <div class="seg"></div>
                     </div>
                     <ul>
-                        <li>Taught through University courses</li>
+                        <li>Taught through university courses</li>
                         <li>Utilised in plenty of personal and RMIT projects</li>
                         <li>Excellent understanding of complex queries</li>
                     </ul>
@@ -742,7 +969,7 @@
                     <ul>
                         <li>Excelled in multiple embedded systems courses at RMIT</li>
                         <li>High passion and interest in the area</li>
-                        <li>Deep understanding of computer architecture and low level programming 
+                        <li>Deep understanding of computer architecture and low level programming
                             languages (Assembly)
                         </li>
                         <li>Practiced with personal projects at home</li>
@@ -774,7 +1001,7 @@
                     </div>
                     <ul>
                         <li>Learnt through courses at RMIT</li>
-                        <li>Utilised AWS for University projects</li>
+                        <li>Utilised AWS for university projects</li>
                         <li>Good understanding of cloud strategies</li>
                         <li>Knowledge on how to provide cloud solutions based on application requirements</li>
                     </ul>
@@ -789,7 +1016,7 @@
                         <div class="seg"></div>
                     </div>
                     <ul>
-                        <li>Educated through University courses</li>
+                        <li>Educated through university courses</li>
                         <li>Implemented in AI subjects at RMIT</li>
                         <li>Big interest in the area</li>
                         <li>Performed exceptionally in assignments</li>
@@ -806,8 +1033,8 @@
                     </div>
                     <ul>
                         <li>Taught through RMIT</li>
-                        <li>Performed well in multiple hands on University courses</li>
-                        <li>Limited experience with complex concepts but a thorough understanding 
+                        <li>Performed well in multiple hands on university courses</li>
+                        <li>Limited experience with complex concepts but a thorough understanding
                             of the fundamentals
                         </li>
                     </ul>
@@ -887,7 +1114,7 @@
                     <i class="fa-solid fa-person-snowboarding"></i>
                     <h1>Snowboarding</h1>
                     <p class="description">
-                        I don't get to go often, but when I do, I make the most of it. I've boarded in Japan, 
+                        I don't get to go often, but when I do, I make the most of it. I've boarded in Japan,
                         Canada and New Zealand.
                     </p>
                 </div>
@@ -897,7 +1124,7 @@
                     <i class="fa-solid fa-terminal"></i>
                     <h1>Coding</h1>
                     <p class="description">
-                        I always have a project that I'm working on. I love the feeling after overcoming problems 
+                        I always have a project that I'm working on. I love the feeling after overcoming problems
                         while coding.
                     </p>
                 </div>
@@ -907,7 +1134,7 @@
                     <i class="fa-solid fa-book"></i>
                     <h1>Reading</h1>
                     <p class="description">
-                        I try to read as much as I can. I mostly read non-fiction books but occasionally 
+                        I try to read as much as I can. I mostly read non-fiction books but occasionally
                         mix it up with something fun.
                     </p>
                 </div>
@@ -917,7 +1144,7 @@
                     <i class="fa-solid fa-plane"></i>
                     <h1>Travel</h1>
                     <p class="description">
-                        I've been lucky enough to do plenty of travelling while growing up, I've fallen 
+                        I've been lucky enough to do plenty of travelling while growing up, I've fallen
                         in love with it and hope to do it more.
                     </p>
                 </div>
@@ -935,7 +1162,7 @@
                 <div class="holder">
                     <i class="fa-solid fa-basketball"></i>
                     <h1>Basketball</h1>
-                    <p class="description">I've been playing basketball most of my life and love it! I now 
+                    <p class="description">I've been playing basketball most of my life and love it! I now
                         just play for fun with mates.
                     </p>
                 </div>
@@ -945,7 +1172,7 @@
                     <i class="fa-solid fa-person-running"></i>
                     <h1>Fitness</h1>
                     <p class="description">
-                        I put a lot of effort into my health and fitness. I enjoy just about anything that makes 
+                        I put a lot of effort into my health and fitness. I enjoy just about anything that makes
                         me huff and puff.
                     </p>
                 </div>
@@ -955,7 +1182,7 @@
                     <i class="fa-solid fa-robot"></i>
                     <h1>Robotics</h1>
                     <p class="description">
-                        Paired with my coding, I like to play around with robotics. I have lots of freedom 
+                        Paired with my coding, I like to play around with robotics. I have lots of freedom
                         thanks to my 3D printer.
                     </p>
                 </div>
@@ -974,7 +1201,7 @@
                     <i class="fa-solid fa-person-hiking"></i>
                     <h1>Camping + Hiking</h1>
                     <p class="description">
-                        I did lots of camping growing up and still go away with my mates when we're all free 
+                        I did lots of camping growing up and still go away with my mates when we're all free
                         (doesn't happen often!).
                     </p>
                 </div>
@@ -984,7 +1211,7 @@
                     <i class="fa-solid fa-gamepad"></i>
                     <h1>Gaming</h1>
                     <p class="description">
-                        My love of technology extends to gaming. I love to play online with my friends but 
+                        My love of technology extends to gaming. I love to play online with my friends but
                         also enjoy some solo strategy games.
                     </p>
                 </div>
