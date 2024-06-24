@@ -61,7 +61,7 @@
                         <i><img src="./images/RLIntersection/TrafficLightsIcon.png" alt="Traffic Lights Icon"></i>
                     </div>
                     <h2>Reinforcement Learning Adaptive Traffic Lights</h2>
-                    <p>This was a University project for a Machine Learning course. The goal was to make
+                    <p>This was a university project for a Machine Learning course. The goal was to make
                         a learning agent that can control traffic lights better than a traditional static
                         timer method.
                     </p>
@@ -326,26 +326,10 @@
                     <div class="split">
                         <h3>Hardware</h3>
                         <ul>
-                            <li>Raspberry Pi 3 Model A+
-                                <ul>
-                                    <li>The brains of the operation</li>
-                                </ul>
-                            </li>
-                            <li>WS2812B LED strip
-                                <ul>
-                                    <li>5 metres with a total of 150 LEDs</li>
-                                </ul>
-                            </li>
-                            <li>NFC HAT for Raspberry Pi (PN532)
-                                <ul>
-                                    <li>The scanner for the NFC cards</li>
-                                </ul>
-                            </li>
-                            <li>13.56MHz NFC key cards
-                                <ul>
-                                    <li>The cards that control what the Raspberry Pi does</li>
-                                </ul>
-                            </li>
+                            <li>Raspberry Pi 3 Model A+</li>
+                            <li>WS2812B LED strip</li>
+                            <li>NFC HAT for Raspberry Pi (PN532)</li>
+                            <li>13.56MHz NFC key cards</li>
                         </ul>
                         <h3>Process</h3>
                         <ol>
@@ -527,7 +511,7 @@
                         </ol>
                     </div>
                     <div class="split">
-                        <h3>Final outcome</h3>
+                        <h3>Final Outcome</h3>
                         <p>
                             After finishing this project I was left with a real world simulation of a simple set of
                             traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
@@ -609,8 +593,7 @@
                     </p>
                     <p>
                         The application uses SQLite to store user information such as usernames and passwords.
-                        Following an MVC architecture the design of this application is very concise and
-                        organised.
+                        Following an MVC architecture the design of this application is concise and organised.
                     </p>
                 </div>
             </div>
@@ -622,31 +605,24 @@
                             The goal of this project was to make an application similar to the graphic design software
                             Canva.
                         </p>
-                        <h3>Features</h3>
-                        <ul>
-                            <li>SQL database</li>
-                            <li>Password encryption</li>
-                            <li>Option to save canvas as png</li>
-                            <li>Ability to add text, images, rectangles and circles to canvas</li>
-                            <li>Anything added to the canvas can be heavily modified</li>
-                            <li>Users can update account details</li>
-                        </ul>
+                        <p>
+                            I also had strong motivation to follow good programming practices, working on concepts 
+                            such as OOP, MVC architecture and unit testing.
+                        </p>
                         <h3>Process</h3>
                         <ol>
                             <li>
                                 I began this application with the login page and create user page. I first create the
-                                GUI's
-                                and then worked on the code to add users to the database and authenticate user logins. I
-                                also added a function to hash passwords.
+                                GUI's and then worked on the code to add users to the database and authenticate user 
+                                logins. I also added a function to hash passwords.
                             </li>
                             <li>
                                 I then built the base design of the application with no functionality.
                             </li>
                             <li>
                                 The logout button was enabled and so was the profile button. The profile button allows
-                                the
-                                user to edit their account details, such as username and password. These updates are
-                                reflected in the database and thus are persistent.
+                                the user to edit their account details, such as username and password. These updates 
+                                are reflected in the database and thus are persistent.
                             </li>
                             <li>
                                 The next step was to allow the user to create a canvas and choose the dimensions in the
@@ -661,41 +637,79 @@
                                 their machine.
                             </li>
                         </ol>
+                        <h3>Final Outcome</h3>
+                        <p>
+                            The final product has the following functionalities.
+                        </p>
+                        <ul>
+                            <li>The application can have many users</li>
+                            <ul>
+                                <li>User information stored in an SQLite database</li>
+                                <li>Users can create a profile with a unique username, password, name and image</li>
+                                <li>Passwords are encrypted</li>
+                            </ul>
+                            <li>Ability to login and logout</li>
+                            <li>After logging in the user can edit their profile (change username, image etc.)</li>
+                            <li>The user can create a canvas with custom dimensions</li>
+                            <li>After creating a canvas, elements can be added (text, image, circle and rectangle)</li>
+                            <li>The background of the canvas can be modified</li>
+                            <li>Each element can be modified (size, rotation, colour, border etc.)</li>
+                            <li>Elements can be placed wherever the user wants</li>
+                            <li>The user can zoom in and out of the canvas</li>
+                            <li>Canvas's can be saved as PNG images to the users' machine</li>
+                        </ul>
                     </div>
                     <div class="split">
                         <h3>Learning Outomes</h3>
                         <p>
-                            This project was part of an early University course I completed, therefore, it gave me
-                            plenty
-                            of insights into the world of programming. Listed below are some of the things I gained
-                            experience in.
+                            This project was part of an early university course I completed, therefore, it gave me
+                            plenty of insights into the world of programming. Listed below are some of the things I 
+                            gained experience in.
                         </p>
                         <h4>Object-Oriented Programming</h4>
                         <p>
                             OOP is something I already had experience with but this course further solidified my
-                            understanding
-                            of it and ability to implement it. As a well practiced Java developer, OOP is something that
-                            I
-                            enjoy and understand well.
+                            understanding of it and ability to implement it. In this project I was able to practice 
+                            principles like encapsulation, inheritence and polymorphism.
                         </p>
                         <h4>MVC Architecture</h4>
                         <p>
                             I followed the MVC architecture to separate my application into three components: the Model,
-                            the View and the Controller.
+                            the View and the Controller. The model component is represented by classes such as User, 
+                            DatabaseManager and the DAO. The view component handled the rendering of the elements on 
+                            the user interface. Holding these two components together was the controller, these class 
+                            are responsible for processing user inputs and updating the model accordingly. Using the 
+                            MVC architecture allows the application to be more scalable and maintainable.
                         </p>
                         <h4>SQL and Database</h4>
+                        <p>
+                            To manage and store user information I integrated an SQL database. This allowed me to 
+                            apply the database design and management skills I gained in other university courses. 
+                            I used SQL queries to insert, update and retrieve data, ensuring efficient management 
+                            of user data and persistent storage of graphic elements. I learnt how to store images 
+                            in the database and also followed good practice by hashing passwords before storing them.
+                        </p>
                         <h4>JavaFX</h4>
+                        <p>
+                            JavaFX was the chosen toolkit for developing the user interface. It provided a rich set 
+                            of libraries for building a modern and responsive GUI. Using JavaFX I learnt about how 
+                            user interfaces are designed and implemented while gaining insight into the extensive  
+                            control a programmer has in application development.
+                        </p>
                         <h4>Serialisation and deserialisation</h4>
+                        <p>
+                            Serialisation was crucial for converting complex objects into a format that could easily 
+                            be stored in my database. On the other hand, deserialisation allowed me to reconstruct 
+                            these objects from the stored data. This project was my first exposure to these concepts 
+                            and was an excellent application to apply them.
+                        </p>
                         <h4>Unit Testing</h4>
-                        <h3>Challenges and solutions</h3>
-                        <p>Some problems I came across were... I solved them by...</p>
-                        <h3>Final outcome</h3>
-                        <p>I drifted from where I originally wanted to go and now have...</p>
-                        <h3>Learnings</h3>
-                        <p>MVC framework, Improved SQL knowledge, JavaFX, serialization and deserialization, unit
-                            testing</p>
-                        <h3>Future Improvements</h3>
-                        <p>To further enhance this project I would...</p>
+                        <p>
+                            Building a complex application like this meant that unit testing was a critical step in 
+                            ensuring the reliability and robustness of the application. Using JUnit I was able to 
+                            automate the tests which helped me to maintain the code quality but also gave me valuable 
+                            experience in writing and managing unit tests for software projects.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
@@ -849,7 +863,7 @@
                         <div class="seg expert"></div>
                     </div>
                     <ul>
-                        <li>Learnt through University</li>
+                        <li>Learnt through university</li>
                         <li>Lots of experience with Java</li>
                         <li>Used for personal and RMIT projects</li>
                         <li>Excelled in multiple Java courses at RMIT</li>
@@ -881,7 +895,7 @@
                         <div class="seg"></div>
                     </div>
                     <ul>
-                        <li>Learnt through University projects</li>
+                        <li>Learnt through university projects</li>
                         <li>Created multiple applications using C++</li>
                         <li>Used C for embedded software at RMIT</li>
                         <li>Well experienced in both languages</li>
@@ -898,7 +912,7 @@
                     </div>
                     <p style="text-align: center; padding-bottom: 10px;">(HTML, CSS, JavaScript)</p>
                     <ul>
-                        <li>Has beed used for University projects</li>
+                        <li>Has beed used for university projects</li>
                         <li>Mostly self taught</li>
                         <li>Used to create websites like this one</li>
                     </ul>
@@ -928,7 +942,7 @@
                         <div class="seg"></div>
                     </div>
                     <ul>
-                        <li>Taught through University courses</li>
+                        <li>Taught through university courses</li>
                         <li>Utilised in plenty of personal and RMIT projects</li>
                         <li>Excellent understanding of complex queries</li>
                     </ul>
@@ -977,7 +991,7 @@
                     </div>
                     <ul>
                         <li>Learnt through courses at RMIT</li>
-                        <li>Utilised AWS for University projects</li>
+                        <li>Utilised AWS for university projects</li>
                         <li>Good understanding of cloud strategies</li>
                         <li>Knowledge on how to provide cloud solutions based on application requirements</li>
                     </ul>
@@ -992,7 +1006,7 @@
                         <div class="seg"></div>
                     </div>
                     <ul>
-                        <li>Educated through University courses</li>
+                        <li>Educated through university courses</li>
                         <li>Implemented in AI subjects at RMIT</li>
                         <li>Big interest in the area</li>
                         <li>Performed exceptionally in assignments</li>
@@ -1009,7 +1023,7 @@
                     </div>
                     <ul>
                         <li>Taught through RMIT</li>
-                        <li>Performed well in multiple hands on University courses</li>
+                        <li>Performed well in multiple hands on university courses</li>
                         <li>Limited experience with complex concepts but a thorough understanding
                             of the fundamentals
                         </li>
