@@ -463,13 +463,15 @@ h1 {
     /* margin-left: 20px; */
     padding-left: 1.5em;
 }
-th, td {
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-}
+
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 1em;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
 }
 th {
     text-align: center;
@@ -480,7 +482,7 @@ th {
     background-color: #8a15e975;
 }
 tr:hover {
-    background-color: rgba(255, 255, 255, 0.2);;
+    background-color: rgba(0, 0, 0, 0.2);;
 }
 table .percentage {
     text-align: center;

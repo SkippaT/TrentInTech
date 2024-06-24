@@ -114,22 +114,21 @@
                         </p>
                         <p>
                             A traditional intersection uses a static timer method to cycle between the lights. This
-                            means that
-                            the intersection will remain the same for a set period before transitioning to the next
-                            configuration.
+                            means that the intersection will remain the same for a set period before transitioning 
+                            to the next configuration.
                         </p>
                         <p>
                             An adaptive traffic light system will be able to spend any amount of time in whichever
-                            configuration
-                            it thinks is best. The system chooses the best configuration based on experience, using
-                            reinforcement learning.
+                            configuration it thinks is best. The system chooses the best configuration based on 
+                            experience, using reinforcement learning.
                         </p>
                         <h3>Process</h3>
                         <ol>
                             <li>
                                 <ul>
                                     <li>Create the intersection environment.</li>
-                                    <li>Create vehicle objects with parameters including: location, direction and final destination.</li>
+                                    <li>Create vehicle objects with parameters including: location, direction and final
+                                        destination.</li>
                                     <li>Define the traffic light system.</li>
                                 </ul>
                             </li>
@@ -152,12 +151,20 @@
                                 </ul>
                             </li>
                         </ol>
-                        <h3>Challenges and solutions</h3>
+                        <h3>Static Timer Method</h3>
                         <p>
                             A challenge I came across was how to configure the static timer system. It was important
-                            that
-                            I made this system perform as best as possible because otherwise I will be cheating when I
-                            compare my results with a subpar static system.
+                            that I made this system perform as best as possible because otherwise I will be cheating 
+                            when I compare my results with a subpar static system.
+                        </p>
+                        <p>
+                            I ran many simulations (1000 iterations) each with a different number of iterations 
+                            between light changes. Through different scenarios it was found that the number of 
+                            iterations before changing the lights should be 7.
+                        </p>
+                        <p>
+                            This resulted in my static timer system cycling between the traffic light configurations 
+                            every 10 iterations (7 for the configuration + 3 for the yellow).
                         </p>
                     </div>
                     <div class="split">
@@ -165,34 +172,29 @@
                         <h4>States</h4>
                         <p>
                             My definition for a state includes the current direction of the traffic lights and the
-                            length of
-                            each queue at the intersection (each a separate feature).
+                            length of each queue at the intersection (each a separate feature).
                         </p>
                         <h4>Actions</h4>
                         <p>
                             The actions that my learning agent can choose from are each of the possible configurations
-                            of the
-                            traffic lights.
+                            of the traffic lights.
                         </p>
                         <h4>Rewards</h4>
                         <ol>
                             <li>
                                 Every time a vehicle leaves a queue and enters the intersection the reward is
-                                incremented
-                                by 3.
+                                incremented by 3.
                             </li>
                             <li>
                                 Every time the traffic lights change direction the reward is decremented by 8.
                                 This is to punish the agent for changing the lights. The more the lights change, the
-                                more
-                                time they spend yellow (X) and no vehicles can clear the intersection.
+                                more time they spend yellow (X) and no vehicles can clear the intersection.
                             </li>
                             <li>
                                 If the first vehicle in the queue leaves the reward is incremented by 3, otherwise the
                                 reward is decremented by the length of the queue with a maximum loss of 3.
                             </li>
                         </ol>
-                        <br>
                         <p>
                             When running simulations with my Q learning agent, the program first runs 3 episodes of 5000
                             iterations. For the first episode the epsilon value is set to 0.6 (60% of actions are chosen
@@ -202,8 +204,7 @@
                         <h3>Testing and Results</h3>
                         <p>
                             To test the performance of my learning agent I compared it against the static timer method
-                            in a
-                            wide range of scenarios, some of the results are shown below.
+                            in a wide range of scenarios, some of the results are shown below.
                         </p>
                         <table>
                             <tr>
@@ -231,22 +232,14 @@
                                 <td class="percentage">92.93%</td>
                             </tr>
                         </table>
-                        <h4>Even Distribution</h4>
                         <p>
-                            Equal chance from each direction.
-                        </p>
-                        <h4>Heavy Traffic from the East</h4>
-                        <p>
-                            Nearly 60% of generated vehicles come from the East
-                        </p>
-                        <h4>Heavy Traffic from the South and East</h4>
-                        <p>
-                            Over 65% of vehicles are generated in the South or East.
+                            After many hours of running simulations I could confidently confirm that my learning agent
+                            out performs the static timer method.
                         </p>
                         <p>
-                            The results I gathered from all my tests and scenarios prove that the learning agent I
-                            developed
-                            outperforms traditional static timer methods.
+                            When the traffic distribution is even, both methods perofrmed very well. However, when I
+                            imitated peak hour traffic by overloading one or two lanes, the static timer method did 
+                            much worse while my learning agent maintained its throughput percentage.
                         </p>
                     </div>
                 </div>
@@ -608,8 +601,8 @@
                     <div class="split">
                         <h3>Purpose</h3>
                         <p>
-                            The goal of this project was to make an application similar to the graphic design software 
-                            Canva. 
+                            The goal of this project was to make an application similar to the graphic design software
+                            Canva.
                         </p>
                         <h3>Features</h3>
                         <ul>
@@ -623,28 +616,30 @@
                         <h3>Process</h3>
                         <ol>
                             <li>
-                                I began this application with the login page and create user page. I first create the GUI's 
-                                and then worked on the code to add users to the database and authenticate user logins. I 
+                                I began this application with the login page and create user page. I first create the
+                                GUI's
+                                and then worked on the code to add users to the database and authenticate user logins. I
                                 also added a function to hash passwords.
                             </li>
                             <li>
                                 I then built the base design of the application with no functionality.
                             </li>
                             <li>
-                                The logout button was enabled and so was the profile button. The profile button allows the 
-                                user to edit their account details, such as username and password. These updates are 
+                                The logout button was enabled and so was the profile button. The profile button allows
+                                the
+                                user to edit their account details, such as username and password. These updates are
                                 reflected in the database and thus are persistent.
                             </li>
                             <li>
-                                The next step was to allow the user to create a canvas and choose the dimensions in the 
+                                The next step was to allow the user to create a canvas and choose the dimensions in the
                                 process.
                             </li>
                             <li>
-                                I then wrote the code for adding text, images and shapes to the canvas. Each of these 
+                                I then wrote the code for adding text, images and shapes to the canvas. Each of these
                                 elements have their own sidebar full of options to edit the element (colour, size, etc).
                             </li>
                             <li>
-                                The last step was adding the ability for the user to save the canvas as a png image to 
+                                The last step was adding the ability for the user to save the canvas as a png image to
                                 their machine.
                             </li>
                         </ol>
@@ -652,20 +647,23 @@
                     <div class="split">
                         <h3>Learning Outomes</h3>
                         <p>
-                            This project was part of an early University course I completed, therefore, it gave me plenty 
-                            of insights into the world of programming. Listed below are some of the things I gained 
+                            This project was part of an early University course I completed, therefore, it gave me
+                            plenty
+                            of insights into the world of programming. Listed below are some of the things I gained
                             experience in.
                         </p>
                         <h4>Object-Oriented Programming</h4>
                         <p>
-                            OOP is something I already had experience with but this course further solidified my understanding 
-                            of it and ability to implement it. As a well practiced Java developer, OOP is something that I 
+                            OOP is something I already had experience with but this course further solidified my
+                            understanding
+                            of it and ability to implement it. As a well practiced Java developer, OOP is something that
+                            I
                             enjoy and understand well.
                         </p>
                         <h4>MVC Architecture</h4>
                         <p>
-                            I followed the MVC architecture to separate my application into three components: the Model, 
-                            the View and the Controller. 
+                            I followed the MVC architecture to separate my application into three components: the Model,
+                            the View and the Controller.
                         </p>
                         <h4>SQL and Database</h4>
                         <h4>JavaFX</h4>
@@ -676,7 +674,8 @@
                         <h3>Final outcome</h3>
                         <p>I drifted from where I originally wanted to go and now have...</p>
                         <h3>Learnings</h3>
-                        <p>MVC framework, Improved SQL knowledge, JavaFX, serialization and deserialization, unit testing</p>
+                        <p>MVC framework, Improved SQL knowledge, JavaFX, serialization and deserialization, unit
+                            testing</p>
                         <h3>Future Improvements</h3>
                         <p>To further enhance this project I would...</p>
                     </div>
