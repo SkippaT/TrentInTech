@@ -32,7 +32,3 @@ SkillsSection:
 
 PassionsSection:
     Backgorund:     #172d67         Navy blue
-
-Annotations for Spotipy
-
-Spotipy videos
