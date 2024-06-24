@@ -424,7 +424,7 @@ h1 {
     /* border: 2px solid orchid; */
     width: 40%;
     max-width: 75%;
-    min-width: 400px;
+    min-width: 500px;
     text-align: justify;
 }
 
@@ -1135,6 +1135,17 @@ table .percentage {
 
     .profile-text #sub-heading {
         font-size: 28px;
+    }
+    .projects-section h1 {
+        letter-spacing: normal;
+    }
+    .projects-section p, .profile-section h3 {
+        text-align: left;
+    }
+    .project .splitter .split {
+        width: 100%;
+        min-width: 0px;
+        max-width: 100%;
     }
     .skill-card {
         width: 100px;
