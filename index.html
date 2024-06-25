@@ -80,13 +80,15 @@
                                 <div class="overlay-text">Even traffic distribution</div>
                             </section>
                             <section>
-                                <video playsinline src="./videos/RLIntersection/SixLaneHeavyFromEast.mov" type="video/mp4">
+                                <video playsinline src="./videos/RLIntersection/SixLaneHeavyFromEast.mov"
+                                    type="video/mp4">
                                     You're browser does not support the video.
                                 </video>
                                 <div class="overlay-text">Heavy traffic from East</div>
                             </section>
                             <section>
-                                <video playsinline src="./videos/RLIntersection/SixLaneHeavyFromSouthAndEast.mov" type="video/mp4">
+                                <video playsinline src="./videos/RLIntersection/SixLaneHeavyFromSouthAndEast.mov"
+                                    type="video/mp4">
                                     You're browser does not support the video.
                                 </video>
                                 <div class="overlay-text">Heavy traffic from South and East</div>
@@ -116,12 +118,12 @@
                         </p>
                         <p>
                             A traditional intersection uses a static timer method to cycle between the lights. This
-                            means that the intersection will remain the same for a set period before transitioning 
+                            means that the intersection will remain the same for a set period before transitioning
                             to the next configuration.
                         </p>
                         <p>
                             An adaptive traffic light system will be able to spend any amount of time in whichever
-                            configuration it thinks is best. The system chooses the best configuration based on 
+                            configuration it thinks is best. The system chooses the best configuration based on
                             experience, using reinforcement learning.
                         </p>
                         <h3>Process</h3>
@@ -156,16 +158,16 @@
                         <h3>Static Timer Method</h3>
                         <p>
                             A challenge I came across was how to configure the static timer system. It was important
-                            that I made this system perform as best as possible because otherwise I will be cheating 
+                            that I made this system perform as best as possible because otherwise I will be cheating
                             when I compare my results with a subpar static system.
                         </p>
                         <p>
-                            I ran many simulations (1000 iterations) each with a different number of iterations 
-                            between light changes. Through different scenarios it was found that the number of 
+                            I ran many simulations (1000 iterations) each with a different number of iterations
+                            between light changes. Through different scenarios it was found that the number of
                             iterations before changing the lights should be 7.
                         </p>
                         <p>
-                            This resulted in my static timer system cycling between the traffic light configurations 
+                            This resulted in my static timer system cycling between the traffic light configurations
                             every 10 iterations (7 for the configuration + 3 for the yellow).
                         </p>
                     </div>
@@ -257,9 +259,9 @@
                             out performs the static timer method.
                         </p>
                         <p>
-                            Under even traffic distribution conditions, both methods performed well. However, when 
-                            simulating peak hour traffic by overloading one or two lanes, the static timer method's 
-                            performance significantly declined, whereas my learning agent maintained its throughput 
+                            Under even traffic distribution conditions, both methods performed well. However, when
+                            simulating peak hour traffic by overloading one or two lanes, the static timer method's
+                            performance significantly declined, whereas my learning agent maintained its throughput
                             efficiency.
                         </p>
                     </div>
@@ -428,39 +430,40 @@
             <div class="project-hook">
                 <div class="project-hook-text">
                     <div class="icons">
-                        <i><img src="./images/TrafficLights/TrafficLightsIcon.png" alt="Traffic lights"></i>
-                        <i><img src="./images/TrafficLights/BreadboardIcon.png" alt="Breadboard"></i>
-                        <i><img src="./images/Spotipy/RPiIcon.png" alt="Raspberry Pi logo"></i>
-                        <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
+                        <i><img src="./images/SkillsIcons/JavaIcon.png" alt="Java logo"></i>
+                        <i><img src="./images/SkillsIcons/DockerLogo.png" alt="Docker logo"></i>
+                        <i><img src="./images/SkillsIcons/ReactLogo.png" alt="React logo"></i>
+                        <i><img src="./images/SkillsIcons/DatabaseIcon.png" alt="Database icon"></i>
                     </div>
-                    <h2>Where it All Began</h2>
-                    <h3>Raspberry Pi Traffic Light System</h3>
+                    <h2>SuperPrice</h2>
+                    <h3>Group project at RMIT</h3>
                     <p>
-                        This simple traffic light system built with a Raspberyy Pi was the first tech project I 
-                        completed.
+                        This was a collaborative project to create an application that allows users to complete 
+                        online shopping while getting the best price. 
                     </p>
                     <p>
-                        My main goal with project was to learn as much as I could. I had not set outcome that I 
-                        was aiming for. I simply wanted to get exposure to the tech world. The project sparked my 
-                        passion for technology and provided a foundation my my future projects.
+                        The web app was built using Java and React, it uses MySQL to store the data and is deployed
+                        using Docker.
+                    </p>
+                    <p>
+                        Note: We are not using real datasets for this application. The names, images and prices have
+                        all been randomly generated.
                     </p>
                 </div>
                 <div class="carousel-container">
                     <div class="carousel" id="carousel3">
                         <div class="slider">
                             <section>
-                                <img src="./images/TrafficLights/TrafficLights.png" alt="Traffic lights Raspberry Pi">
+                                <img src="./images/SuperPrice/LandingPage.png" alt="SuperPrice landing page">
                             </section>
                             <section>
-                                <img src="./images/TrafficLights/DeskView.png" alt="Traffic lights Raspberry Pi">
+                                <img src="./images/SuperPrice/Specials.png" alt="SuperPrice specials">
                             </section>
                             <section>
-                                <video playsinline src="./videos/TrafficLights/TrafficLightsStart.mp4" type="video/mp4">
-                                    You're browser does not support the video.
-                                </video>
+                                <img src="./images/SuperPrice/Sidebar.png" alt="SuperPrice sidebar">
                             </section>
                             <section>
-                                <video playsinline src="./videos/TrafficLights/TrafficLightsFinish.mp4" type="video/mp4">
+                                <video playsinline src="./videos/SuperPrice/AddingToCart.mov" type="video/mp4">
                                     You're browser does not support the video.
                                 </video>
                             </section>
@@ -482,72 +485,106 @@
             <div class="expansion">
                 <div class="splitter">
                     <div class="split">
-                        <h3>Hardware</h3>
-                        <ul>
-                            <li>Raspberry Pi 4 Model B+</li>
-                            <li>Breadboard</li>
-                            <li>LEDs</li>
-                            <li>Buzzer</li>
-                            <li>Switch</li>
-                            <li>Jumper wires</li>
-                        </ul>
-                        <h3>Process</h3>
+                        <h3>Tools/Software Used</h3>
+                        <div class="list-splitter">
+                            <div class="list-split">
+                                <ul>
+                                    <li>GitHub</li>
+                                    <li>GitHub actions</li>
+                                    <li>Microsoft Teams</li>
+                                    <li>Spring Boot</li>
+                                    <li>MySQL</li>
+                                </ul>
+                            </div>
+                            <div class="list-split">
+                                <ul>
+                                    <li>Maven</li>
+                                    <li>Java</li>
+                                    <li>JUnit</li>
+                                    <li>React</li>
+                                    <li>Docker</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Sprints (Milestones)</h3>
+                        <h4>Sprint 1</h4>
                         <p>
-                            This being my first tech project, I took baby steps in the development process and had no
-                            end product in mind, I simply wanted to learn.
+                            The first sprint was all about defining the project requirements, creating user stories,
+                            setting up the project environment and starting the initial system design.<br>
+                            At the end of this sprint we had a clear plan of the development process.
                         </p>
-                        <ol>
-                            <li>
-                                I began by controlling a single LED with the Raspberry Pi and quickly progressed to
-                                controlling three LEDs using a timer in Python.
-                            </li>
-                            <li>
-                                A button was then introduced and used to control the three LEDs. I wrote code that 
-                                made these traffic lights behave as they would for vehicles in the real world. 
-                                This meant that the lights were green until the button was pressed. After the press, 
-                                the lights changed to yellow for a few seconds and then to red. After a few more 
-                                seconds the lights went back to green.
-                            </li>
-                            <li>
-                                I then added the two lights for the pedestrians and programmed them to only be green 
-                                when the vehicles' lights are red. I took these lights a step further and made the 
-                                red light flash when the timer was coming to an en.
-                            </li>
-                            <li>
-                                The last addition to this project was the buzzer. This buzzer immitates the tone heard
-                                at traffic lights and can be used to indicate when pedestrians can and cannot cross the
-                                road.
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="split">
+                        <h4>Sprint 2</h4>
+                        <p>
+                            The second phase we focused on developing the minimum viable product (MVP) with all essential
+                            features. During this sprint we also generated tests for our program and started preparing
+                            for deployment.
+                        </p>
+                        <h4>Sprint 3</h4>
+                        <p>
+                            In the final sprint we completed the application with all required tests passing and features
+                            implemented. We ended the sprint with the deployment of the application using Docker.
+                        </p>
                         <h3>Final Outcome</h3>
                         <p>
-                            After finishing this project I was left with a real world simulation of a simple set of
-                            traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
+                            The final outcome of this project is a fully function web application that is designed to
+                            streamline the process of grocery shopping. We achieve this by enabling users to find the
+                            lowest prices for various products across many stores and by handling seamless delivery
+                            arrangements.
+                        </p>
+                        <p>
+                            The application allows users to complete the following:
                         </p>
                         <ul>
-                            <li>Traffic lights for vehicles remain green until pedestrian button is pressed</li>
-                            <li>Pedestrian lights remain red until the vehicles' lights are red</li>
-                            <li>The vehicles' lights turn yellow when the pedestrian button is pressed</li>
-                            <li>After a few seconds on yellow, the vehicles' lights change to red and the pedestrian 
-                                lights to green</li>
-                            <li>After a few seconds the pedestrians flash red for a few seconds</li>
-                            <li>Finally the lights return to their base state, green for vehicles, red for 
-                                predestrians</li>
-                            <li>While the pedestrian lights are red, the buzzer beeps at a slow frequency</li>
-                            <li>When the pedestrian lights are green the buzzer beeps at a fast frequency</li>
+                            <li>Shop online as a guest</li>
+                            <li>Create an account, login and logout</li>
+                            <li>Search for products or categories</li>
+                            <li>Sort search results however they want</li>
+                            <li>Compare the price of a product across all the stores that have it in stock</li>
+                            <li>If logged in, the user can check their order history</li>
+                            <li>Choose the date and time the products are delivered based on available vehicles</li>
                         </ul>
+                    </div>
+                    <div class="split">
                         <h3>Learning Outcomes</h3>
-                        <ul>
-                            <li>Good understanding of basic electronics</li>
-                            <li>Fundamentals of programming</li>
-                            <li>How to integrate hardware with software using the Raspberry Pi</li>
-                            <li>Developed problem-solving skills by troubleshooting issues that arose during 
-                                development
-                            </li>
-                            <li>Most importantly... Persistence!</li>
-                        </ul>
+                        <h4>Software Engineering Processes</h4>
+                        <p>
+                            A key part of this project was following various software engineering processes such as
+                            Agile and Scrum methodologies. We gained experience planning, organising, test and
+                            managing a software project from inception to completion.
+                        </p>
+                        <p>
+                            Our group took advantage of GitHub and the suite of features it includes. We used GitHub
+                            to manage our version control, task management, milestones and automated testing.
+                        </p>
+                        <h4>Backend Development</h4>
+                        <p>
+                            This project enhanced my Java skills due to us using Spring Boot for backend development.
+                            We followed the MVC architecture while creating a RESTful API. We used a relational
+                            database through MySQL which provided us with experience in complex database design and 
+                            management.
+                        </p>
+                        <h4>Frontend Development</h4>
+                        <p>
+                            For our frontend we used the React framework to build a quick and responsive webpage. I
+                            gained experience using HTML and CSS to structure and style web pages. This includes
+                            understanding user experience design and ensuring accessibility.
+                        </p>
+                        <p>
+                            This project was my first exposure to React. I learnt how to use it by doing and from the
+                            other students in my group. This hands on experience sparked my interest in frontend
+                            development to compliment my already comprehensive backend skills.
+                        </p>
+                        <h4>Continuous Integration/Deployment (CI/CD)</h4>
+                        <p>
+                            We implemented CI/CD pipelines using GitHub to automate our testing and deployment process.
+                            From this I learnt how to set up automated workflows that ensure code is tested and
+                            deployed efficiently and reliably.
+                        </p>
+                        <h4>Unit Testing</h4>
+                        <p>
+                            Using JUnit I gained experience writing and executing unit tests to verify that individual
+                            parts of the program work as expected.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
@@ -616,14 +653,14 @@
                             Canva.
                         </p>
                         <p>
-                            I also had strong motivation to follow good programming practices, working on concepts 
+                            I also had strong motivation to follow good programming practices, working on concepts
                             such as OOP, MVC architecture and unit testing.
                         </p>
                         <h3>Process</h3>
                         <ol>
                             <li>
                                 I began this application with the login page and create user page. I first create the
-                                GUI's and then worked on the code to add users to the database and authenticate user 
+                                GUI's and then worked on the code to add users to the database and authenticate user
                                 logins. I also added a function to hash passwords.
                             </li>
                             <li>
@@ -631,7 +668,7 @@
                             </li>
                             <li>
                                 The logout button was enabled and so was the profile button. The profile button allows
-                                the user to edit their account details, such as username and password. These updates 
+                                the user to edit their account details, such as username and password. These updates
                                 are reflected in the database and thus are persistent.
                             </li>
                             <li>
@@ -673,51 +710,51 @@
                         <h3>Learning Outomes</h3>
                         <p>
                             This project was part of an early university course I completed, therefore, it gave me
-                            plenty of insights into the world of programming. Listed below are some of the things I 
+                            plenty of insights into the world of programming. Listed below are some of the things I
                             gained experience in.
                         </p>
                         <h4>Object-Oriented Programming</h4>
                         <p>
                             OOP is something I already had experience with but this course further solidified my
-                            understanding of it and ability to implement it. In this project I was able to practice 
+                            understanding of it and ability to implement it. In this project I was able to practice
                             principles like encapsulation, inheritence and polymorphism.
                         </p>
                         <h4>MVC Architecture</h4>
                         <p>
                             I followed the MVC architecture to separate my application into three components: the Model,
-                            the View and the Controller. The model component is represented by classes such as User, 
-                            DatabaseManager and the DAO. The view component handled the rendering of the elements on 
-                            the user interface. Holding these two components together was the controller, these class 
-                            are responsible for processing user inputs and updating the model accordingly. Using the 
+                            the View and the Controller. The model component is represented by classes such as User,
+                            DatabaseManager and the DAO. The view component handled the rendering of the elements on
+                            the user interface. Holding these two components together was the controller, these class
+                            are responsible for processing user inputs and updating the model accordingly. Using the
                             MVC architecture allows the application to be more scalable and maintainable.
                         </p>
                         <h4>SQL and Database</h4>
                         <p>
-                            To manage and store user information I integrated an SQL database. This allowed me to 
-                            apply the database design and management skills I gained in other university courses. 
-                            I used SQL queries to insert, update and retrieve data, ensuring efficient management 
-                            of user data and persistent storage of graphic elements. I learnt how to store images 
+                            To manage and store user information I integrated an SQL database. This allowed me to
+                            apply the database design and management skills I gained in other university courses.
+                            I used SQL queries to insert, update and retrieve data, ensuring efficient management
+                            of user data and persistent storage of graphic elements. I learnt how to store images
                             in the database and also followed good practice by hashing passwords before storing them.
                         </p>
                         <h4>JavaFX</h4>
                         <p>
-                            JavaFX was the chosen toolkit for developing the user interface. It provided a rich set 
-                            of libraries for building a modern and responsive GUI. Using JavaFX I learnt about how 
-                            user interfaces are designed and implemented while gaining insight into the extensive  
+                            JavaFX was the chosen toolkit for developing the user interface. It provided a rich set
+                            of libraries for building a modern and responsive GUI. Using JavaFX I learnt about how
+                            user interfaces are designed and implemented while gaining insight into the extensive
                             control a programmer has in application development.
                         </p>
                         <h4>Serialisation and deserialisation</h4>
                         <p>
-                            Serialisation was crucial for converting complex objects into a format that could easily 
-                            be stored in my database. On the other hand, deserialisation allowed me to reconstruct 
-                            these objects from the stored data. This project was my first exposure to these concepts 
+                            Serialisation was crucial for converting complex objects into a format that could easily
+                            be stored in my database. On the other hand, deserialisation allowed me to reconstruct
+                            these objects from the stored data. This project was my first exposure to these concepts
                             and was an excellent application to apply them.
                         </p>
                         <h4>Unit Testing</h4>
                         <p>
-                            Building a complex application like this meant that unit testing was a critical step in 
-                            ensuring the reliability and robustness of the application. Using JUnit I was able to 
-                            automate the tests which helped me to maintain the code quality but also gave me valuable 
+                            Building a complex application like this meant that unit testing was a critical step in
+                            ensuring the reliability and robustness of the application. Using JUnit I was able to
+                            automate the tests which helped me to maintain the code quality but also gave me valuable
                             experience in writing and managing unit tests for software projects.
                         </p>
                     </div>
@@ -726,8 +763,140 @@
             </div>
             <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
+        <hr class="project-sep"> <!-- --------------------------Project Seperator-------------------------- -->
+        <div class="project">
+            <div class="project-hook">
+                <div class="project-hook-text">
+                    <div class="icons">
+                        <i><img src="./images/TrafficLights/TrafficLightsIcon.png" alt="Traffic lights"></i>
+                        <i><img src="./images/TrafficLights/BreadboardIcon.png" alt="Breadboard"></i>
+                        <i><img src="./images/Spotipy/RPiIcon.png" alt="Raspberry Pi logo"></i>
+                        <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
+                    </div>
+                    <h2>Where it All Began</h2>
+                    <h3>Raspberry Pi Traffic Light System</h3>
+                    <p>
+                        This simple traffic light system built with a Raspberyy Pi was the first tech project I
+                        completed.
+                    </p>
+                    <p>
+                        My main goal with project was to learn as much as I could. I had not set outcome that I
+                        was aiming for. I simply wanted to get exposure to the tech world. The project sparked my
+                        passion for technology and provided a foundation my my future projects.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel5">
+                        <div class="slider">
+                            <section>
+                                <img src="./images/TrafficLights/TrafficLights.png" alt="Traffic lights Raspberry Pi">
+                            </section>
+                            <section>
+                                <img src="./images/TrafficLights/DeskView.png" alt="Traffic lights Raspberry Pi">
+                            </section>
+                            <section>
+                                <video playsinline src="./videos/TrafficLights/TrafficLightsStart.mp4" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                            </section>
+                            <section>
+                                <video playsinline src="./videos/TrafficLights/TrafficLightsFinish.mp4" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                            </section>
+                        </div>
+
+                        <div class="controls">
+                            <span class="arrow prev"><i class="fa-solid fa-chevron-left"></i></span>
+                            <span class="arrow next"><i class="fa-solid fa-chevron-right"></i></span>
+                            <ul>
+                                <li class="selected"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion">
+                <div class="splitter">
+                    <div class="split">
+                        <h3>Hardware</h3>
+                        <ul>
+                            <li>Raspberry Pi 4 Model B+</li>
+                            <li>Breadboard</li>
+                            <li>LEDs</li>
+                            <li>Buzzer</li>
+                            <li>Switch</li>
+                            <li>Jumper wires</li>
+                        </ul>
+                        <h3>Process</h3>
+                        <p>
+                            This being my first tech project, I took baby steps in the development process and had no
+                            end product in mind, I simply wanted to learn.
+                        </p>
+                        <ol>
+                            <li>
+                                I began by controlling a single LED with the Raspberry Pi and quickly progressed to
+                                controlling three LEDs using a timer in Python.
+                            </li>
+                            <li>
+                                A button was then introduced and used to control the three LEDs. I wrote code that
+                                made these traffic lights behave as they would for vehicles in the real world.
+                                This meant that the lights were green until the button was pressed. After the press,
+                                the lights changed to yellow for a few seconds and then to red. After a few more
+                                seconds the lights went back to green.
+                            </li>
+                            <li>
+                                I then added the two lights for the pedestrians and programmed them to only be green
+                                when the vehicles' lights are red. I took these lights a step further and made the
+                                red light flash when the timer was coming to an en.
+                            </li>
+                            <li>
+                                The last addition to this project was the buzzer. This buzzer immitates the tone heard
+                                at traffic lights and can be used to indicate when pedestrians can and cannot cross the
+                                road.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="split">
+                        <h3>Final Outcome</h3>
+                        <p>
+                            After finishing this project I was left with a real world simulation of a simple set of
+                            traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
+                        </p>
+                        <ul>
+                            <li>Traffic lights for vehicles remain green until pedestrian button is pressed</li>
+                            <li>Pedestrian lights remain red until the vehicles' lights are red</li>
+                            <li>The vehicles' lights turn yellow when the pedestrian button is pressed</li>
+                            <li>After a few seconds on yellow, the vehicles' lights change to red and the pedestrian
+                                lights to green</li>
+                            <li>After a few seconds the pedestrians flash red for a few seconds</li>
+                            <li>Finally the lights return to their base state, green for vehicles, red for
+                                predestrians</li>
+                            <li>While the pedestrian lights are red, the buzzer beeps at a slow frequency</li>
+                            <li>When the pedestrian lights are green the buzzer beeps at a fast frequency</li>
+                        </ul>
+                        <h3>Learning Outcomes</h3>
+                        <ul>
+                            <li>Good understanding of basic electronics</li>
+                            <li>Fundamentals of programming</li>
+                            <li>How to integrate hardware with software using the Raspberry Pi</li>
+                            <li>Developed problem-solving skills by troubleshooting issues that arose during
+                                development
+                            </li>
+                            <li>Most importantly... Persistence!</li>
+                        </ul>
+                    </div>
+                </div>
+                <i class="arrow expand fa-solid fa-chevron-down"></i>
+            </div>
+            <i class="arrow contract fa-solid fa-chevron-up"></i>
+        </div>
     </div>
-    </div>
+
+    
 
     <div class="sep">
         <hr>
