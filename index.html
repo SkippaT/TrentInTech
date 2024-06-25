@@ -725,139 +725,140 @@
             </div>
             <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
-    </div>
-
-    <hr class="project-sep"> <!-- --------------------------Project Seperator-------------------------- -->
-    <div class="project">
-        <div class="project-hook">
-            <div class="project-hook-text">
-                <div class="icons">
-                    <i><img src="./images/TrafficLights/TrafficLightsIcon.png" alt="Traffic lights"></i>
-                    <i><img src="./images/TrafficLights/BreadboardIcon.png" alt="Breadboard"></i>
-                    <i><img src="./images/Spotipy/RPiIcon.png" alt="Raspberry Pi logo"></i>
-                    <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
-                </div>
-                <h2>Where it All Began</h2>
-                <h3>Raspberry Pi Traffic Light System</h3>
-                <p>
-                    This simple traffic light system built with a Raspberyy Pi was the first tech project I
-                    completed.
-                </p>
-                <p>
-                    My main goal with project was to learn as much as I could. I had not set outcome that I
-                    was aiming for. I simply wanted to get exposure to the tech world. The project sparked my
-                    passion for technology and provided a foundation my my future projects.
-                </p>
-            </div>
-            <div class="carousel-container">
-                <div class="carousel" id="carousel5">
-                    <div class="slider">
-                        <section>
-                            <img src="./images/TrafficLights/TrafficLights.png" alt="Traffic lights Raspberry Pi">
-                        </section>
-                        <section>
-                            <img src="./images/TrafficLights/DeskView.png" alt="Traffic lights Raspberry Pi">
-                        </section>
-                        <section>
-                            <video playsinline src="./videos/TrafficLights/TrafficLightsStart.mp4" type="video/mp4">
-                                You're browser does not support the video.
-                            </video>
-                        </section>
-                        <section>
-                            <video playsinline src="./videos/TrafficLights/TrafficLightsFinish.mp4" type="video/mp4">
-                                You're browser does not support the video.
-                            </video>
-                        </section>
+        <hr class="project-sep"> <!-- --------------------------Project Seperator-------------------------- -->
+        <div class="project">
+            <div class="project-hook">
+                <div class="project-hook-text">
+                    <div class="icons">
+                        <i><img src="./images/TrafficLights/TrafficLightsIcon.png" alt="Traffic lights"></i>
+                        <i><img src="./images/TrafficLights/BreadboardIcon.png" alt="Breadboard"></i>
+                        <i><img src="./images/Spotipy/RPiIcon.png" alt="Raspberry Pi logo"></i>
+                        <i><img src="./images/SkillsIcons/PythonIcon.png" alt="Python logo"></i>
                     </div>
+                    <h2>Where it All Began</h2>
+                    <h3>Raspberry Pi Traffic Light System</h3>
+                    <p>
+                        This simple traffic light system built with a Raspberyy Pi was the first tech project I
+                        completed.
+                    </p>
+                    <p>
+                        My main goal with project was to learn as much as I could. I had not set outcome that I
+                        was aiming for. I simply wanted to get exposure to the tech world. The project sparked my
+                        passion for technology and provided a foundation my my future projects.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel5">
+                        <div class="slider">
+                            <section>
+                                <img src="./images/TrafficLights/TrafficLights.png" alt="Traffic lights Raspberry Pi">
+                            </section>
+                            <section>
+                                <img src="./images/TrafficLights/DeskView.png" alt="Traffic lights Raspberry Pi">
+                            </section>
+                            <section>
+                                <video playsinline src="./videos/TrafficLights/TrafficLightsStart.mp4" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                            </section>
+                            <section>
+                                <video playsinline src="./videos/TrafficLights/TrafficLightsFinish.mp4" type="video/mp4">
+                                    You're browser does not support the video.
+                                </video>
+                            </section>
+                        </div>
 
-                    <div class="controls">
-                        <span class="arrow prev"><i class="fa-solid fa-chevron-left"></i></span>
-                        <span class="arrow next"><i class="fa-solid fa-chevron-right"></i></span>
+                        <div class="controls">
+                            <span class="arrow prev"><i class="fa-solid fa-chevron-left"></i></span>
+                            <span class="arrow next"><i class="fa-solid fa-chevron-right"></i></span>
+                            <ul>
+                                <li class="selected"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion">
+                <div class="splitter">
+                    <div class="split">
+                        <h3>Hardware</h3>
                         <ul>
-                            <li class="selected"></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>Raspberry Pi 4 Model B+</li>
+                            <li>Breadboard</li>
+                            <li>LEDs</li>
+                            <li>Buzzer</li>
+                            <li>Switch</li>
+                            <li>Jumper wires</li>
+                        </ul>
+                        <h3>Process</h3>
+                        <p>
+                            This being my first tech project, I took baby steps in the development process and had no
+                            end product in mind, I simply wanted to learn.
+                        </p>
+                        <ol>
+                            <li>
+                                I began by controlling a single LED with the Raspberry Pi and quickly progressed to
+                                controlling three LEDs using a timer in Python.
+                            </li>
+                            <li>
+                                A button was then introduced and used to control the three LEDs. I wrote code that
+                                made these traffic lights behave as they would for vehicles in the real world.
+                                This meant that the lights were green until the button was pressed. After the press,
+                                the lights changed to yellow for a few seconds and then to red. After a few more
+                                seconds the lights went back to green.
+                            </li>
+                            <li>
+                                I then added the two lights for the pedestrians and programmed them to only be green
+                                when the vehicles' lights are red. I took these lights a step further and made the
+                                red light flash when the timer was coming to an en.
+                            </li>
+                            <li>
+                                The last addition to this project was the buzzer. This buzzer immitates the tone heard
+                                at traffic lights and can be used to indicate when pedestrians can and cannot cross the
+                                road.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="split">
+                        <h3>Final Outcome</h3>
+                        <p>
+                            After finishing this project I was left with a real world simulation of a simple set of
+                            traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
+                        </p>
+                        <ul>
+                            <li>Traffic lights for vehicles remain green until pedestrian button is pressed</li>
+                            <li>Pedestrian lights remain red until the vehicles' lights are red</li>
+                            <li>The vehicles' lights turn yellow when the pedestrian button is pressed</li>
+                            <li>After a few seconds on yellow, the vehicles' lights change to red and the pedestrian
+                                lights to green</li>
+                            <li>After a few seconds the pedestrians flash red for a few seconds</li>
+                            <li>Finally the lights return to their base state, green for vehicles, red for
+                                predestrians</li>
+                            <li>While the pedestrian lights are red, the buzzer beeps at a slow frequency</li>
+                            <li>When the pedestrian lights are green the buzzer beeps at a fast frequency</li>
+                        </ul>
+                        <h3>Learning Outcomes</h3>
+                        <ul>
+                            <li>Good understanding of basic electronics</li>
+                            <li>Fundamentals of programming</li>
+                            <li>How to integrate hardware with software using the Raspberry Pi</li>
+                            <li>Developed problem-solving skills by troubleshooting issues that arose during
+                                development
+                            </li>
+                            <li>Most importantly... Persistence!</li>
                         </ul>
                     </div>
                 </div>
+                <i class="arrow expand fa-solid fa-chevron-down"></i>
             </div>
+            <i class="arrow contract fa-solid fa-chevron-up"></i>
         </div>
-        <div class="expansion">
-            <div class="splitter">
-                <div class="split">
-                    <h3>Hardware</h3>
-                    <ul>
-                        <li>Raspberry Pi 4 Model B+</li>
-                        <li>Breadboard</li>
-                        <li>LEDs</li>
-                        <li>Buzzer</li>
-                        <li>Switch</li>
-                        <li>Jumper wires</li>
-                    </ul>
-                    <h3>Process</h3>
-                    <p>
-                        This being my first tech project, I took baby steps in the development process and had no
-                        end product in mind, I simply wanted to learn.
-                    </p>
-                    <ol>
-                        <li>
-                            I began by controlling a single LED with the Raspberry Pi and quickly progressed to
-                            controlling three LEDs using a timer in Python.
-                        </li>
-                        <li>
-                            A button was then introduced and used to control the three LEDs. I wrote code that
-                            made these traffic lights behave as they would for vehicles in the real world.
-                            This meant that the lights were green until the button was pressed. After the press,
-                            the lights changed to yellow for a few seconds and then to red. After a few more
-                            seconds the lights went back to green.
-                        </li>
-                        <li>
-                            I then added the two lights for the pedestrians and programmed them to only be green
-                            when the vehicles' lights are red. I took these lights a step further and made the
-                            red light flash when the timer was coming to an en.
-                        </li>
-                        <li>
-                            The last addition to this project was the buzzer. This buzzer immitates the tone heard
-                            at traffic lights and can be used to indicate when pedestrians can and cannot cross the
-                            road.
-                        </li>
-                    </ol>
-                </div>
-                <div class="split">
-                    <h3>Final Outcome</h3>
-                    <p>
-                        After finishing this project I was left with a real world simulation of a simple set of
-                        traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
-                    </p>
-                    <ul>
-                        <li>Traffic lights for vehicles remain green until pedestrian button is pressed</li>
-                        <li>Pedestrian lights remain red until the vehicles' lights are red</li>
-                        <li>The vehicles' lights turn yellow when the pedestrian button is pressed</li>
-                        <li>After a few seconds on yellow, the vehicles' lights change to red and the pedestrian
-                            lights to green</li>
-                        <li>After a few seconds the pedestrians flash red for a few seconds</li>
-                        <li>Finally the lights return to their base state, green for vehicles, red for
-                            predestrians</li>
-                        <li>While the pedestrian lights are red, the buzzer beeps at a slow frequency</li>
-                        <li>When the pedestrian lights are green the buzzer beeps at a fast frequency</li>
-                    </ul>
-                    <h3>Learning Outcomes</h3>
-                    <ul>
-                        <li>Good understanding of basic electronics</li>
-                        <li>Fundamentals of programming</li>
-                        <li>How to integrate hardware with software using the Raspberry Pi</li>
-                        <li>Developed problem-solving skills by troubleshooting issues that arose during
-                            development
-                        </li>
-                        <li>Most importantly... Persistence!</li>
-                    </ul>
-                </div>
-            </div>
-            <i class="arrow expand fa-solid fa-chevron-down"></i>
-        </div>
-        <i class="arrow contract fa-solid fa-chevron-up"></i>
     </div>
+
+    
 
     <div class="sep">
         <hr>
