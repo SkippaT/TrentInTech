@@ -523,6 +523,16 @@ table .percentage {
     opacity: 1;
 }
 
+.project .list-splitter {
+    /* border: 2px solid orchid; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+    gap: 40px;
+}
+
 
 
 .arrow {

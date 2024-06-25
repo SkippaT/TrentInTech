@@ -445,6 +445,10 @@
                         The web app was built using Java and React, it uses MySQL to store the data and is deployed
                         using Docker.
                     </p>
+                    <p>
+                        Note: We are not using real datasets for this application. The names, images and prices have
+                        all been randomly generated.
+                    </p>
                 </div>
                 <div class="carousel-container">
                     <div class="carousel" id="carousel3">
@@ -481,72 +485,106 @@
             <div class="expansion">
                 <div class="splitter">
                     <div class="split">
-                        <h3>Hardware</h3>
-                        <ul>
-                            <li>Raspberry Pi 4 Model B+</li>
-                            <li>Breadboard</li>
-                            <li>LEDs</li>
-                            <li>Buzzer</li>
-                            <li>Switch</li>
-                            <li>Jumper wires</li>
-                        </ul>
-                        <h3>Process</h3>
+                        <h3>Tools/Software Used</h3>
+                        <div class="list-splitter">
+                            <div class="list-split">
+                                <ul>
+                                    <li>GitHub</li>
+                                    <li>GitHub actions</li>
+                                    <li>Microsoft Teams</li>
+                                    <li>Spring Boot</li>
+                                    <li>MySQL</li>
+                                </ul>
+                            </div>
+                            <div class="list-split">
+                                <ul>
+                                    <li>Maven</li>
+                                    <li>Java</li>
+                                    <li>JUnit</li>
+                                    <li>React</li>
+                                    <li>Docker</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Sprints (Milestones)</h3>
+                        <h4>Sprint 1</h4>
                         <p>
-                            This being my first tech project, I took baby steps in the development process and had no
-                            end product in mind, I simply wanted to learn.
+                            The first sprint was all about defining the project requirements, creating user stories,
+                            setting up the project environment and starting the initial system design.<br>
+                            At the end of this sprint we had a clear plan of the development process.
                         </p>
-                        <ol>
-                            <li>
-                                I began by controlling a single LED with the Raspberry Pi and quickly progressed to
-                                controlling three LEDs using a timer in Python.
-                            </li>
-                            <li>
-                                A button was then introduced and used to control the three LEDs. I wrote code that
-                                made these traffic lights behave as they would for vehicles in the real world.
-                                This meant that the lights were green until the button was pressed. After the press,
-                                the lights changed to yellow for a few seconds and then to red. After a few more
-                                seconds the lights went back to green.
-                            </li>
-                            <li>
-                                I then added the two lights for the pedestrians and programmed them to only be green
-                                when the vehicles' lights are red. I took these lights a step further and made the
-                                red light flash when the timer was coming to an en.
-                            </li>
-                            <li>
-                                The last addition to this project was the buzzer. This buzzer immitates the tone heard
-                                at traffic lights and can be used to indicate when pedestrians can and cannot cross the
-                                road.
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="split">
+                        <h4>Sprint 2</h4>
+                        <p>
+                            The second phase we focused on developing the minimum viable product (MVP) with all essential
+                            features. During this sprint we also generated tests for our program and started preparing
+                            for deployment.
+                        </p>
+                        <h4>Sprint 3</h4>
+                        <p>
+                            In the final sprint we completed the application with all required tests passing and features
+                            implemented. We ended the sprint with the deployment of the application using Docker.
+                        </p>
                         <h3>Final Outcome</h3>
                         <p>
-                            After finishing this project I was left with a real world simulation of a simple set of
-                            traffic lights with a pedestrian button. The traffic lights followed a basic set of rules:
+                            The final outcome of this project is a fully function web application that is designed to
+                            streamline the process of grocery shopping. We achieve this by enabling users to find the
+                            lowest prices for various products across many stores and by handling seamless delivery
+                            arrangements.
+                        </p>
+                        <p>
+                            The application allows users to complete the following:
                         </p>
                         <ul>
-                            <li>Traffic lights for vehicles remain green until pedestrian button is pressed</li>
-                            <li>Pedestrian lights remain red until the vehicles' lights are red</li>
-                            <li>The vehicles' lights turn yellow when the pedestrian button is pressed</li>
-                            <li>After a few seconds on yellow, the vehicles' lights change to red and the pedestrian
-                                lights to green</li>
-                            <li>After a few seconds the pedestrians flash red for a few seconds</li>
-                            <li>Finally the lights return to their base state, green for vehicles, red for
-                                predestrians</li>
-                            <li>While the pedestrian lights are red, the buzzer beeps at a slow frequency</li>
-                            <li>When the pedestrian lights are green the buzzer beeps at a fast frequency</li>
+                            <li>Shop online as a guest</li>
+                            <li>Create an account, login and logout</li>
+                            <li>Search for products or categories</li>
+                            <li>Sort search results however they want</li>
+                            <li>Compare the price of a product across all the stores that have it in stock</li>
+                            <li>If logged in, the user can check their order history</li>
+                            <li>Choose the date and time the products are delivered based on available vehicles</li>
                         </ul>
+                    </div>
+                    <div class="split">
                         <h3>Learning Outcomes</h3>
-                        <ul>
-                            <li>Good understanding of basic electronics</li>
-                            <li>Fundamentals of programming</li>
-                            <li>How to integrate hardware with software using the Raspberry Pi</li>
-                            <li>Developed problem-solving skills by troubleshooting issues that arose during
-                                development
-                            </li>
-                            <li>Most importantly... Persistence!</li>
-                        </ul>
+                        <h4>Software Engineering Processes</h4>
+                        <p>
+                            A key part of this project was following various software engineering processes such as
+                            Agile and Scrum methodologies. We gained experience planning, organising, test and
+                            managing a software project from inception to completion.
+                        </p>
+                        <p>
+                            Our group took advantage of GitHub and the suite of features it includes. We used GitHub
+                            to manage our version control, task management, milestones and automated testing.
+                        </p>
+                        <h4>Backend Development</h4>
+                        <p>
+                            This project enhanced my Java skills due to us using Spring Boot for backend development.
+                            We followed the MVC architecture while creating a RESTful API. We used a relational
+                            database through MySQL which provided us with experience in complex database design and 
+                            management.
+                        </p>
+                        <h4>Frontend Development</h4>
+                        <p>
+                            For our frontend we used the React framework to build a quick and responsive webpage. I
+                            gained experience using HTML and CSS to structure and style web pages. This includes
+                            understanding user experience design and ensuring accessibility.
+                        </p>
+                        <p>
+                            This project was my first exposure to React. I learnt how to use it by doing and from the
+                            other students in my group. This hands on experience sparked my interest in frontend
+                            development to compliment my already comprehensive backend skills.
+                        </p>
+                        <h4>Continuous Integration/Deployment (CI/CD)</h4>
+                        <p>
+                            We implemented CI/CD pipelines using GitHub to automate our testing and deployment process.
+                            From this I learnt how to set up automated workflows that ensure code is tested and
+                            deployed efficiently and reliably.
+                        </p>
+                        <h4>Unit Testing</h4>
+                        <p>
+                            Using JUnit I gained experience writing and executing unit tests to verify that individual
+                            parts of the program work as expected.
+                        </p>
                     </div>
                 </div>
                 <i class="arrow expand fa-solid fa-chevron-down"></i>
