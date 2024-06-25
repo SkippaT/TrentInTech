@@ -1147,6 +1147,10 @@ table .percentage {
         min-width: 0px;
         max-width: 100%;
     }
+    .slider section .overlay-text {
+        top: 35px;
+        font-size: 10px;
+    }
     .skill-card {
         width: 100px;
     }
