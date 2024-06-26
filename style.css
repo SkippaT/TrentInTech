@@ -850,19 +850,19 @@ table .percentage {
 
     &.beginner {
         /* background: #4CAF50 !important; */
-        background-image: linear-gradient(to right, #DEA8FF, #bcc0f8);
+        background-image: linear-gradient(to right, #DEA8FF, #bcc0f8) !important;
     }
     &.intermediate {
         /* background: #2196F3 !important; */
-        background-image: linear-gradient(to right, #bcc0f8, #9cd6f3);
+        background-image: linear-gradient(to right, #bcc0f8, #9cd6f3) !important;
     }
     &.advanced {
         /* background: #FF9800 !important; */
-        background-image: linear-gradient(to right, #9cd6f3, #7ae8ed);
+        background-image: linear-gradient(to right, #9cd6f3, #7ae8ed) !important;
     }
     &.expert {
         /* background: #F44336 !important; */
-        background-image: linear-gradient(to right, #7ae8ed, #40FDE7);
+        background-image: linear-gradient(to right, #7ae8ed, #40FDE7) !important;
     }
 }
 
