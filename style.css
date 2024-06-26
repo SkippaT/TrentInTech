@@ -790,9 +790,9 @@ table .percentage {
     margin-top: 30px;
 
     gap: 10px;
-    &:first-child {
-        margin: 0;
-    }
+}
+.skills-row:first-child {
+    margin: 0;
 }
 .skill-card {
     /* border: 2px solid green; */
@@ -838,32 +838,31 @@ table .percentage {
     background: rgba(255, 255, 255, 0.2);
     margin-right: 2px;
     height: 8px;
+}
+.seg:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.seg:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
 
-    &:first-child {
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
-    }
-    &:last-child {
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-    }
-
-    &.beginner {
-        /* background: #4CAF50 !important; */
-        background-image: linear-gradient(to right, #DEA8FF, #bcc0f8) !important;
-    }
-    &.intermediate {
-        /* background: #2196F3 !important; */
-        background-image: linear-gradient(to right, #bcc0f8, #9cd6f3) !important;
-    }
-    &.advanced {
-        /* background: #FF9800 !important; */
-        background-image: linear-gradient(to right, #9cd6f3, #7ae8ed) !important;
-    }
-    &.expert {
-        /* background: #F44336 !important; */
-        background-image: linear-gradient(to right, #7ae8ed, #40FDE7) !important;
-    }
+.seg.beginner {
+    /* background: #4CAF50 !important; */
+    background: linear-gradient(to right, #DEA8FF, #bcc0f8) !important;
+}
+.seg.intermediate {
+    /* background: #2196F3 !important; */
+    background: linear-gradient(to right, #bcc0f8, #9cd6f3) !important;
+}
+.seg.advanced {
+    /* background: #FF9800 !important; */
+    background: linear-gradient(to right, #9cd6f3, #7ae8ed) !important;
+}
+.seg.expert {
+    /* background: #F44336 !important; */
+    background: linear-gradient(to right, #7ae8ed, #40FDE7) !important;
 }
 
 .soft-card p {
@@ -895,7 +894,7 @@ table .percentage {
 
 .passions-section {
     /* border: 5px solid green; */
-    background-image: linear-gradient(to bottom, #410f6a, #172d67);
+    /* background-image: linear-gradient(to bottom, #410f6a, #172d67); */
     background: #172d67;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -1003,7 +1002,7 @@ table .percentage {
 
 .contact-me-section {
     /* border: 2px solid red; */
-    background-image: linear-gradient(to top, #8b15e9, #172d67);
+    /* background-image: linear-gradient(to top, #8b15e9, #172d67); */
     background: #8b15e9;
     display: flex;
     flex-direction: column;
@@ -1051,13 +1050,10 @@ table .percentage {
     font-size: 18px;
     text-decoration: none;
     color: #F5F5DC;
-
-    &:hover {
-        text-decoration: underline;
-
-    }
 }
-
+.contact-me-section .contact-details .contact-card a:hover {
+    text-decoration: underline;
+}
 
 /* ----------------------------- Responsive Window ----------------------------- */
 
