@@ -523,6 +523,16 @@ table .percentage {
     opacity: 1;
 }
 
+.project .list-splitter {
+    /* border: 2px solid orchid; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+    gap: 40px;
+}
+
 
 
 .arrow {
@@ -839,16 +849,20 @@ table .percentage {
     }
 
     &.beginner {
-        background: #4CAF50 !important;
+        /* background: #4CAF50 !important; */
+        background-image: linear-gradient(to right, #DEA8FF, #bcc0f8);
     }
     &.intermediate {
-        background: #2196F3 !important;
+        /* background: #2196F3 !important; */
+        background-image: linear-gradient(to right, #bcc0f8, #9cd6f3);
     }
     &.advanced {
-        background: #FF9800 !important;
+        /* background: #FF9800 !important; */
+        background-image: linear-gradient(to right, #9cd6f3, #7ae8ed);
     }
     &.expert {
-        background: #F44336 !important;
+        /* background: #F44336 !important; */
+        background-image: linear-gradient(to right, #7ae8ed, #40FDE7);
     }
 }
 
@@ -1146,6 +1160,10 @@ table .percentage {
         width: 100%;
         min-width: 0px;
         max-width: 100%;
+    }
+    .slider section .overlay-text {
+        top: 35px;
+        font-size: 10px;
     }
     .skill-card {
         width: 100px;
