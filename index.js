@@ -10,22 +10,22 @@ const backToTopButton = document.querySelector(".back-to-top");
 window.addEventListener("scroll", scrollFunction);
 
 function scrollFunction() {
-  if (window.pageYOffset > 300) { // Show backToTopButton
-    if(!backToTopButton.classList.contains("btnEntrance")) {
-      backToTopButton.classList.remove("btnExit");
-      backToTopButton.classList.add("btnEntrance");
-      backToTopButton.style.display = "block";
+    if (window.pageYOffset > 300) { // Show backToTopButton
+        if (!backToTopButton.classList.contains("btnEntrance")) {
+            backToTopButton.classList.remove("btnExit");
+            backToTopButton.classList.add("btnEntrance");
+            backToTopButton.style.display = "block";
+        }
     }
-  }
-  else { // Hide backToTopButton
-    if(backToTopButton.classList.contains("btnEntrance")) {
-      backToTopButton.classList.remove("btnEntrance");
-      backToTopButton.classList.add("btnExit");
-      setTimeout(function() {
-        backToTopButton.style.display = "none";
-      }, 250);
+    else { // Hide backToTopButton
+        if (backToTopButton.classList.contains("btnEntrance")) {
+            backToTopButton.classList.remove("btnEntrance");
+            backToTopButton.classList.add("btnExit");
+            setTimeout(function () {
+                backToTopButton.style.display = "none";
+            }, 250);
+        }
     }
-  }
 }
 
 // backToTopButton.addEventListener("click", smoothScrollBackToTop);
@@ -40,7 +40,7 @@ function scrollFunction() {
 //   const distance = targetPosition - startPosition;
 //   const duration = 750;
 //   let start = null;
-  
+
 //   window.requestAnimationFrame(step);
 
 //   function step(timestamp) {
@@ -52,10 +52,10 @@ function scrollFunction() {
 // }
 
 function easeInOutCubic(t, b, c, d) {
-	t /= d/2;
-	if (t < 1) return c/2*t*t*t + b;
-	t -= 2;
-	return c/2*(t*t*t + 2) + b;
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
 };
 
 // ---------------------------------------------------------------------------------------------
@@ -246,11 +246,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Select all 'a' elements inside the div with class 'links'
     // Loop through each 'a' element and attach a click event listener
-    var links = document.querySelectorAll(".nav-link").forEach(function(link) {
-        link.addEventListener('click', function(event) {
+    var links = document.querySelectorAll(".nav-link").forEach(function (link) {
+        link.addEventListener('click', function (event) {
             // Prevent the default behavior of the link
             event.preventDefault();
 
@@ -290,19 +290,19 @@ var carouselNumberOfSections = {}   // This keeps track of how many sections eac
 var carouselVideoPlaying = {}       // This keeps track of if a carousel is playing a video
 
 // Set the default parameters for each carousel
-carousels.forEach(function(element) {
+carousels.forEach(function (element) {
     isCarouselTranisitioning[element.id] = false;
     carouselSectionIndex[element.id] = 0;
     carouselDirection[element.id] = -1;    // 1 = previous;    -1 = next
     carouselIntervaleID[element.id] = 0;
     var slider = element.querySelector('.slider');
     carouselNumberOfSections[element.id] = slider.childElementCount;
-    slider.style.width = slider.childElementCount*100 + "%";
+    slider.style.width = slider.childElementCount * 100 + "%";
     carouselVideoPlaying[element.id] = false;
 
     // Get all the videos in the carousel section and add a listener for when the finish
     var videos = element.querySelectorAll("video");
-    videos.forEach(function(video) {
+    videos.forEach(function (video) {
         video.addEventListener('ended', () => {
             // video.currentTime = 0;
             carouselVideoPlaying[element.id] = false;
@@ -350,10 +350,10 @@ function startShow(carousel) {
 
     // Get the slider inside the carousel
     const slider = carousel.querySelector('.slider');
-    carouselIntervaleID[carousel.id] = setInterval(function() {
+    carouselIntervaleID[carousel.id] = setInterval(function () {
         if (!carouselVideoPlaying[carousel.id]) {
             // Move to the next slide in the carousel, if the end is reached, go round to the start
-            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id]-1) ? carouselSectionIndex[carousel.id] + 1 : 0;
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id] - 1) ? carouselSectionIndex[carousel.id] + 1 : 0;
             // Update the indicators
             setIndex(carousel, carouselSectionIndex[carousel.id]);
             // Update the direction
@@ -363,14 +363,14 @@ function startShow(carousel) {
             }
             // Do the transform
             carousel.style.justifyContent = "flex-start";
-            const translatePercentage = 100/carouselNumberOfSections[carousel.id];
+            const translatePercentage = 100 / carouselNumberOfSections[carousel.id];
             slider.style.transform = "translate(-" + translatePercentage + "%)";
         }
-    }, time*1000);
+    }, time * 1000);
 }
 
-prevArrows.forEach(function(element) {
-    element.addEventListener("click", function() {
+prevArrows.forEach(function (element) {
+    element.addEventListener("click", function () {
         // This is for whenever the "previous arrow" is clicked
 
         // Get the carousel the arrow is inside
@@ -381,7 +381,7 @@ prevArrows.forEach(function(element) {
         if (!isCarouselTranisitioning[carousel.id]) {      // Check if not currently transitioning
             isCarouselTranisitioning[carousel.id] = true;  // Set transitioning flag
             // Move to the previous slide in the carousel, loop if necessary
-            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] > 0) ? carouselSectionIndex[carousel.id] - 1 : carouselNumberOfSections[carousel.id]-1;
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] > 0) ? carouselSectionIndex[carousel.id] - 1 : carouselNumberOfSections[carousel.id] - 1;
             // Update the indicators
             setIndex(carousel, carouselSectionIndex[carousel.id]);
             // Update the direction
@@ -391,29 +391,29 @@ prevArrows.forEach(function(element) {
             }
             // Do the transform
             carousel.style.justifyContent = "flex-end";
-            const translatePercentage = 100/carouselNumberOfSections[carousel.id];
+            const translatePercentage = 100 / carouselNumberOfSections[carousel.id];
             slider.style.transform = "translate(" + translatePercentage + "%)";
-            setTimeout(function() {
+            setTimeout(function () {
                 isCarouselTranisitioning[carousel.id] = false; // Reset transitioning flag after transition
             }, 500);
         }
     });
 });
 
-nextArrows.forEach(function(element) {
-    element.addEventListener("click", function() {
+nextArrows.forEach(function (element) {
+    element.addEventListener("click", function () {
         // This is for whenever the "next arrow" is clicked
-        
+
         // Get the carousel the arrow is inside
         const carousel = element.parentElement.parentElement;
         // Get the slider inside the carousel
         const slider = carousel.querySelector('.slider');
-    
+
 
         if (!isCarouselTranisitioning[carousel.id]) {      // Check if not currently transitioning
             isCarouselTranisitioning[carousel.id] = true;  // Set transitioning flag
             // Move to the next slide in the carousel, loop if necessary
-            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id]-1) ? carouselSectionIndex[carousel.id] + 1 : 0;
+            carouselSectionIndex[carousel.id] = (carouselSectionIndex[carousel.id] < carouselNumberOfSections[carousel.id] - 1) ? carouselSectionIndex[carousel.id] + 1 : 0;
             // Update the indicators
             setIndex(carousel, carouselSectionIndex[carousel.id]);
             // Update the direction
@@ -423,53 +423,47 @@ nextArrows.forEach(function(element) {
             }
             // Do the transfrom
             carousel.style.justifyContent = "flex-start";
-            const translatePercentage = 100/carouselNumberOfSections[carousel.id];
+            const translatePercentage = 100 / carouselNumberOfSections[carousel.id];
             slider.style.transform = "translate(-" + translatePercentage + "%)";
-            setTimeout(function() {
+            setTimeout(function () {
                 isCarouselTranisitioning[carousel.id] = false; // Reset transitioning flag after transition
             }, 500);
         }
     });
 });
 
-carousels.forEach(function(element) {
+carousels.forEach(function (element) {
     // Start the show for each carousel
     startShow(element);
     // Stop the automatic sliding when hovered over
-    element.addEventListener("mouseover", function() {
+    element.addEventListener("mouseover", function () {
         clearInterval(carouselIntervaleID[element.id]);
     });
     // Restart the automatic sliding when the mouse leaves
-    element.addEventListener("mouseout", function() {
+    element.addEventListener("mouseout", function () {
         startShow(element);
     });
 
     // Add a listener for the slider to update after a transition
     const slider = element.querySelector(".slider");
-    slider.addEventListener("transitionend", function() {
+    slider.addEventListener("transitionend", function () {
         // Get the carousel
         const carousel = slider.parentElement
         if (carouselDirection[element.id] === -1) {
             slider.appendChild(slider.firstElementChild);
             var video = slider.querySelectorAll("section")[0].querySelector("video");
             if (video !== null) {
-                // If the section is a video, play it and stop the slideshow
-                if (isElementInViewport(video)) {
-                    video.play();
-                    carouselVideoPlaying[element.id] = true;
-                }
-                
+                video.play();
+                carouselVideoPlaying[element.id] = true;
+
             }
         } else {
             slider.prepend(slider.lastElementChild);
             var video = slider.lastElementChild.querySelector("video");
             if (video !== null) {
-                // If the section is a video, play it and stop the slideshow
-                if (isElementInViewport(video)) {
-                    video.play();
-                    carouselVideoPlaying[element.id] = true;
-                }
-                
+                video.play();
+                carouselVideoPlaying[element.id] = true;
+
             }
         }
 
@@ -483,7 +477,7 @@ carousels.forEach(function(element) {
         }
 
         // Go through each video and pause it
-        slider.querySelectorAll("video").forEach(function(video) {
+        slider.querySelectorAll("video").forEach(function (video) {
             if (video !== face) {
                 video.pause();
                 video.currentTime = 0;
@@ -493,10 +487,10 @@ carousels.forEach(function(element) {
                 carouselVideoPlaying[element.id] = true;
             }
         });
-    
+
         slider.style.transition = "none";
         slider.style.transform = "translate(0)";
-        setTimeout(function() {
+        setTimeout(function () {
             slider.style.transition = "all 0.3s ease";
         });
     });
@@ -519,9 +513,9 @@ function isElementInViewport(el) {
 var expandButtons = document.querySelectorAll(".project .expansion .expand");
 
 // Add an event listener to each
-expandButtons.forEach(function(element) {
-    element.addEventListener("click", function() {
-    
+expandButtons.forEach(function (element) {
+    element.addEventListener("click", function () {
+
         var totalHeight = 35;
         var button = this;
 
@@ -533,17 +527,17 @@ expandButtons.forEach(function(element) {
 
         // Get the length of the splitter that is hidden
         totalHeight += splitter.offsetHeight
-    
+
         expansionElement.style.height = totalHeight + "px";
         expansionElement.style.maxHeight = totalHeight + "px"
 
         // Get the project this expansion element is in
         project = expansionElement.parentNode;
         const contractButton = project.querySelector(".contract");
-        
+
         button.style.display = "none";
         contractButton.style.display = "block";
-        
+
         return false;
     });
 });
@@ -552,8 +546,8 @@ expandButtons.forEach(function(element) {
 var contractButtons = document.querySelectorAll(".project .contract");
 
 // Add an event listener to each
-contractButtons.forEach(function(element) {
-    element.addEventListener("click", function() {
+contractButtons.forEach(function (element) {
+    element.addEventListener("click", function () {
 
         var button = this;
         const height = 150;
@@ -566,16 +560,16 @@ contractButtons.forEach(function(element) {
 
         // Get the splitter inside the expansion
         var splitter = expansionElement.querySelector(".splitter");
-    
+
         expansionElement.style.height = height + "px";
         // expansionElement.style.maxHeight = height + "px"
-    
+
         // Get the expand button
         const expandButton = expansionElement.querySelector(".expand");
-        
+
         button.style.display = "none";
         expandButton.style.display = "block";
-        
+
         return false;
 
     })
