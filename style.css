@@ -805,6 +805,10 @@ table .percentage {
     width: 300px;
     /* height: 250px; */
 }
+.tech-card h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
 .tech-card p {
     text-align: justify;
 }
