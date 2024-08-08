@@ -355,7 +355,7 @@ h1 {
 
 .project-hook-text h2 {
     padding-bottom: 0.5rem;
-    font-size: 36px;
+    font-size: 40px;
 }
 .project-hook-text h3 {
     text-align: center;
@@ -389,8 +389,8 @@ h1 {
 }
 .project-hook-text i {
     /* border: 2px solid brown; */
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -603,6 +603,20 @@ table .percentage {
     height: auto;
     min-width: 100px;
 }
+.slider section .play-button i {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+    /* width: 100px;
+    height: 100px; */
+    font-size: 64px;
+    opacity: 0.7;
+}
+.slider section .play-button .hidden {
+    display: none;
+}
 .slider section .overlay-text {
     position: absolute;
     z-index: 4;
@@ -733,12 +747,12 @@ table .percentage {
     text-align: center;
 }
 .degree h3 {
-    font-size: 28px;
+    font-size: 36px;
 }
 .course h4 {
     padding-top: 15px;
     padding-bottom: 5px;
-    font-size: 20px;
+    font-size: 26px;
     
 }
 
