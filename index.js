@@ -438,6 +438,12 @@ carousels.forEach(function (element) {
     // Stop the automatic sliding when hovered over
     element.addEventListener("mouseover", function () {
         clearInterval(carouselIntervaleID[element.id]);
+        var video = slider.querySelectorAll("section")[0].querySelector("video");
+        if (video !== null) {
+            console.log("It is a video.");
+            video.play();
+            carouselVideoPlaying[element.id] = true;
+        }
     });
     // Restart the automatic sliding when the mouse leaves
     element.addEventListener("mouseout", function () {
@@ -451,20 +457,18 @@ carousels.forEach(function (element) {
         const carousel = slider.parentElement
         if (carouselDirection[element.id] === -1) {
             slider.appendChild(slider.firstElementChild);
-            var video = slider.querySelectorAll("section")[0].querySelector("video");
-            if (video !== null) {
-                video.play();
-                carouselVideoPlaying[element.id] = true;
-
-            }
+            // var video = slider.querySelectorAll("section")[0].querySelector("video");
+            // if (video !== null) {
+            //     video.play();
+            //     carouselVideoPlaying[element.id] = true;
+            // }
         } else {
             slider.prepend(slider.lastElementChild);
-            var video = slider.lastElementChild.querySelector("video");
-            if (video !== null) {
-                video.play();
-                carouselVideoPlaying[element.id] = true;
-
-            }
+            // var video = slider.lastElementChild.querySelector("video");
+            // if (video !== null) {
+            //     video.play();
+            //     carouselVideoPlaying[element.id] = true;
+            // }
         }
 
 
@@ -477,16 +481,16 @@ carousels.forEach(function (element) {
         }
 
         // Go through each video and pause it
-        slider.querySelectorAll("video").forEach(function (video) {
-            if (video !== face) {
-                video.pause();
-                video.currentTime = 0;
-                carouselVideoPlaying[element.id] = false;
-            }
-            if (face.nodeName === "VIDEO" && isElementInViewport(video)) {
-                carouselVideoPlaying[element.id] = true;
-            }
-        });
+        // slider.querySelectorAll("video").forEach(function (video) {
+        //     if (video !== face) {
+        //         video.pause();
+        //         video.currentTime = 0;
+        //         carouselVideoPlaying[element.id] = false;
+        //     }
+        //     if (face.nodeName === "VIDEO" && isElementInViewport(video)) {
+        //         carouselVideoPlaying[element.id] = true;
+        //     }
+        // });
 
         slider.style.transition = "none";
         slider.style.transform = "translate(0)";
