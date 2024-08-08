@@ -305,7 +305,6 @@ carousels.forEach(function (element) {
     videos.forEach(function (video) {
         video.addEventListener('ended', () => {
             // video.currentTime = 0;
-            console.log("Video finished");
             let icon = video.parentElement.children[0].children[0];
             icon.classList.remove('hidden');
             carouselVideoPlaying[element.id] = false;
@@ -443,8 +442,6 @@ carousels.forEach(function (element) {
         clearInterval(carouselIntervaleID[element.id]);
         var video = slider.querySelectorAll("section")[0].querySelector("video");
         if (video !== null) {
-            console.log("It is a video.");
-            console.log(video.parentElement.children[0].children[0]);
             let icon = video.parentElement.children[0].children[0];
             icon.classList.add('hidden');
             video.play();
